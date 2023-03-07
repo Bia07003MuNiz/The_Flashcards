@@ -34,6 +34,7 @@ Route::resources([
 ]);
 
 Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
+Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
 
 
 Route::view('/teste','tela-teste');
