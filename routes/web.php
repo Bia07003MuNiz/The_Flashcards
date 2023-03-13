@@ -36,7 +36,9 @@ Route::resources([
 Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
 Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
 
-
-Route::view('/teste','tela-teste');
-
-
+Route::view('/quem-somos','quem-somos');
+Route::view('/onde-estamos','onde-estamos');
+Route::view('/contato','contato');
+Route::view('/politica-de-privacidade','politica-de-privacidade');
+Route::view('/termos-de-uso','termos-de-uso');
+Route::view('/duvidas-frequentes','duvidas-frequentes');

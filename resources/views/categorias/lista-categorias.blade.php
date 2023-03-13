@@ -2,7 +2,7 @@
     <x-slot:title>
         Lista de categorias
     </x-slot>
-    <div>
+    <div class="container">
         <h1>LISTA DE CATEGORIAS</h1>
         <a href="{{route('categorias.create')}}">Novo Categoria</a>
         <div class="list-group mt-5">
