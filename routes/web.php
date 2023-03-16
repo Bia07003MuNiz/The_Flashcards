@@ -33,7 +33,10 @@ Route::resources([
     'users' => UserController::class, 
 ]);
 
+
 Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
+Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
+
 Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
 
 Route::view('/quem-somos','quem-somos');
@@ -42,3 +45,4 @@ Route::view('/contato','contato');
 Route::view('/politica-de-privacidade','politica-de-privacidade');
 Route::view('/termos-de-uso','termos-de-uso');
 Route::view('/duvidas-frequentes','duvidas-frequentes');
+Route::view('/login','login.login');
