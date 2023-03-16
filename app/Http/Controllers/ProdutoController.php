@@ -95,4 +95,11 @@ class ProdutoController extends Controller
     {
         return view('produtos.excluir-produto', compact('produto'));
     }
+
+    public function Listar()
+    {
+        $produtos = Produto::all();
+
+        return view('produtos.listar-produtos-clientes', compact('produtos'));
+    }
 }
