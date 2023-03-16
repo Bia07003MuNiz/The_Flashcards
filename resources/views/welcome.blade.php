@@ -40,13 +40,13 @@
                 </div>
             </div>
             <div id="redesSociais">
-                <a href="instagram.com" target="_blank" rel="noopener" title="Instagram">
+                <a href="instagram.com" target="_blank" rel="noopener" title="Instagram" class="style__rede">
                     <img src="assets/svg/instagram.svg" width="55" height="50" alt="Instagram">
                 </a>
-                <a href="facebook.com" target="_blank" rel="noopener" title="Facebook">
+                <a href="facebook.com" target="_blank" rel="noopener" title="Facebook" class="style__rede">
                     <img src="assets/svg/facebook.svg" width="55" height="50" alt="Facebook">
                 </a>
-                <a href="twitter.com" target="_blank" rel="noopener" title="Twitter">
+                <a href="twitter.com" target="_blank" rel="noopener" title="Twitter" class="style__rede">
                     <img src="assets/svg/twitter.svg" width="55" height="50" alt="Twitter">
                 </a>
             </div>
@@ -55,33 +55,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4" data-animate="zoomIn animated">
-                        <a href="#" target="_blank" rel="noopener">
-                            <div class="d-flex position-relative">
-                                <img src="assets/images/chamada1.png" class="flex-shrink-0 me-3" width="118" height="118" alt="Ícone selo de aprovação">
-                                <div>
-                                <h5 class="mt-0">Produtos de alta qualidade</h5>
-                                </div>
+                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Alta qualidade">
+                            <div class="chamada__icone">
+                                <img src="assets/images/chamada1.png" width="118" height="118" alt="Ícone selo de aprovação">
                             </div>
+                            <h5 class="chamada__texto">Produtos de alta qualidade</h5>
                         </a>
                     </div>
                     <div class="col-lg-4" data-animate="bounceIn animated">
-                        <a href="#" target="_blank" rel="noopener">
-                            <div class="d-flex position-relative">
-                                <img src="assets/images/chamada2.png" class="flex-shrink-0 me-3" width="118" height="119" alt="Ícone mão de preço baixo">
-                                <div>
-                                <h5 class="mt-0">Preço mais baixo do mercado</h5>
-                                </div>
+                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Preço baixo">
+                            <div class="chamada__icone">
+                                <img src="assets/images/chamada2.png" width="118" height="119" alt="Ícone mão de preço baixo">
                             </div>
+                            <h5 class="chamada__texto">Preço mais baixo do mercado</h5>
                         </a>
                     </div>
                     <div class="col-lg-4" data-animate="fadeIn animated">
-                        <a href="#" target="_blank" rel="noopener">
-                            <div class="d-flex position-relative">
-                                <img src="assets/images/chamada3.png" class="flex-shrink-0 me-3" width="118" height="118" alt="Ícone de desconto">
-                                <div>
-                                <h5 class="mt-0">Descontos exclusivos</h5>
-                                </div>
+                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Descontos">
+                            <div class="chamada__icone">
+                                <img src="assets/images/chamada3.png" width="118" height="118" alt="Ícone de desconto">
                             </div>
+                            <h5 class="chamada__texto">Descontos exclusivos</h5>
                         </a>
                     </div>
                 </div>
