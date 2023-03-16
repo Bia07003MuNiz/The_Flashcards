@@ -62,7 +62,7 @@
                             <h5 class="chamada__texto">Produtos de alta qualidade</h5>
                         </a>
                     </div>
-                    <div class="col-lg-4" data-animate="bounceIn animated">
+                    <div class="col-lg-4 card__chamada" data-animate="bounceIn animated">
                         <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Preço baixo">
                             <div class="chamada__icone">
                                 <img src="assets/images/chamada2.png" width="118" height="119" alt="Ícone mão de preço baixo">
