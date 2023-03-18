@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagem;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
+
     /**
      * Display a listing of the resource.
      */
@@ -30,8 +37,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
-
+        
         $produto = new Produto();
         $produto->nome = $request->nome;
         $produto->valor = $request->valor;
@@ -41,6 +47,20 @@ class ProdutoController extends Controller
         $produto->save();
 
         $produto->categorias()->attach($request->categoria);
+
+        if($request->file()) {
+            foreach ($request->file('arquivo') as $key => $arquivo) {
+                //dd($request->file('arquivo'), $arquivo);
+                $fileName = time().'_'.$arquivo->getClientOriginalName();
+                $filePath = $arquivo->storeAs('produtos', $fileName, 'assets');
+
+                $imagem = new Imagem();
+                $imagem->produto_id = $produto->id;
+                $imagem->url = 'http://127.0.0.1:8000/assets/images/'.$filePath;
+                $imagem->save();
+                # code...
+            }
+        }
 
         return redirect(route('produtos.index'));
     }

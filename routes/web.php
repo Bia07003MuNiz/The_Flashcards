@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Models\Produto;
@@ -19,13 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/teste2', function () {
-    $produto = Produto::find(2);
-
-
-    dd($produto->possuiCategoria(1));
-});
+})->name('home');
 
 Route::resources([
     'produtos' => ProdutoController::class,
@@ -34,15 +29,31 @@ Route::resources([
 ]);
 
 
-Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function () {
+        return view('login');
+    })->name('login');
+    
+    Route::post('/logar', [loginController::class, 'logar'])->name('logar');
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', [loginController::class, 'logout'])->name('logout');
+    
+    Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
+    Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
+});
+
+
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
 
-Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
 
 Route::view('/quem-somos','quem-somos');
 Route::view('/onde-estamos','onde-estamos');
-Route::view('/contato','contato');
+Route::view('/contato','contato')->name('contato');
 Route::view('/politica-de-privacidade','politica-de-privacidade');
 Route::view('/termos-de-uso','termos-de-uso');
 Route::view('/duvidas-frequentes','duvidas-frequentes');
-Route::view('/login','login.login');
+//Route::view('/login','login.login');
