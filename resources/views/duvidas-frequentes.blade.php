@@ -76,11 +76,13 @@
                     </div>
                 </div>
                 <div>
+                  <br>
                 <h1 class="text-center fs-4 mb-4">Não encontrou o que precisa? </h1>
                 <div class="text-center my-5">
     <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg">
-       Entre em contato conosco pelo WhatsApp
+        <i class="fab fa-whatsapp mr-2"></i> Entre em contato conosco pelo WhatsApp
     </a>
 </div>
+
 
 </x-layout-base>
