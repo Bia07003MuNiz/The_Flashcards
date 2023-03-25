@@ -9,7 +9,7 @@
 
     <div class="bg-white w-screen h-screen d-flex align-items-center justify-content-center">
         <div class="bg-white rounded-lg shadow-lg p-5 p-md-8 w-100 w-md-75">
-            <h1 class="text-center text-purple-900 fw-bold fs-3 mb-4">DÚVIDAS</h1>
+            <h1 class="text-left fw-bold fs-3 mb-4" style="color: rgb(75, 13, 132);">DÚVIDAS</h1>
             <div class="w-20 h-1 bg-purple-900 mx-auto mb-4"></div>    
             
             <div class="accordion" id="accordionExample">
