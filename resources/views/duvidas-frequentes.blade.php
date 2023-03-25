@@ -66,12 +66,12 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Posso realizar o acesso no site em diferentes plataformas?
+                        Atualmente atuam somente online ou fisicamente tambem?
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                        Sim, nosso site está disponivel para todas as plataformas.
+                        Atualmente estamos atuando somente nas plataformas online.
                         </div>
                     </div>
                 </div>
