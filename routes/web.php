@@ -56,4 +56,8 @@ Route::view('/contato','contato')->name('contato');
 Route::view('/politica-de-privacidade','politica-de-privacidade');
 Route::view('/termos-de-uso','termos-de-uso');
 Route::view('/duvidas-frequentes','duvidas-frequentes');
+Route::view('/meus-dados','area-restrita-vendedor/meus-dados');
+Route::view('/alterar-senha','area-restrita-vendedor/alterar-senha');
+Route::view('/cadastrar-nova-categoria','area-restrita-vendedor/cadastrar-nova-categoria');
+Route::view('/cadastrar-novo-produto','area-restrita-vendedor/cadastrar-novo-produto');
 //Route::view('/login','login.login');
