@@ -1,17 +1,42 @@
-// Estilo base para as etiquetas dos botões de opção
-.opcao-label {
-    font-size: 1px;
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+}
+
+.form-check-inline .form-check-input {
+  position: static;
+  margin-top: 0;
+  margin-right: 0.3125rem;
+  margin-left: 0;
+}
+
+input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: #1d71c4;
+  border-color: #1d71c4;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+
+  .form-check-input {
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.25rem;
   }
   
-  // Estilo para o contêiner de botões de opção
-  .opcoes-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  .form-check-inline .form-check-input {
+    position: static;
+    margin-top: 0;
+    margin-right: 0.3125rem;
+    margin-left: 0;
   }
-  
-  // Estilo para os botões de opção
-  .opcao-input {
-    margin-right: 10px;
-  }
-  
+}
