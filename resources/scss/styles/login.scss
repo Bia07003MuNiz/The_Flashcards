@@ -1,0 +1,17 @@
+// Estilo base para as etiquetas dos botões de opção
+.opcao-label {
+    font-size: 1px;
+  }
+  
+  // Estilo para o contêiner de botões de opção
+  .opcoes-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  // Estilo para os botões de opção
+  .opcao-input {
+    margin-right: 10px;
+  }
+  
