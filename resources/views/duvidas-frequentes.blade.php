@@ -5,7 +5,10 @@
 
     @push('scss')
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-    @endpush
+        <link rel="stylesheet" href="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=360">
+        <script src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=360"></script>
+
+        @endpush
 
     <div class="bg-white w-screen h-screen d-flex align-items-center justify-content-center">
         <div class="bg-white rounded-lg shadow-lg p-5 p-md-8 w-100 w-md-75">
@@ -79,10 +82,12 @@
                   <br>
                 <h1 class="text-center fs-4 mb-4">Não encontrou o que precisa? </h1>
                 <div class="text-center my-5">
-    <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg">
-        <i class="fab fa-whatsapp mr-2"></i> Entre em contato conosco pelo WhatsApp
+                <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg"> 
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=360" alt="WhatsApp Icon" class="mr-1" style="width: 60px; height: 60px; border-radius: 50%">
+        Fale conosco pelo WhatsApp
     </a>
 </div>
+
 
 
 </x-layout-base>
