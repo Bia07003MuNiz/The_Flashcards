@@ -1,8 +1,33 @@
-.custom-class {
-  display: none;
+
+.linha-horizontal{
+  display: inline-block;
+  border: none;
+  border-left: 200px solid rgb(75, 13, 132);
+  height: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
-@include media-breakpoint-up(sm) {
-  .custom-class {
-    display: block;
-  }
+
+.card-header button {
+  width: 100%;
+  text-align: left;
 }
+
+.card-header button:focus {
+  outline: none;
+}
+
+.card-header button::after {
+  display: inline-block;
+  margin-left: auto;
+  content: "";
+  border-top: 0.3rem solid;
+  border-right: 0.3rem solid transparent;
+  border-left: 0.3rem solid transparent;
+  vertical-align: middle;
+}
+
+.card-header button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
