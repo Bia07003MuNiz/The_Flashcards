@@ -19,7 +19,7 @@
                             Como faço para criar uma conta?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" style=" border: 1px solid blue;" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse show" style=" border: 1px solid blue; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Para criar uma conta, clique no botão "Criar conta" na página inicial e preencha o formulário com suas informações pessoais.
                         </div>
@@ -31,7 +31,7 @@
                             Como posso recuperar minha senha?
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div id="collapseTwo" class="accordion-collapse collapse" style=" border: 1px solid blue; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Para recuperar sua senha, clique no link "Esqueceu sua senha?" na página de login e siga as instruções para redefinir sua senha.
                         </div>
@@ -43,7 +43,7 @@
                             Quais são as formas de pagamento aceitas?
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="collapseThree" class="accordion-collapse collapse" style=" border: 1px solid blue; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Aceitamos pagamentos por cartão de crédito, boleto bancário e pix.
                         </div>
@@ -56,7 +56,7 @@
                         Posso realizar o acesso no site em diferentes plataformas?
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div id="collapseFour" class="accordion-collapse collapse" style=" border: 1px solid blue; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;"aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                         Sim, nosso site está disponivel para todas as plataformas.
                         </div>
@@ -69,7 +69,7 @@
                         Atualmente atuam somente online ou fisicamente tambem?
                         </button>
                     </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse"  aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div id="collapseFive" class="accordion-collapse collapse" style=" border: 1px solid blue; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                         Atualmente estamos atuando somente nas plataformas online.
                         </div>
