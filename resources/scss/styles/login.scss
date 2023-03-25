@@ -41,8 +41,25 @@ input {
   }
 }
 
+.text-blue-600.font-bold.mb-2 {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 100px;
+  color:#10151b
+}
 
-.btn-custom {
-  margin-right: 5px; /* ajuste a margem direita do primeiro botão */
-  margin-left: 5px; /* ajuste a margem esquerda do segundo botão */
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$link-color: black;
+
+.btn-link {
+  color: $link-color;
+  a {
+    font-size: $font-size-medium;
+  }
+  
+  h1 {
+    font-size: $font-size-large;
+  }
 }
