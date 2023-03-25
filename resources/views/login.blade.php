@@ -12,16 +12,16 @@
             <h1 class="text-2xl font-bold text-purple-900 text-left mb-8">LOGIN</h1>
             <div class="text-center text-xl font-bold" style= "padding-left:2%; color:black; font-size: 90%;">Entre com seus dados</div>
             <div class="mb-6">
-                    <div class="text-gray-700 font-bold mb-2">
+                    <div class="text-blue-600 font-bold mb-2">
                         Entrar como:
                     </div>
                     <label class="inline-flex items-center">
                         <input type="radio" class="form-radio" name="inlineRadioOptions" id="inlineRadio1" value="opcao1">
-                        <span class="ml-2 text-gray-700">Cliente</span>
+                        <span class="ml-2 text-blue-600">Cliente</span>
                     </label>
                     <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio" name="inlineRadioOptions" id="inlineRadio2" value="opcao2">
-                        <span class="ml-2 text-gray-700">Vendedor</span>
+                        <input type="radio" class="form-radio " name="inlineRadioOptions" id="inlineRadio2" value="opcao2">
+                        <span class="ml-2 text-blue-600">Vendedor</span>
                     </label>
                 </div>
             <form action="{{route('logar')}}" method="POST">
