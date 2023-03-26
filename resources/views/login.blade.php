@@ -8,8 +8,7 @@
     @endpush
 
     <div class="container">
-    <div class="bg-white w-1200 h-800 flex items-center justify-center">
-  <div class="bg-white shadow-lg p-10 w-1006">
+     <div class="bg-white shadow-lg p-10 w-1006" style= "position:relative; Left:25%;">
     <h1 class="text-2xl font-bold text-purple-900 text-left mb-8" style="font-size:40px;">LOGIN</h1>
     <div class="text-center text-xl font-bold" style="color:black; font-size: 20px;">Entre com seus dados</div>
     <br><br>
