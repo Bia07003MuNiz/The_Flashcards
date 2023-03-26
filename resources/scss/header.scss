@@ -1,0 +1,51 @@
+#topo{
+    &.topo{
+        position: relative;
+
+        .box__categorias{
+            position: absolute;
+            bottom: -40px;
+            z-index: 10;
+        }
+    }
+
+    .box__frase{
+        padding: 8px 0;
+        background-color: #4F0074;
+        color: #FFF;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        list-style: 17px;
+        text-align: start;
+    }
+
+    .box__menu{
+        background-color: #006ACB;
+    }
+
+    .box__categorias{
+        background-color: rgba($color: #006ACB, $alpha: .4);
+        border-bottom: 2px solid #006ACB;
+        padding: 7px 60px;
+
+        .itens__lista{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .item{
+                a{
+                    color: #FFF;
+                    font-size: 18px;
+                    line-height: 20px;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    margin: 0 20px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
