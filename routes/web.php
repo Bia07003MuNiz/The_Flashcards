@@ -60,5 +60,6 @@ Route::view('/meus-dados','area-restrita-vendedor/meus-dados');
 Route::view('/alterar-senha','area-restrita-vendedor/alterar-senha');
 Route::view('/cadastrar-nova-categoria','area-restrita-vendedor/cadastrar-nova-categoria');
 Route::view('/cadastrar-novo-produto','area-restrita-vendedor/cadastrar-novo-produto');
-Route::view('/esqueceu-minha-senha','esqueceu-minha-senha');
+Route::view('/esqueci-minha-senha','esqueci-minha-senha');
+Route::view('/carrinho','carrinho');
 //Route::view('/login','login.login');
