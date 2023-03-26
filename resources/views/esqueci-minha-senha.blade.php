@@ -39,7 +39,8 @@
                           
             
                 <div class="mt-11 flex justify-center">
-                    <button type="submit" class="rounded-lg bg-purple-900 p-3 font-bold text-white  py-2 rounded-lg ml-2" >Entrar</button>
+                <button type="submit" class="rounded-lg bg-purple-900 p-3 font-bold text-white  py-2 rounded-lg ml-2" >VOLTAR</button>
+                    <button type="submit" class="rounded-lg bg-purple-900 p-3 font-bold text-white  py-2 rounded-lg ml-2" >ENTRAR</button>
                 </div>
                 </form>
           </div>
