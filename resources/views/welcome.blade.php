@@ -55,6 +55,7 @@
             </div>
             <section id="secaoChamadas">
                 <div class="container">
+                    <h1 class="titulo">SOBRE NÓS</h1>
                     <div class="row">
                         <div class="col-lg-4" data-animate="zoomIn animated">
                             <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Alta qualidade">
