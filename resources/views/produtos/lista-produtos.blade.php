@@ -4,14 +4,7 @@
     </x-slot>
     <div class="container">
         <h1>NOSSOS PRODUTOS</h1>
-        @auth
-            <a href="{{route('produtos.create')}}">Novo Produto</a>
-        @endauth
-        <div class="list-group mt-5">
-            @foreach ($produtos as $produto)
-                <a href="{{route('produtos.show',$produto)}}" class="list-group-item list-group-item-action">{{$produto->nome}}</a>
-            @endforeach
-
+        
             <div class="row">
                 <div class="col-12 col-md-5">
                     <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
@@ -42,7 +35,17 @@
     </div>
     </div>
     <hr>
+    @auth
+            <a href="{{route('produtos.create')}}">Novo Produto</a>
+        @endauth
+        <div class="list-group mt-5">
+            @foreach ($produtos as $produto)
+                <a href="{{route('produtos.show',$produto)}}" class="list-group-item list-group-item-action">{{$produto->nome}}</a>
+            @endforeach
+<hr>  <h1>OUTROS PRODUTOS</h1>
+
             <div class="row">
+                
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex aling-items-stretch">
                     <div class="card text-center bg-light">
                                              
@@ -332,11 +335,12 @@
                     </div>
                 </div>
                 
-                
+
 
             </div>
 
 
     
     </div>
+</div>
 </x-layout-base>
