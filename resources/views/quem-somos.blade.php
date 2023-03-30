@@ -58,7 +58,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     </div>
+ 
   </div>
+  
+  <BR><BR><button  class="btn btn-primary"  type="submit">VOLTAR</button>
 </div>
 
 <BR><BR><BR>

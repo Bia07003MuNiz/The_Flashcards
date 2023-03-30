@@ -1,4 +1,4 @@
-/*
+
 .media-body{
   color:#000000;
   text-decoration:none;
@@ -13,10 +13,11 @@
   line-height: 1.5em;
 }
 .ml-3{
-  width: 40%;
-  order: inherit;        
+  width: 35%;
+  order: 3;        
                             
-    .nav{ background-color: #6fbaff;
+    .nav{ 
+    background-color: #6fbaff;
     border-radius: 20px 20px 0px 0px;
     line-height: 40px;
     padding: 0 20px;
@@ -48,4 +49,12 @@
   left: 7.5%;
   top: 45%;
 }
-*/
+.btn-primary{
+  position: relative;
+  left: 45%;
+  background-color: #4f0074;
+  border-radius: 60px;
+  padding: 12px 28px;
+  border: #4f0074;
+  
+}
