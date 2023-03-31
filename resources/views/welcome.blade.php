@@ -12,6 +12,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Sono&display=swap" rel="stylesheet">
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/7de26de2f7.js" crossorigin="anonymous"></script>
     </head>
     <body>
         @include('header')
@@ -43,19 +47,18 @@
                 </div>
                 <div id="redesSociais">
                     <a href="instagram.com" target="_blank" rel="noopener" title="Instagram" class="style__rede">
-                        <img src="assets/svg/instagram.svg" width="55" height="50" alt="Instagram">
+                        <img src="assets/svg/instagram.svg" width="45" height="40" alt="Instagram">
                     </a>
                     <a href="facebook.com" target="_blank" rel="noopener" title="Facebook" class="style__rede">
-                        <img src="assets/svg/facebook.svg" width="55" height="50" alt="Facebook">
+                        <img src="assets/svg/facebook.svg" width="45" height="40" alt="Facebook">
                     </a>
                     <a href="twitter.com" target="_blank" rel="noopener" title="Twitter" class="style__rede">
-                        <img src="assets/svg/twitter.svg" width="55" height="50" alt="Twitter">
+                        <img src="assets/svg/twitter.svg" width="45" height="40" alt="Twitter">
                     </a>
                 </div>
             </div>
             <section id="secaoChamadas">
                 <div class="container">
-                    <h1 class="titulo">SOBRE NÓS</h1>
                     <div class="row">
                         <div class="col-lg-4" data-animate="zoomIn animated">
                             <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Alta qualidade">
@@ -82,6 +85,40 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section id="secaoCategorias">
+                <div class="container">
+                    <div class="box__img__cats">
+                        <a href="#" title="Categoria 3">
+                            <img src="assets/images/categoria3.png" class="img-fluid" alt="Categoria 3" width="500" height="200">
+                        </a>
+                        <a href="#" title="Categoria 4">
+                            <img src="assets/images/categoria4.png" class="img-fluid" alt="Categoria 4" width="500" height="200">
+                        </a>
+                    </div>
+                    <div>
+                        <h1>Veja por categorias</h1>
+                    </div>
+                    <div class="box__img__cats">
+                        <a href="#" title="Categoria 1">
+                            <img src="assets/images/categoria1.png" class="img-fluid" alt="Categoria 1" width="500" height="200">
+                        </a>
+                        <a href="#" title="Categoria 2">
+                            <img src="assets/images/categoria2.png" class="img-fluid" alt="Categoria 2" width="500" height="200">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="secaoProdutos">
+                <div class="container">
+                    <h1>Conheça os produtos do<br>momento</h1>
+                    <!--Carousel-->
+                </div>
+            </section>
+            <section id="secaoComoFazer">
+                <div class="container">
+                    <h1>Como fazer meu pedido?</h1>
                 </div>
             </section>
         </main>

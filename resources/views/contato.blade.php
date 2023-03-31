@@ -39,8 +39,8 @@
 
                 </div>
             </div>
-            <button type="submit" value="Voltar">VOLTAR</button>
-            <button type="submit" value="Enviar">ENVIAR</button>
+            <button type="submit" class="button" value="Voltar">VOLTAR</button>
+            <button type="submit" class="button" value="Enviar">ENVIAR</button>
         </form>
     </div>
 </x-layout-base>

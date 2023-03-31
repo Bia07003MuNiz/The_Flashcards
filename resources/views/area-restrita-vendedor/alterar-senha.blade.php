@@ -21,7 +21,7 @@
                     <label class="sr-only" for="nome">Confirmar nova senha:</label>
                     <input type="password" placeholder="confirmar nova senha:" id="confirmar nova senha" name="confirmar nova senha">
                 </div>
-            <button type=submit value="Salvar">
+            <button type=submit class="button" value="Salvar"> Salvar </button>
         </form>
     </div>
 </x-layout-base>

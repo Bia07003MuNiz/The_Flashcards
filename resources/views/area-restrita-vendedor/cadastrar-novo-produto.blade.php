@@ -23,7 +23,10 @@
                     <option>Carnes</option>
                     <option>Frituras</option>
                     <option>Massas</option>
-                    <option>queijo</option>
+                    <option>Queijo</option>
+                    <option>Peixes</option>
+                    <option>Leite e derivados</option>
+                    <option>Embutidos</option>
                 </select>
                 </div>
                 <div class="col-lg-12">
@@ -45,7 +48,7 @@
                     <option>desativado</option>
                 </select>
             </div>
-            <button type=submit value="Salvar">
+            <button type=submit class="button" value="Salvar"> Salvar </button>
         </form>
     </div>
 </x-layout-base>

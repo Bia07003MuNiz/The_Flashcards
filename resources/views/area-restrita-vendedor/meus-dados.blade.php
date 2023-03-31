@@ -23,8 +23,8 @@
                     <input type="text" name="CPF">
                 </div>
             </div>
-            <button type=submit value="trocar senha">
-            <button type=submit value="alterar">
+            <button type=submit class="button" value="trocar senha"> TROCAR SENHAR </button>
+            <button type=submit class="button" value="alterar"> ALTERAR </button>
         </form>
     </div>
 </x-layout-base>

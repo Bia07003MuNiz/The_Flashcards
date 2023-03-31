@@ -24,7 +24,7 @@
                 </select>
                 </div>
             </div>
-            <button type=submit value="Salvar">
+            <button type=submit class="button" value="Salvar"> Salvar </button>
         </form>
     </div>
 </x-layout-base>
