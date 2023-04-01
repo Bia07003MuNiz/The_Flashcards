@@ -11,20 +11,18 @@
     @endpush
 
 
-    <div class="container">
-  <div class="bg-light shadow p-4 w-75 " style="position:relative; left:15%;">
-    <form action="{{ route('logar') }}" method="POST" class="">
+    <div class="container py-5">
+  <div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+     <form action="{{ route('logar') }}" method="POST" class="">
       @csrf
-      <div class="text-left h3 font-weight-bold">ESQUECEU A SENHA</div>
+      <h1 class="text-2xl font-bold text-purple-900 text-left mb-8" style="font-size: 40px;">ESQUECEU A SENHA</h1>
 
       @error('email')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
-      <div class="text-center h3 font-weight-bold mt-4 text-xs">
-  Digite seu e-mail para receber um e-mail de recuperação.
-</div>
-
+      <p class="text-lg font-semibold text-dark text-center">Digite seu e-mail para receber um e-mail de recuperação.</p>
 
       <div class="text-primary font-weight-bold mt-4">
         <div class="d-flex justify-content-center">

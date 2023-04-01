@@ -11,9 +11,10 @@
         @endpush
 
 
-        <div class="container">
-        <div class="bg-white shadow-lg p-10 w-1006" style= "position:relative; Left:25%;">
-            <h1 class="text-left fw-bold fs-3 mb-4" style="color: rgb(75, 13, 132);">DÚVIDAS</h1>
+        <div class="container py-5">
+  <div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+  <h1 class="text-2xl font-bold text-purple-900 text-left mb-8" style="font-size: 40px;">DUVIDAS</h1>
   
             
             <div class="accordion" id="accordionExample">
@@ -82,13 +83,17 @@
 
                 <div>
     <br>
-    <h1 class="text-center fs-4 mb-4">Não encontrou o que precisa?</h1>
-    <div class="text-center my-5">
-        <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=60" alt="WhatsApp Icon" class="mr-3" style="width: 60px; height: 60px; border-radius: 50%;">
-            <span style="display: inline-block; vertical-align: middle;">Fale conosco pelo WhatsApp</span>
-        </a>
-    </div>
+
+    <div class="text-center my-5 form-control">
+        
+    <h1 class="text-center fs-4 mb-4 ">Não encontrou o que precisa?</h1>
+    <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg rounded-pill">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=60" alt="WhatsApp Icon" class="mr-3" style="width: 60px; height: 60px; border-radius: 50%; display: inline-block; vertical-align: middle;">
+        <span>Entre em contato conosco pelo <br> WhatsApp</span>
+    </a>
+</div>
+
+
 </div>
 
 
