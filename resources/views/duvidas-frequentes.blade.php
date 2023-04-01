@@ -79,18 +79,22 @@
                         </div>
                     </div>
                 </div>
+
                 <div>
-                  <br>
-                <h1 class="text-center fs-4 mb-4">Não encontrou o que precisa? </h1>
-                <div class="text-center my-5">
-                <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg"> 
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=360" alt="WhatsApp Icon" class="mr-1" style="width: 60px; height: 60px; border-radius: 50%">
-        Fale conosco pelo WhatsApp
-    </a>
-</div>
-</div>
-</div>
-</div>
+    <br>
+    <h1 class="text-center fs-4 mb-4">Não encontrou o que precisa?</h1>
+    <div class="text-center my-5">
+        <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=60" alt="WhatsApp Icon" class="mr-3" style="width: 60px; height: 60px; border-radius: 50%;">
+            <span style="display: inline-block; vertical-align: middle;">Fale conosco pelo WhatsApp</span>
+        </a>
+    </div>
 </div>
 
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </x-layout-base>
