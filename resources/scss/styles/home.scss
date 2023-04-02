@@ -1,31 +1,55 @@
 .seguraBanner{
     position: relative;
+    max-width: 1920px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+
+    .carousel-inner{
+        max-width: 1920px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160%;
+    }
 
     @media (min-width: 1300px){
         margin-top: -40px;
     }
 
     #redesSociais{
-        position: absolute;
+        @include media-breakpoint-up(lg){
+            position: absolute;
+            flex-direction: column;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 190px;
+            border-radius: 40px;
+        }
+        
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 190px;
         background-color: #FFF;
-        border-radius: 40px;
         padding: 10px 8px;
 
         .style__rede{
             margin: 5px 0;
+
+            @include media-breakpoint-down(md){
+                margin: 0 15px;
+            }
         }
     }
 
     .carousel-indicators{
         justify-content: end;
         margin-bottom: 2em;
+
+        @include media-breakpoint-down(md){
+            margin-bottom: 1em;
+        }
 
         .indicatorItem{
             width: 15px;
@@ -44,8 +68,11 @@
 
 #secaoChamadas{
     padding-top: 50px;
-   padding-bottom: 50px;
-    border-bottom: 8px solid rgba(#6B6B6B,.2);
+
+    .container__style{
+        padding-bottom: 50px;
+        border-bottom: 8px solid rgba(#6B6B6B,.2);
+    }
 
     .card__chamada{
         display: flex;
@@ -59,7 +86,8 @@
 
         .chamada__texto{
             color: #000000;
-            font-size: 40px;
+            font-size: 25px;
+            line-height: 27px;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
@@ -70,13 +98,161 @@
 }
 
 #secaoCategorias{
+    padding: 40px 0;
+
+    .row__style{
+        align-items: center;
+    }
+
+    .title__home{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: bold;
+        color: #004C93;
+        font-size: 34px;
+        line-height: 38px;
+        text-align: center;
+
+        @include media-breakpoint-down(md){
+            margin: 30px 0;            
+        }
+    }
+
+    .box__img__cats{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .categoria__bloco{
+            &:first-child{
+                margin-bottom: 20px;
+            }
+        }
+    }
 
 }
 
 #secaoProdutos{
+    padding: 40px 0;
     background-color: #4F0074;
+
+    .title__home{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: bold;
+        color: #FFF;
+        font-size: 34px;
+        line-height: 38px;
+        text-align: center;
+    }
 }
 
 #secaoComoFazer{
-    
+    padding: 40px 0;
+
+    .title__home{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: bold;
+        color: #000;
+        font-size: 34px;
+        line-height: 38px;
+        text-align: center;
+    }
+
+    .blogo__cards{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        margin-top: 70px;
+
+        @include media-breakpoint-down(md){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card__fazer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            margin: 0 30px;
+
+            @include media-breakpoint-down(md){
+                margin-bottom: 40px;
+            }
+
+            .card__fazer__icone{
+                position: relative;
+                margin-bottom: 20px;
+
+                span{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-weight: bold;
+                    background-color: #004C93;
+                    width: 35px;
+                    min-width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    color: #FFF;
+                    font-size: 17px;
+                    line-height: 17px;
+                    border: 2px solid #FFF;
+                    top: -5px;
+                    left: -5px;
+                }
+
+                .fundo__img{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #3F84C3;
+                    width: 120px;
+                    min-width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                }
+            }
+
+            .card__fazer__textos{
+                .fazer__title{
+                    position: relative;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 20px;
+                    text-align: center;
+                    padding-bottom: 5px;
+                    margin-bottom: 15px;
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        width: 75px;
+                        height: 1px;
+                        //background-color: #006ACB;
+                        border-bottom: 2px dotted #006ACB;
+                        /*background-image: url(../assets/images/Separador.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: auto;*/
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                    }
+                }
+
+                .fazer__texto{
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    color: #000;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                }
+            }
+        }
+    }   
 }

@@ -8,14 +8,14 @@
     }
 
     .box__logo{
-        /*@include media-breakpoint-down(md){
+        @include media-breakpoint-down(md){
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-bottom: 30px;
             text-align: center;
-        }*/
+        }
     }
 
     .cnpj{
@@ -73,10 +73,10 @@
         align-items: end;
         justify-content: center;
 
-        /*@include media-breakpoint-down(md){
+        @include media-breakpoint-down(md){
             align-items: center;
             margin-top: 30px;
-        }*/
+        }
 
         .util__tel{
             font-size: 30px;
