@@ -56,4 +56,5 @@ Route::view('/contato','contato')->name('contato');
 Route::view('/politica-de-privacidade','politica-de-privacidade');
 Route::view('/termos-de-uso','termos-de-uso');
 Route::view('/duvidas-frequentes','duvidas-frequentes');
+Route::view('/cadastre-se','cadastre-se');
 //Route::view('/login','login.login');
