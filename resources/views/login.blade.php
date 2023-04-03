@@ -4,38 +4,59 @@
     </x-slot>
 
     @push('scss')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     @endpush
+  
+    <div class="container py-5">
+  <div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
 
+    <h1 class="text-2xl font-bold text-purple-900 text-left mb-8" style="font-size: 40px;">LOGIN</h1>
+      <p class="text-lg font-semibold text-dark text-center">Entre com seus dados</p>
 
-    <div class="container">
-        <div class="h-screen p-6">
-            <form action="{{route('logar')}}" method="POST" class="m-auto rounded-lg p-6 bg-gray-300">
-                @csrf
-                <div class="text-center text-xl font-bold">Login Congelados</div>
-
-
-                @error('email')
-                    <div class="alert alert-danger">{{$message}}</div>
-                @enderror
-                <div class="mt-8 flex">
-                    <label for="" class="font-bold">email:</label>
-                    <input class="ml-2 w-full rounded-lg border px-4" type="text" name="email" id="email" />
-                </div>
-                
-                @error('password')
-                    <div class="alert alert-danger">Senha é obrigatório!</div>
-                @enderror
-                <div class="mt-8 flex">
-                    <label for="" class="font-bold">Senha:</label>
-                    <input class="ml-2 w-full rounded-lg border px-4" type="password" name="password" id="password" />
-                </div>
-            
-                <div class="mt-11 flex justify-center">
-                    <button type="submit" class="rounded-lg bg-blue-600 p-3 font-bold text-white">Entrar</button>
-                </div>
-                </form>
+    <div class="mb-4">
+      <div class="text-primary font-bold mb-2">
+        <div class="flex justify-center">
+          Entrar como:
+          <label class="inline-flex items-center">
+            <input type="radio" class="form-radio" name="inlineRadioOptions" id="inlineRadio1" value="opcao1">
+            <span class="ml-2 text-primary">Cliente</span>
+          </label>
+          <label class="inline-flex items-center ml-6">
+            <input type="radio" class="form-radio" name="inlineRadioOptions" id="inlineRadio2" value="opcao2">
+            <span class="ml-2 text-primary">Vendedor</span>
+          </label>
+        </div>
+        <form action="{{route('logar')}}" method="POST">
+          @csrf
+          <div class="mb-3">
+            <input class="form-control rounded-pill border-blue px-3 text-primary" id="email" name="email" type="email" placeholder="E-mail" />
+            @error('email')
+            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
+            @enderror
           </div>
-          
+          <div class="mb-3">
+            <input class="form-control rounded-pill border-blue px-3 text-primary" id="password" name="password" type="password" placeholder="Senha" />
+            @error('password')
+            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
+            @enderror
+          </div>
+          <div class="mb-4 d-flex justify-content-end">
+            <a href="#" class="btn btn-link text-black text-sm">Esqueceu sua senha?</a>
+          </div>
+
+          <div class="mt-11 d-flex justify-content-end">
+            <button type="submit" class="btn btn-purple rounded-lg ml-2" style="color: white; background-color: #5a258e;">CRIAR CONTA</button>
+            <button type="submit" class="btn btn-purple rounded-lg ml-2" style="color: white; background-color: #5a258e;">ENTRAR</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
 </x-layout-base>
