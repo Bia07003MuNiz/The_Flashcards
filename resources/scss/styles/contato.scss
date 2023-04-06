@@ -1,10 +1,55 @@
-.button {
-    background-color: #4f0074;
-    border: 1px solid #4f0074;
-    border-radius: 30px;
-    color: white;
-    display: inline-block;
-    height: auto;
-    width: auto;
-    padding: 10px 20px;
+#contatos{
+    padding: 100px;   
+    .button {
+        background-color: #4f0074;
+        border: 1px solid #4f0074;
+        border-radius: 30px;
+        color: white;
+        display: inline-block;
+        height: auto;
+        width: auto;
+        padding: 10px 20px;
+    }
+
+    .lim__estilo{
+        padding: 50px;
+    }
+
+    .centro {
+        text-align: center;
+    }
+
+    .centro_inicio{
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 50px;
+    }
+
+    .campo__input{
+        border: 1px solid #006acb;
+        border-radius: 30px;
+        color: white;
+        display: inline-block;
+        height: 60px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        input,
+        textarea{
+            border: none;
+        }
+
+    }
+    .campo__input2{
+        border: 1px solid #006acb;
+        border-radius: 30px;
+        color: white;
+        display: inline-block;
+        height: 120px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
