@@ -1,5 +1,6 @@
 #contatos{
-    padding: 100px;   
+    padding: 100px;
+     
     .button {
         background-color: #4f0074;
         border: 1px solid #4f0074;
@@ -27,29 +28,111 @@
     }
 
     .campo__input{
+        margin-bottom: 10px;
+    }
+
+    .style__campo{
         border: 1px solid #006acb;
         border-radius: 30px;
         color: white;
-        display: inline-block;
-        height: 60px;
+        display: block;
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        height: auto;
+        padding: 15px 25px;
 
-        input,
-        textarea{
-            border: none;
+        &::placeholder{
+            font-family: 'Plus Jakarta Sans';
+            font-size: 15px;
+            line-height: 15px;
+            color: #006acb;
         }
 
+        &:focus{
+            outline: none;
+        }
     }
-    .campo__input2{
+
+    .custom__checkbox {
+        .rodape__check {
+          position: fixed;
+          left: -200vw;
+
+          &:checked {
+            ~ .rodape__check__label {
+              &:after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .rodape__check__label {
+          position: relative;
+          padding-left: 30px;
+          margin-left: 0;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          color: #000;
+          font-size: 16px;
+          line-height: 20px;
+
+          a{
+            color: inherit;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #000;
+            left: 0;
+            top: 0;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #000;
+            left: 3px;
+            top: 3px;
+            opacity: 0;
+          }
+        }
+    }
+
+    .sub__select{
         border: 1px solid #006acb;
+        background-color: #FFF;
         border-radius: 30px;
         color: white;
-        display: inline-block;
-        height: 120px;
+        display: block;
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+        height: auto;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        color: #006acb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        line-height: 15px;
+    
+        &:focus{
+          outline: none;
+        }
+    
+        &::-ms-expand{
+          display: none;
+        }
+    
+        option{
+          background-color: #FFF;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 14px;
+          color: #000000;
+        }
+      }
 }

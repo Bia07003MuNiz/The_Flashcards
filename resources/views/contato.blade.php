@@ -17,44 +17,44 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="campo__input ">
-                            <label class="sr-only" for="nome">Nome:</label>
-                            <input type="text" placeholder="NOME:" id="nome" name="nome">
+                            <label class="sr-only" for="nome">Nome</label>
+                            <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="e-mail"> E-mail:</label>
-                                <input type="email" name="e-mail" placeholder="EMAIL:" id="e-mail">
+                            <label class="sr-only" for="e-mail"> E-mail</label>
+                                <input type="email" class="style__campo" name="e-mail" placeholder="E-mail" id="e-mail">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="telefone"> Telefone:</label>
-                                <input type="tel" name="telefone" placeholder="TELEFONE:" id="Telefone">
+                            <label class="sr-only" for="telefone"> Telefone</label>
+                                <input type="tel" class="style__campo" name="telefone" placeholder="Telefone" id="Telefone">
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="campo__input">
-                            <label class="sr-only" for="nome"> Assunto:</label>
-                            <select class="form-control form-control-sm">
+                        <div class="segura__select">
+                            <label class="sr-only" for="nome"> Assunto</label>
+                            <select class="sub__select">
+                                <option selected disabled>Assunto</option>
                                 <option>Reclamações</option>
-                                <option>Duvidas</option>
+                                <option>Dúvidas</option>
                                 <option>Sugestões</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <div class="campo__input2">
-                            <label class="sr-only" for="mensagem">  Mensagem:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="MENSAGEM"></textarea>
+                        <div class="campo__input">
+                            <label class="sr-only" for="mensagem">Mensagem</label>
+                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem"></textarea>
                         </div>
                     </div>
-                    <div class="col-lg-12 lim__estyilo">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Eu li e concordo com os termos e condiçoes de uso
-                    </label>
-
+                    <div class="col-lg-12 custom__checkbox">
+                        <input class="rodape__check" type="checkbox" name="termos" id="contato__termos">
+                        <label class="rodape__check__label" for="contato__termos">
+                            Eu li e concordo com os <a href="termos-de-uso">termos e condições de uso</a>.
+                        </label>			
                     </div>
                 </div>
                 <div class="lim__estilo">
