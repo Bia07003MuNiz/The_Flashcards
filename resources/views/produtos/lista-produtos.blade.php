@@ -3,7 +3,9 @@
         Lista de produtos
     </x-slot>
     <div class="container">
-        <h1>NOSSOS PRODUTOS</h1>
+    <h1 class="titulo">
+          <span>NOSSOS PRODUTOS</span>
+        </h1>
         
             <div class="row">
                 <div class="col-12 col-md-5">
@@ -42,7 +44,9 @@
             @foreach ($produtos as $produto)
                 <a href="{{route('produtos.show',$produto)}}" class="list-group-item list-group-item-action">{{$produto->nome}}</a>
             @endforeach
-<hr>  <h1>OUTROS PRODUTOS</h1>
+            <h1 class="titulo">
+          <span>CATÁLOGO</span>
+        </h1>
 
             <div class="row">
                 

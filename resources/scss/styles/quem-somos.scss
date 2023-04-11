@@ -13,9 +13,8 @@
     justify-content: center; 
     align-items: center;
   }
-  .ml-3{
-    width: 35%;
-    order: 3;        
+  .navegador{
+          
                               
       .nav{ 
       background-color: #6fbaff;
@@ -29,7 +28,7 @@
       left: 70px;
         }
   }
-  .tab-content{
+  .posit__nav{
     width: 85%;
     border-style: solid;
     border-color: #2063a0;
@@ -38,24 +37,26 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     position: relative;
     left: 7.5%;
+    
 
   }
-  .nav-item{
+  .nav__estilo{
     background-color: #6fbaff;;
     position: relative;
     left: 10%;
     border-radius:10px 10px 0px 0px ;
     position: relative;
     left: 7.5%;
-    top: 45%;
+    top: 100%;
   }
-  .btn-primary{
+  .bot__style{
     position: relative;
     left: 45%;
     background-color: #4f0074;
     border-radius: 60px;
     padding: 12px 28px;
     border: #4f0074;
+    margin-top: 10%;
     
   }
 }

@@ -18,18 +18,18 @@
               <img class="img-fluid" src="assets/images/produtos/123 (1).jpg"  alt="imagem 1">
             </div>
         </div>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item">
+        <ul class="nav nav-pills navegador" id="pills-tab" role="tablist">
+          <li class="nav-item nav__estilo" >
             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">MISSÃO</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item  nav__estilo">
               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">VISÃO</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item  nav__estilo">
               <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">VALORES</a>
           </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content posit__nav" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             A missão da nossa empresa de distribuição de congelados é fornecer aos nossos clientes 
             produtos de qualidade superior, com um serviço excepcional e entregas pontuais e confiáveis.
@@ -51,6 +51,7 @@
             <b>Segurança alimentar:</b> mantemos altos padrões de segurança alimentar em todas as etapas da produção, desde a seleção de ingredientes até o armazenamento e distribuição dos nossos produtos.<br>
           </div>
         </div>
+        <a class="btn btn-primary bot__style" href="http://127.0.0.1:8000/">VOLTAR</a>
       </div>
     </main>
 </x-layout-base>
