@@ -11,34 +11,36 @@
 
         <form class="centro" method= "POST"  action ="" > 
 
-        <h2>Meus dados cadastrais</h2>
+            <h2 class="campo_titulo2">
+            <spain> Meus dados cadastrais</spain>
+            </h2>
 
             <div class="row">
                 <div class="campo__input">
                     <div class="col-lg-12">
                             <label class="sr-only" for="nome">Nome:</label>
-                            <input type="text" placeholder="nome:" id="nome" name="nome">
+                            <input type="text" class="style__campo" placeholder="Nome:" id="nome" name="nome">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="campo__input">
                         <label class="sr-only" for="CPF"> CPF:</label>
-                            <input type="text" placeholder="CPF:" id="cpf" name="CPF">
+                            <input type="text" class="style__campo" placeholder="CPF:" id="cpf" name="CPF">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="campo__input">
                         <label class="sr-only" for="telefone"> Telefone:</label>
-                            <input type="tel" placeholder="TELEFONE:" id="telefone" name="TELEFONE">
+                            <input type="tel" class="style__campo" placeholder="Telefone:" id="telefone" name="TELEFONE">
                     </div>
                 </div>
 
                 <div class="col-lg-12">
                     <div class="campo__input">
                         <label class="sr-only" for="e-mail"> E-mail:</label>
-                            <input type="email" placeholder="E-MAIL" id="e-mail" name="E-MAIL">
+                            <input type="email" class="style__campo" placeholder="E-mail" id="e-mail" name="E-MAIL">
                     </div>
                 </div>
             </div>
@@ -49,4 +51,5 @@
             </div>
         </form>
     </div>
+</main>
 </x-layout-base>

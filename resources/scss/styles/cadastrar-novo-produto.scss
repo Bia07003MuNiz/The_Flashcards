@@ -20,19 +20,63 @@
     }
 
     .campo__input{
+        margin-bottom: 10px;
+
+    }
+
+    .campo_titulo2{
+        color:#006acb
+    }
+    .style__campo{
         border: 1px solid #006acb;
         border-radius: 30px;
         color: white;
-        display: inline-block;
-        height: 60px;
+        display: block;
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        height: auto;
+        padding: 15px 25px;
 
-        input,
-        textarea{
-            border: none;
+        &::placeholder{
+            font-family: 'Plus Jakarta Sans';
+            font-size: 15px;
+            line-height: 15px;
+            color: #006acb;
+        }
+
+        &:focus{
+            outline: none;
         }
     }
+
+    .sub__select{
+        border: 1px solid #006acb;
+        background-color: #FFF;
+        border-radius: 30px;
+        color: white;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        color: #006acb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        line-height: 15px;
+    
+        &:focus{
+          outline: none;
+        }
+    
+        &::-ms-expand{
+          display: none;
+        }
+    
+        option{
+          background-color: #FFF;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 14px;
+          color: #000000;
+        }
+      }
 
 }
