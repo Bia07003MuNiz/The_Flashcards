@@ -2,29 +2,46 @@
     <x-slot:title>
         Usuario
     </x-slot>
+    <main id="cadastrar_nova_categoria">
     <div class="container">
-        <h1>Área restrita</h1>
-        <form class="" method= "POST"  action ="" > 
+
+        <h1 class="titulo">
+            <span> Área restrita </span>
+        </h1>
+
+        <form class="centro" method= "POST"  action ="" >
+
         <h2>Cadastrar nova categoria</h2>
+
+
             <div class="row">
                 <div class="col-lg-6">
-                    <label class="sr-only" for="nome">Ordem:</label>
-                    <input type="text" placeholder="ordem" id="ordem" name="ordem">
+                    <div class="campo__input ">
+                        <label class="sr-only" for="nome">Ordem:</label>
+                        <input type="text" placeholder="ordem" id="ordem" name="ordem">
+                    </div>
                 </div>
-                <div class="row">
+                
                 <div class="col-lg-6">
-                    <label class="sr-only" for="nome">Nome:</label>
-                    <input type="text" placeholder="nome" id="nome" name="nome">
+                    <div class="campo__input ">
+                        <label class="sr-only" for="nome">Nome:</label>
+                        <input type="text" placeholder="nome" id="nome" name="nome">
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                <label class="sr-only" for="nome"> Status:</label>
-                <select class="form-control form-control-sm">
-                    <option>habilitado</option>
-                    <option>desabilitado</option>
-                </select>
+
+                <div class="col-lg-12">
+                    <div class="campo__input ">
+                        <label class="sr-only" for="nome"> Status:</label>
+                        <select class="form-control form-control-sm">
+                            <option>habilitado</option>
+                            <option>desabilitado</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <button type=submit class="button" value="Salvar"> Salvar </button>
+                <div class="lim__estilo">
+                    <button type=submit class="button" value="Salvar"> Salvar </button>
+                </div>
         </form>
     </div>
 </x-layout-base>

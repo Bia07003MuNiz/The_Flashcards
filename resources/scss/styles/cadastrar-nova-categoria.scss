@@ -1,17 +1,5 @@
-#alterar-senha{
+#cadastrar_nova_categoria{
     padding: 100px;
-
-    .centro_inicio{
-        text-align: center;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 50px;
-        border-radius: 30px;
-    }
-
-    .centro {
-        text-align: center;
-    }
 
     .campo__input{
         border: 1px solid #006acb;
@@ -27,6 +15,11 @@
         textarea{
             border: none;
         }
+
+    }
+
+    .centro {
+        text-align: center;
     }
 
     .button {
@@ -38,13 +31,11 @@
         height: auto;
         width: auto;
         padding: 10px 20px;
-        }
+    }
 
     .lim__estilo{
         padding: 50px;
     }
-
-
 
 
 }
