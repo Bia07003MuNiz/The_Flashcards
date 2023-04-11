@@ -2,8 +2,12 @@
     <x-slot:title>
         Política de privacidade
     </x-slot>
-    <div class="container", style="text-align: justify;">
-        <h1>Política de privacidade</h1>
+    <div class="container">
+            <div class="titulo">
+                <span>Política de privacidade</span>
+            </div>
+        <div class="style__text">
+        
         <p>
         <p></p>
         Esta política de privacidade descreve como a SIS Congelados coleta, usa e compartilha informações pessoais que você fornece
@@ -47,8 +51,8 @@
         <p><strong>
         Esta política de privacidade foi atualizada pela última vez em 23 de abril de 2023.
         </strong></p>
-
         </p>
-
+        <button class="btn btn-primary btn__style" type="submit">VOLTAR</button>
+        </div>
     </div>
 </x-layout-base>
