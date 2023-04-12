@@ -1,0 +1,157 @@
+.button {
+    background-color: #4f0074;
+    border: 1px solid #4f0074;
+    border-radius: 30px;
+    color: white;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 35px;
+}
+
+.style__letras{
+    font-family: 'Plus Jakarta Sans';
+    font-size: 25px;
+    line-height: 25px;
+    color: #006acb;
+}
+
+.margin__style{
+    margin-top: 50px;
+
+}
+
+.margin__10{
+  padding: 10px;
+}
+
+
+
+
+.lim__estilo{
+    padding: 50px;
+    position: relative;
+    left: 20%;
+}
+
+.centro {
+    text-align: center;
+}
+
+.centro_inicio{
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 50px;
+}
+
+.campo__input{
+    margin-bottom: 10px;
+}
+
+.style__campo{
+    border: 1px solid #006acb;
+    border-radius: 30px;
+    color: white;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 15px 25px;
+
+    &::placeholder{
+        font-family: 'Plus Jakarta Sans';
+        font-size: 15px;
+        line-height: 15px;
+        color: #006acb;
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.custom__checkbox {
+    .rodape__check {
+      position: fixed;
+      left: -200vw;
+      display: block;
+
+      &:checked {
+        ~ .rodape__check__label {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .rodape__check__label {
+      position: relative;
+      padding-left: 30px;
+      margin-left: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #000;
+      font-size: 16px;
+      line-height: 20px;
+
+      a{
+        color: inherit;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid #000;
+        left: 0;
+        top: 0;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+        left: 3px;
+        top: 3px;
+        opacity: 0;
+      }
+    }
+}
+
+.sub__select{
+    border: 1px solid #006acb;
+    background-color: #FFF;
+    border-radius: 30px;
+    color: white;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    color: #006acb;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    line-height: 15px;
+
+    &:focus{
+      outline: none;
+    }
+
+    &::-ms-expand{
+      display: none;
+    }
+
+    option{
+      background-color: #FFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      color: #000000;
+    }
+  }
