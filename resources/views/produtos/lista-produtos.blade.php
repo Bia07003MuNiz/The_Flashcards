@@ -3,11 +3,9 @@
         Lista de produtos
     </x-slot>
     <div class="container">
-    <h1 class="titulo">
-          <span>NOSSOS PRODUTOS</span>
-        </h1>
+    
         
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-12 col-md-5">
                     <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
                         <div class="input-group input-group-sm w-800">
@@ -45,7 +43,7 @@
                 <a href="{{route('produtos.show',$produto)}}" class="list-group-item list-group-item-action">{{$produto->nome}}</a>
             @endforeach
             <h1 class="titulo">
-          <span>CATÁLOGO</span>
+          <span>NOSSOS PRODUTOS</span>
         </h1>
 
             <div class="row">
@@ -343,8 +341,12 @@
 
             </div>
 
-
     
     </div>
+    <div class="mx-auto" style="width: 200px;">
+    <a class="btn bot__style  my-5 mx-5" href="http://127.0.0.1:8000/"></a>
+   
+</div>
+    
 </div>
 </x-layout-base>
