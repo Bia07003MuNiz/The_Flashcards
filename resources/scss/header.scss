@@ -118,18 +118,44 @@
             &:before{
               content: '';
               position: absolute;
-              border-top: 25px solid transparent;
-              border-bottom: 25px solid transparent;
-              border-left: 25px solid #000;
+              border-top: 10px solid transparent;
+              border-bottom: 10px solid transparent;
+              border-left: 15px solid #FFF;
               top: 50%;
               transform: translateY(-50%);
-              right: 0;
+              right: -15px;
             }
 
             form{
               display: flex;
               align-items: center;
-              justify-content: center;
+              justify-content: space-between;
+
+              .label__titulo{
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                color: #4F0074;
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: bold;
+              }
+
+              .campo__pesquisa{
+                display: block;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid #4F0074;
+
+                &::placeholder{
+                  font-family: 'Plus Jakarta Sans';
+                  font-size: 15px;
+                  line-height: 15px;
+                  color: #000;
+                }
+        
+                &:focus{
+                    outline: none;
+                }
+              }
             }
           }
         }

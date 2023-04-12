@@ -50,11 +50,11 @@
           <button type="button" class="btn btn__pesquisa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <div class="dropdown-menu" id="form__pesquisa">
+          <div class="dropdown-menu" id="form__pesquisa" style="top: -15px">
             <form>
               <div class="campo__input">
-                  <label for="busca">O que esta buscando:</label>
-                  <input type="text" placeholder="XXXXXX XXXXXXX" id="busca" name="busca">
+                  <label for="busca" class="label__titulo">O que esta buscando:</label>
+                  <input type="text" class="campo__pesquisa" placeholder="XXXXXX XXXXXXX" id="busca" name="busca">
               </div>
               <button type="submit" class="button" value="Enviar">
                 <i class="fa-solid fa-magnifying-glass"></i>
