@@ -14,7 +14,10 @@
         <div class="container py-5">
   <div class="row justify-content-center">
   <div class="col-md-8 col-lg-6">
-  <h1 class="text-2xl font-bold text-purple-900 text-left mb-8" style="font-size: 40px;">DUVIDAS</h1>
+
+  <h1 class="titulo">
+    <span>DÚVIDAS</span>
+    </h1>
   
             
             <div class="accordion" id="accordionExample">

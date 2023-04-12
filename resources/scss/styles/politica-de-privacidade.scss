@@ -1,13 +1,30 @@
-.style__text{
-    text-align: justify;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+#politica-de-privacidade{
+    padding: 70px;
 
+    .style__text{
+        margin-top: 50px;
+        text-align: justify;
+
+    }
+
+    .lim__estilo{
+        padding: 50px;
+        display:flex;
+        justify-content: center;
+    }
+
+    .button {
+        background-color: #4f0074;
+        border: 1px solid #4f0074;
+        border-radius: 30px;
+        color: white;
+        display: inline-block;
+        height: auto;
+        width: auto;
+        padding: 10px 20px;
+       
+    }
 
 }
-
-.btn__style{
-    margin: 45px 0;
-}
-
 
 
