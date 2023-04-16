@@ -69,15 +69,17 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="box__categorias">
-      <ul class="itens__lista">
-        @foreach (\App\Models\Categoria::all() as $categoria)
-          <li class="item">
-            <a href="{{route('categorias.show', $categoria->id)}}" title="{{$categoria->nome}}">{{$categoria->nome}}</a>
-          </li>
-        @endforeach
-      </ul>
+  @if(empty(\App\Models\Categoria::all()))
+    <div class="container">
+      <div class="box__categorias">
+        <ul class="itens__lista">
+          @foreach (\App\Models\Categoria::all() as $categoria)
+            <li class="item">
+              <a href="{{route('categorias.show', $categoria->id)}}" title="{{$categoria->nome}}">{{$categoria->nome}}</a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
     </div>
-  </div>
+  @endif
 </header>

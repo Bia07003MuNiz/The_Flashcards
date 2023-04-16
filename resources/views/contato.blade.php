@@ -4,19 +4,16 @@
     </x-slot>
     <main id="contatos">
         <div class="container">
-            <h1 class="titulo">
-                <span> CONTATO</span>
-            </h1>
-            <div class="centro_inicio">
-                <p>
-                    Non arcu duis massa facilisis auctor et curabitur, eros mi aliquam commodo lacus sodales malesuada in, amet augue dui tellus suspendisse ligula. sociosqu taciti aliquet class bibendum ad etiam pretium rutrum, taciti blandit congue cursus suscipit a vitae mollis sapien, placerat lacinia venenatis purus
-                    sed consectetur est. metus litora tortor cubilia tristique eget id eget interdum proin elementum placerat, euismod nibh torquent ornare consequat leo vulputate habitasse ullamcorper laoreet.  
-                </p>
+            <h1 class="titulo"><span> CONTATO</span></h1>
+            <div class="texto__style">
+                <p>Non arcu duis massa facilisis auctor et curabitur, eros mi aliquam commodo lacus sodales malesuada in, amet augue dui tellus suspendisse ligula. sociosqu taciti aliquet class bibendum ad etiam pretium rutrum, taciti blandit congue cursus suscipit a vitae mollis sapien, placerat lacinia venenatis purus sed consectetur est. metus litora tortor cubilia tristique eget id eget interdum proin elementum placerat, euismod nibh torquent ornare consequat leo vulputate habitasse ullamcorper laoreet.</p>
             </div>
-            <form class="centro" method= "POST"  action ="" >
+            <form method="POST" action ="{{route('logar')}}" >
+                @method('POST')
+                @csrf
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="campo__input ">
+                        <div class="campo__input">
                             <label class="sr-only" for="nome">Nome</label>
                             <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
                         </div>
@@ -57,11 +54,11 @@
                         </label>			
                     </div>
                 </div>
-                <div class="lim__estilo">
-                    <button type="submit" class="button" value="Voltar">VOLTAR</button>
-                    <button type="submit" class="button" value="Enviar">ENVIAR</button>
+                <div class="btn__center">
+                    <a href="javascript:history.back()" class="btn__style">VOLTAR</a>
+                    <button type="submit" class="btn__style">ENVIAR</button>
                 </div>
             </form>
         </div>
-</main>
+    </main>
 </x-layout-base>

@@ -1,3 +1,4 @@
+//Outros
 @import "home.scss";
 @import "quem-somos.scss";
 @import "onde-estamos.scss";
@@ -5,15 +6,17 @@
 @import "duvidas-frequentes.scss";
 @import "politica-de-privacidade.scss";
 @import "termos-de-uso.scss";
+@import "esqueci-a-senha.scss";
+@import "login.scss";
+@import "carrinho.scss";
+@import "cadastre-se.scss";
+
+//Área restrita do vendedor
 @import "meus-dados.scss";
 @import "alterar-senha.scss";
-@import "meus-dados-cadastrais.scss";
-@import "mudar-senha.scss";
-
 @import "cadastrar-nova-categoria.scss";
 @import "cadastrar-novo-produto.scss";
 
-@import "carrinho.scss";
-
-@import "cadastre-se.scss";
-
+//Área restrita do cliente
+@import "mudar-senha.scss";
+@import "meus-dados-cadastrais.scss";

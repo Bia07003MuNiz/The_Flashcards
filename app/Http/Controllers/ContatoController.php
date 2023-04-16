@@ -2,24 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
+use App\Models\Contato;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class loginController extends Controller
+class ContatoController extends Controller
 {
-    //
-
-    public function logout(Request $request)
+    /*public function create()
     {
-        Auth::logout();
-        $request->session()->regenerate();
-
-        return redirect(route('home'));
-
+        return view('contato');
     }
 
-    public function logar(Request $request): RedirectResponse
+    public function store(Request $request)
+    {
+        $contato = new Contato();
+        $contato->nome = $request->nome;
+        $contato->email = $request->email;
+        $contato->telefone = $request->telefone;
+        $contato->assunto = $request->assunto;
+        $contato->mensagem = $request->mensagem;
+
+        $contato->save();
+
+        return redirect(route('contato'));
+    }
+
+    public function enviar(Request $request)
     {
         $messages = [
             'email.required' => 'E-mail é obrigatório!',
@@ -33,14 +40,8 @@ class loginController extends Controller
             'password' => ['required','min_digits:6'],
         ], $messages);
  
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
- 
-            return redirect()->intended(route('home'));
-        }
- 
         return back()->withErrors([
             'email' => 'Usuário ou senha não encontrados!',
         ])->onlyInput('email');
-    }
+    }*/
 }

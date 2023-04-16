@@ -1,10 +1,26 @@
 #quem-somos{
   padding: 100px 0;
 
-  .posi__style{
-    padding: 50px;
+  .row{
     align-items: center;
+    margin-top: 30px;
+
+    .text__style{
+      text-align: justify;
+    }
   }
+
+  .btn__center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    .btn__style{
+      min-width: 150px;
+    }
+  }
+
   .media-body{
     margin-bottom: 40px;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -13,21 +29,21 @@
     justify-content: center; 
     align-items: center;
   }
-  .navegador{
-          
-                              
+
+  .navegador{            
       .nav{ 
-      background-color: #6fbaff;
-      border-radius: 20px 20px 0px 0px;
-      line-height: 40px;
-      padding: 0 20px;
-      float: left;
-      color: #fff;
-      transition: background ease-in-out .3s;
-      position: relative;
-      left: 70px;
-        }
+        background-color: #6fbaff;
+        border-radius: 20px 20px 0px 0px;
+        line-height: 40px;
+        padding: 0 20px;
+        float: left;
+        color: #fff;
+        transition: background ease-in-out .3s;
+        position: relative;
+        left: 70px;
+      }
   }
+
   .posit__nav{
     width: 85%;
     border-style: solid;
@@ -37,9 +53,8 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     position: relative;
     left: 7.5%;
-    
-
   }
+
   .nav__estilo{
     background-color: #6fbaff;;
     position: relative;
@@ -48,15 +63,5 @@
     position: relative;
     left: 7.5%;
     top: 100%;
-  }
-  .bot__style{
-    position: relative;
-    left: 45%;
-    background-color: #4f0074;
-    border-radius: 60px;
-    padding: 12px 28px;
-    border: #4f0074;
-    margin-top: 10%;
-    
   }
 }
