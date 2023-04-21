@@ -5,6 +5,9 @@
 }
 
 #topo{
+  position: relative;
+  z-index: 9;
+
     .box__frase{
         padding: 8px 0;
         background-color: #4F0074;
