@@ -1,4 +1,15 @@
 #duvidas-frequentes{
+
+  .container.py-5.form-control {
+    width: 1000px;
+     
+  }
+  
+  .text-center.my-5.form-control{
+    height: 300px;
+  
+  }
+
   .linha-horizontal{
     display: inline-block;
     border: none;
@@ -11,7 +22,7 @@
   .accordion-button {
     background-color: blue;
     border: 1px solid blue;
-    border-radius: 25% ;
+  
     color: white;
   }
 

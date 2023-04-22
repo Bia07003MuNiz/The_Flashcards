@@ -5,41 +5,45 @@
     <main id="login">
       <div class="container">
         <h1 class="titulo"><span>LOGIN</span></h1>
-        <p class="">Entre com seus dados</p>
+        <p class="estilo_texto text-dark">Entre com seus dados</p>
         <form action="{{route('logar')}}" method="POST">
           @csrf
-          <div class="">
+          <div class="radio_btn text_label">
             <span>Entrar como:</span>
             <div>
-              <label class="" for="tipoCliente">Cliente</label>
-              <input class="" type="radio" name="tipo" id="tipoCliente" value="1">
+            <input class="text_check" type="radio" name="tipo" id="tipoCliente" value="1">
+              <label class="text_label" for="tipoCliente">Cliente</label>
+              
             </div>
             <div>
-              <label class="" for="tipoVendedor">Vendedor</label>
-              <input class="" type="radio" name="tipo" id="tipoVendedor" value="2">
+            <input class="text_check" type="radio" name="tipo" id="tipoVendedor" value="2">  
+            <label class="text_label" for="tipoVendedor">Vendedor</label>
+              
             </div>
           </div>
-          <div class="">
+          <div class="campos_input">
             <label class="sr-only" for="email">E-mail</label>
-            <input class="" id="email" name="email" type="email" placeholder="E-mail">
+            <input class="estilo_campos" id="email" name="email" type="email" placeholder="E-mail">
             @error('email')
               <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
             @enderror
           </div>
-          <div class="">
+          <div class="campos_input">
             <label class="sr-only" for="password">Senha</label>
-            <input class="" id="password" name="password" type="password" placeholder="Senha" />
+            <input class="estilo_campos" id="password" name="password" type="password" placeholder="Senha" />
             @error('password')
               <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
             @enderror
           </div>
-          <div class="">
-            <a href="{{route('esqueci-senha')}}" class="">Esqueceu sua senha?</a>
+          <div class="esqueceu_senha">
+            <a href="{{route('esqueci-senha')}}" class="esqueceu_senha">Esqueceu sua senha?</a>
           </div>
-          <div class="">
-            <a type="submit" href="{{route('cadastre-se')}}" class="">CRIAR CONTA</button>
-            <button type="submit" class="">ENTRAR</button>
+          <div class="btn_center">
+            <button type="submit" href="{{route('cadastre-se')}}" class="estilo_botao">CRIAR CONTA</button>
+            <button type="submit" class="estilo_botao">ENTRAR</button>
           </div>
+          <br>
+          <br>
         </form>
       </div>
     </main>
