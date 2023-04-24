@@ -21,10 +21,10 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <img class="img-fluid" src="https://via.placeholder.com/500x500?text" width="500" height="500" alt="imagem 1">
+              <img class="img-fluid" src="assets/images/consumo.jpg" width="500" height="500" alt="imagem 1">
             </div>
         </div>
-        <div>
+        <div class="margin__style">
           <ul class="nav nav-pills navegador" id="pills-tab" role="tablist">
             <li class="nav-item nav__estilo" >
               <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">MISSÃO</a>
