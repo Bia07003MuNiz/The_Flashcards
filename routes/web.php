@@ -1,5 +1,6 @@
 <?php
 
+use App\Auxiliares\CarrinhoAux;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProdutoController;
@@ -70,3 +71,9 @@ Route::view('/cadastrar-novo-produto','area-restrita-vendedor/cadastrar-novo-pro
 //Área restrita do cliente
 Route::view('/meus-dados-cadastrais','area-restrita-cliente/meus-dados-cadastrais');
 Route::view('/mudar-senha','area-restrita-cliente/mudar-senha');
+
+Route::get('/teste', function () {
+    $carrinhoAux = new CarrinhoAux();
+    $carrinho = $carrinhoAux->PegaCarrinho();
+    dd($carrinho->Itens[0]->Produto);
+})->name('teste');

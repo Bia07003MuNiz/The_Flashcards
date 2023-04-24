@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produtos_orcamento', function (Blueprint $table) {
+        Schema::create('produtos_orcamentos', function (Blueprint $table) {
             $table->id();
+            $table->integer('quantidade')->default(1);
             $table->foreignIdFor(Orcamento::class)->constrained();
             $table->foreignIdFor(Produto::class)->constrained();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produtos_orcamento');
+        Schema::dropIfExists('produtos_orcamentos');
     }
 };

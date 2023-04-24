@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('orcamentos', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
-            $table->tinyInteger('status')->default()->comment('0 - recebido, 1 - em andamento, 2 - finalizado');
+            $table->tinyInteger('status')->default(0)->comment('0 - carrinho, 1 - recebido, 2 - em andamento, 3 - finalizado');
             $table->timestamps();
         });
     }

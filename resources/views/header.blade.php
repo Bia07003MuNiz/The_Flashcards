@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  @if(empty(\App\Models\Categoria::all()))
+  @if(!empty(\App\Models\Categoria::all()))
     <div class="container">
       <div class="box__categorias">
         <ul class="itens__lista">
