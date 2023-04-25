@@ -1,15 +1,101 @@
-#esqueci-a-senha{
-  .btn-purple {
-    background-color: purple;
-    border-color: purple;
+#esqueci-senha{
+ 
+  
+  .radio_bton{
+    display:flex ;
+    position: relative;
+    right: 205px;
+      }
+
+  .text_label{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+   color: #006acb;
+   font-size: 16px;
+   line-height: 20px;
+}
+
+
+input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: #1d71c4;
+  border-color: #1d71c4;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+
+  .form-check-input {
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.25rem;
   }
   
-  .custom-font {
-    font-size: 15px;
-  }
-  
-  .border-blue {
-    border: 1px solid blue;
+  .form-check-inline .form-check-input {
+    position: static;
+    margin-top: 0;
+    margin-right: 0.3125rem;
+    margin-left: 0;
   }
 }
-  
+
+.campos_input{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.estilo_campos{
+  border: 1px solid #006acb;
+  border-radius: 30px;
+  color: #000;
+  display: block;
+  width: 50%;
+  height: auto;
+  padding: 15px 25px;
+
+  &::placeholder{
+      font-family: 'Plus Jakarta Sans';
+      font-size: 15px;
+      line-height: 15px;
+      color: #006acb;
+  }
+
+  &:focus{
+      outline: none;
+  }
+}
+
+.btn_center{
+  display: flex;
+   position: relative;
+  left: 595px;
+   
+  .estilo_botao{
+    min-width: 180px;
+    background-color: #4f0074;
+        border: 1px solid #4f0074;
+        border-radius: 30px;
+        color: white;
+        font-weight: 600;
+        display: inline-block;
+        height: auto;
+        width: auto;
+       padding: 6px;
+        text-decoration: none;
+        
+      
+        &:last-child{
+           margin-left: 20px;
+        }
+      }
+    }
+    }

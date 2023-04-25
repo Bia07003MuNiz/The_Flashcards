@@ -69,14 +69,18 @@
 
   .campos_input{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .estilo_campos{
     border: 1px solid #006acb;
     border-radius: 30px;
-    color: white;
+    color: #000;
     display: block;
-    width: 100%;
+    width: 50%;
     height: auto;
     padding: 15px 25px;
 
@@ -99,8 +103,10 @@
 }
 
 .radio_btn{
-  text-align: center;
   display: flex;
+  position: relative;
+ right: 170px;
+ 
 }
 
 .text_label{
@@ -116,10 +122,13 @@
 }
 
 .esqueceu_senha {
-    display: inline-block;
-  font-size: 14px;
+     font-size: 14px;
    color: #000;
   transition: color 0.3s ease;
+  
+  display: flex;
+  position: relative;
+ left: 400px;
  
 
   &:hover {
@@ -129,9 +138,11 @@
 
 .btn_center{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+ left: 590px;
   margin-top: 30px;
+
+  
     
   .estilo_botao{
     min-width: 180px;
