@@ -4,7 +4,15 @@
   .radio_bton{
     display:flex ;
     position: relative;
-    right: 205px;
+    right: 120px;
+      }
+
+      .radio_bton label {
+        margin-right: 20px; /* ajuste o valor da margem conforme necessário */
+      }
+      
+      .radio_bton span {
+        margin-right: 30px; /* ajuste o valor da margem conforme necessário */
       }
 
   .text_label{
@@ -77,7 +85,8 @@ input {
 .btn_center{
   display: flex;
    position: relative;
-  left: 595px;
+   left: 450px;
+  margin-top: 30px;
    
   .estilo_botao{
     min-width: 180px;
