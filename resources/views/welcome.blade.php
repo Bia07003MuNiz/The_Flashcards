@@ -1,7 +1,7 @@
 <x-layout-base>
     <x-slot:title>
         Congelados
-    </x-slot>    
+    </x-slot>
     <main>
         <div class="seguraBanner">
             <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">

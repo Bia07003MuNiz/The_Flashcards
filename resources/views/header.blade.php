@@ -23,16 +23,31 @@
       </a>
       <div class="main__lateral">
         @auth
-          <div class="dropdown">
-            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="dropdown box__logado">
+            <button class="btn" type="button" id="optionsRestrito" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa-solid fa-user"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu dropdownRestrito" aria-labelledby="optionsRestrito">
               <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
               <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
               <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
               <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-              <a class="dropdown-item" href="{{route('logout')}}">Sair</a>
+              <a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
+              <a class="dropdown-item" href="">Solicitações de contato</a>
+              <a class="dropdown-item" href="">Relatório clientes cadastrados</a>
+              <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>
+              <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+          </div>
+          <div class="dropdown box__logado">
+            <button class="btn" type="button" id="optionsRestritoCliente" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
+              <a class="dropdown-item {{ Request::is('meus-dados-cadastrais') ? 'active' : '' }}" href="{{route('meus-dados-cadastrais')}}">Meus dados</a>
+              <a class="dropdown-item {{ Request::is('mudar-senha') ? 'active' : '' }}" href="{{route('mudar-senha')}}">Alterar senha</a>
+              <a class="dropdown-item" href="">Pedidos realizados</a>
+              <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
           </div>
         @else
@@ -51,19 +66,19 @@
           <button type="button" class="btn btn__pesquisa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <div class="dropdown-menu" id="form__pesquisa" style="top: -15px">
+          <div class="dropdown-menu" id="form__pesquisa">
             <form>
               <div class="campo__input">
                   <label for="busca" class="label__titulo">O que esta buscando:</label>
                   <input type="text" class="campo__pesquisa" placeholder="XXXXXX XXXXXXX" id="busca" name="busca">
               </div>
-              <button type="submit" class="button" value="Enviar">
+              <button type="submit" class="btn__busca__style" value="Enviar">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
           </div>
         </div>
-        <a class="box__carrinho" href="{{route('carrinho')}}">
+        <a class="btn box__carrinho" href="{{route('carrinho')}}">
           <i class="fa-solid fa-cart-shopping"></i>
         </a>
       </div>

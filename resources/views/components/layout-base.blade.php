@@ -22,6 +22,7 @@
     </head>
     <body>
         @include('header')
+        @stack('teste')
         {{ $slot }}
         @include('footer')
         @livewireScripts

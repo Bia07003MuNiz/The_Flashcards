@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orcamentos()
+    {
+        return $this->hasMany(Orcamento::class);
+    }
+
+    public function carrinho()
+    {
+       return $this->orcamentos()->where('status', 0);
+    }
 }

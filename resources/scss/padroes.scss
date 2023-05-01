@@ -188,3 +188,16 @@ body{
     }
   }
 }
+
+.message__style{
+  position: absolute;
+  z-index:50;
+  right:40px;
+
+  .toast-body{
+    background-color: #198754;
+    color: #FFF;
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
