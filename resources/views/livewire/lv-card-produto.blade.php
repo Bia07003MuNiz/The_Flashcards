@@ -9,13 +9,20 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{$produto->nome}}</h5>
-            <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn btn-danger bg-purple-900">Adicionar</button>
-            <a href="{{route('produtos.show',$produto)}}">Editar</a>
-            <!--<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>-->
+            @auth
+                @if(auth()->user()->tipo == 0)
+                    <a href="{{route('produtos.show',$produto)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn btn-danger bg-purple-900"><i class="fa-solid fa-cart-plus"></i></button>
+                @elseif(auth()->user()->tipo == 1)
+                    <a href="{{route('produtos.edit',$produto)}}"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{{route('produtos.aviso',$produto)}}"><i class="fa-solid fa-trash"></i></a>
+                @endif
+            @else
+              <a href="{{route('produtos.show',$produto)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
+            @endauth
         </div>
     </div>
-
-    @push('teste')
+    @push('adicionaCarrinho')
         @once
             <script>
                 function pushTest() {
@@ -24,11 +31,10 @@
             </script>
             <div class="toast message__style" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-body">
-                    Produto adicionado ao carrinho!
+                    Produto adicionado ao carrinho! <a href="{{route('carrinho')}}">Ir ao carrinho</a>.
                 </div>
             </div>   
         @endonce
-        
     @endpush
 </div>
 

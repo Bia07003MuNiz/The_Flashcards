@@ -16,7 +16,6 @@ class loginController extends Controller
         $request->session()->regenerate();
 
         return redirect(route('home'));
-
     }
 
     public function logar(Request $request): RedirectResponse
@@ -26,7 +25,7 @@ class loginController extends Controller
             'email.email' => 'Este e-mail não é um e-mail válido!',
 
             'password.required' => 'Senha é obrigatório!',
-            'password.min_digits' => 'Senha deve possui no mínimo 6 caracteres!',
+            'password.min_digits' => 'Senha deve possuir no mínimo 6 caracteres!',
         ];
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -34,9 +33,17 @@ class loginController extends Controller
         ], $messages);
  
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+            if(auth()->user()->tipo == 0){
+                //Cliente
+                $request->session()->regenerate();
  
-            return redirect()->intended(route('home'));
+                return redirect()->intended(route('home'));
+            } elseif(auth()->user()->tipo == 1){
+                //Vendedor
+                $request->session()->regenerate();
+ 
+                return redirect()->intended(route('boas-vindas'));
+            }
         }
  
         return back()->withErrors([

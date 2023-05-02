@@ -16,7 +16,7 @@
                             @foreach($orcamento->Itens as $item)
                                 <div class="carrinho__item">
                                     <div class="carrinho__produto" data-text=" PRODUTO(S) NO CARRINHO">
-                                        <a class="carrinho__produto__card" href="produto-detalhes.html">
+                                        <a class="carrinho__produto__card" href="{{route('produtos.show',$item->Produto->id)}}">
                                             <figure class="carrinho__produto__img">
                                                 <img class="img-fluid" src="{{$item->Produto->imagens()->first()->url}}" width="95" height="95" alt="Imagem Carrinho" loading="lazy">
                                             </figure>
@@ -47,8 +47,22 @@
             </div>
             <a class="button__style" href="{{route('produtos.index')}}">ADICIONAR MAIS PRODUTOS</a>
             @if($orcamento && $orcamento->Itens()->count()>0)
-                <button class="button__style" wire:click="solicitarOrcamento()" type="submit">SOLICITAR ORÇAMENTO</button>
+                <button class="button__style" wire:click="solicitarOrcamento()" onclick="pushTest()" type="submit">SOLICITAR ORÇAMENTO</button>
             @endif
         </div>
     </main>
+    @push('solicitacaoOrcamento')
+        @once
+            <script>
+                function pushTest() {
+                    $('.toast').toast('show');
+                }
+            </script>
+            <div class="toast message__style" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body">
+                    Solicitação enviada com sucesso!
+                </div>
+            </div>   
+        @endonce
+    @endpush
 </div>

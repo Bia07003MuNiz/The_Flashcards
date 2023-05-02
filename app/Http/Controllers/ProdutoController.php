@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Auxiliares\CarrinhoAux;
 use App\Models\Imagem;
 use App\Models\Produto;
 use Illuminate\Http\Request;
@@ -121,5 +122,14 @@ class ProdutoController extends Controller
         $produtos = Produto::all();
 
         return view('produtos.listar-produtos-clientes', compact('produtos'));
+    }
+
+    public function AddCarrinho(Produto $produto)
+    {
+        $carrinhoAux = new CarrinhoAux();
+        
+        $carrinhoAux->AddItemCarrinho($produto, 1);
+
+        return redirect(route('carrinho'));
     }
 }

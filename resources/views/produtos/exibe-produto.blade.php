@@ -9,6 +9,9 @@
     <div class="row">
     <div class="col-xl-5 col-lg-3">
     </div>
+    @auth
+        <a href="{{route('produtos.adicionar',$produto)}}">Adicionar ao carrinho <i class="fa-solid fa-cart-plus"></i></a>
+    @endauth
     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex aling-items-stretch">
         <div class="card text-center bg-light">
         <h1 class="teste">{{$produto->nome}}</h1>
@@ -27,10 +30,6 @@
             @endforeach
             <br>
         </div>
-        @auth
-            <a class="btn btn-danger" href="{{route('produtos.edit',$produto)}}">Editar</a>
-            <a class="btn btn-danger" href="{{route('produtos.aviso',$produto)}}">Excluir</a>
-        @endauth
     </div>
     
 </div>

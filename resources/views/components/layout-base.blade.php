@@ -22,7 +22,8 @@
     </head>
     <body>
         @include('header')
-        @stack('teste')
+        @stack('adicionaCarrinho')
+        @stack('solicitacaoOrcamento')
         {{ $slot }}
         @include('footer')
         @livewireScripts

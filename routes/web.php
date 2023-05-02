@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
+Route::get('/add-produto/{produto}', [ProdutoController::class, 'AddCarrinho'])->name('produtos.adicionar');
 
 
 //Outros
@@ -60,12 +61,11 @@ Route::view('/politica-de-privacidade','politica-de-privacidade')->name('politic
 Route::view('/termos-de-uso','termos-de-uso')->name('termos');
 Route::view('/duvidas-frequentes','duvidas-frequentes')->name('duvidas');
 Route::view('/esqueci-a-senha','esqueci-a-senha')->name('esqueci-senha');
-//Route::view('/carrinho','carrinho')->name('carrinho');
 Route::get('/carrinho', LvCarrinho::class)->name('carrinho');
-
 Route::view('/cadastre-se','cadastre-se')->name('cadastre-se');
 
 //Área restrita do vendedor
+Route::view('/area-restrita','area-restrita-vendedor/area-restrita')->name('boas-vindas');
 Route::view('/meus-dados','area-restrita-vendedor/meus-dados')->name('meus-dados');
 Route::view('/alterar-senha','area-restrita-vendedor/alterar-senha')->name('alterar-senha');
 Route::view('/cadastrar-nova-categoria','area-restrita-vendedor/cadastrar-nova-categoria')->name('cadastrar-nova-categoria');

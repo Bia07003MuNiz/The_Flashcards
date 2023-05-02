@@ -1,7 +1,15 @@
 <header id="topo">
   <div class="box__frase">
     <div class="container">
-      Seja bem vindo(a)@auth vendedor(a) {{Auth::user()->nome}}@endauth
+      @auth
+        @if(auth()->user()->tipo == 0)
+          Seja bem vindo(a) {{Auth::user()->nome}}
+        @elseif(auth()->user()->tipo == 1)
+          Seja bem vindo(a)@auth vendedor(a) {{Auth::user()->nome}}@endauth
+        @endif
+      @else
+        Seja bem vindo(a)
+      @endauth
     </div>
   </div>
   <div class="box__menu">
@@ -23,33 +31,36 @@
       </a>
       <div class="main__lateral">
         @auth
-          <div class="dropdown box__logado">
-            <button class="btn" type="button" id="optionsRestrito" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa-solid fa-user"></i>
-            </button>
-            <div class="dropdown-menu dropdownRestrito" aria-labelledby="optionsRestrito">
-              <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
-              <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
-              <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-              <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-              <a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
-              <a class="dropdown-item" href="">Solicitações de contato</a>
-              <a class="dropdown-item" href="">Relatório clientes cadastrados</a>
-              <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>
-              <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+          @if(auth()->user()->tipo == 0)
+            <div class="dropdown box__logado">
+              <button class="btn" type="button" id="optionsRestritoCliente" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </button>
+              <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
+                <a class="dropdown-item {{ Request::is('meus-dados-cadastrais') ? 'active' : '' }}" href="{{route('meus-dados-cadastrais')}}">Meus dados</a>
+                <a class="dropdown-item {{ Request::is('mudar-senha') ? 'active' : '' }}" href="{{route('mudar-senha')}}">Alterar senha</a>
+                <a class="dropdown-item" href="">Pedidos realizados</a>
+                <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+              </div>
             </div>
-          </div>
-          <div class="dropdown box__logado">
-            <button class="btn" type="button" id="optionsRestritoCliente" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa-solid fa-user"></i>
-            </button>
-            <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
-              <a class="dropdown-item {{ Request::is('meus-dados-cadastrais') ? 'active' : '' }}" href="{{route('meus-dados-cadastrais')}}">Meus dados</a>
-              <a class="dropdown-item {{ Request::is('mudar-senha') ? 'active' : '' }}" href="{{route('mudar-senha')}}">Alterar senha</a>
-              <a class="dropdown-item" href="">Pedidos realizados</a>
-              <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+          @elseif(auth()->user()->tipo == 1)
+            <div class="dropdown box__logado">
+              <button class="btn" type="button" id="optionsRestrito" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </button>
+              <div class="dropdown-menu dropdownRestrito" aria-labelledby="optionsRestrito">
+                <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
+                <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
+                <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
+                <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
+                <a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
+                <a class="dropdown-item" href="">Solicitações de contato</a>
+                <a class="dropdown-item" href="">Relatório clientes cadastrados</a>
+                <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>
+                <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+              </div>
             </div>
-          </div>
+          @endif
         @else
           <div class="box__login">
             <div class="segura__links">
