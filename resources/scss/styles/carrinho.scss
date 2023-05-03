@@ -1,5 +1,9 @@
 #carrinho{
+  padding: 100px 0;
+
     .box__carrinho{
+      margin: 50px 0 70px 0;
+
         .carrinho__conteudo{
           max-width: 100%;
           width: 100%;
@@ -14,7 +18,7 @@
             line-height: 18px;
             color: #fff;
             background-color: #4F0074;
-            font-family: MontserratBold;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             padding: 12px 30px;
     
             .carrinho__produto{
@@ -30,9 +34,7 @@
               }
             }
     
-            .carrinho__quantidade{
-              text-align: center;
-    
+            .carrinho__quantidade{    
               @include media-breakpoint-up(lg) {
                 width: 16%;
               }
@@ -62,8 +64,7 @@
                   bottom: 0;
                   width: 100%;
                   height: 2px;
-                  background: rgb(255,103,0);
-                  background: linear-gradient(90deg, rgba(255,103,0,0) 0%, rgba(255,103,0,1) 50%, rgba(255,103,0,0) 100%);
+                  background-color: #4F0074;
                 }
     
                 &:last-child{
@@ -82,6 +83,7 @@
                   display: flex;
                   align-items: center;
                   justify-content: start;
+                  text-decoration: none;
     
                   @include media-breakpoint-down(md){
                     flex-direction: column;
@@ -110,7 +112,7 @@
                   }
     
                   .carrinho__produto__desc{
-                    font-family: MontserratExtraBold;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
                     color: #000000;
                     font-size: 16px;
                     line-height: 18px;
@@ -139,105 +141,25 @@
               }
     
               .carrinho__quantidade{
-                @include media-breakpoint-up(lg) {
-                  width: 16%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 30px;
+                border: 2px solid #000;
+
+                button{
+                  border: none;
+                  background-color: transparent;
+                  font-size: 25px;
+                  line-height: 25px;
                 }
-    
-                @include media-breakpoint-only(lg){
-                  width: 20%;
-                }
-    
-                .segura__quantidade{
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  text-align: center;
-                  font-size: 13px;
-                  text-transform: uppercase;
-                  font-family: MontserratBold;
-                  color: #000000;
-    
-                  @include media-breakpoint-up(lg){
-                    p{
-                      display: none;
-                    }
-                  }
-    
-                  @include media-breakpoint-down(md){
-                    margin-top: 20px;
-                  }
-    
-                  .qtde-toggler{
-                    display: flex;
-                    max-width: 160px;
-                    margin-right: auto;
-                    margin-left: auto;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
-    
-                    &:after{
-                      content: "";
-                      width: 105px;
-                      height: 2px;
-                      border-radius: 30px;
-                      background: #4F0074;
-                      position: absolute;
-                      bottom: 0;
-                      z-index: -1;
-                    }
-    
-                    &:before{
-                      content: "";
-                      width: 105px;
-                      height: 2px;
-                      background: #4F0074;
-                      border-radius: 30px;
-                      position: absolute;
-                      top: 0;
-                      z-index: -1;
-                    }
-    
-                    .input-group-append{
-                      width: 30%;
-                      border: none;
-                    }
-                    .input__qtd{
-                      width: 37%;
-                      height: 30px;
-                      text-align: center;
-                      margin-left: 1px;
-                      margin-right: 1px;
-                      border: none;
-                      font-family: MontserratBold;
-                      font-size: 16px;
-                      outline: none;
-                    }
-                  }
-    
-                  .btn__quantidade{
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: #4F0074;
-                    color: #FFF;
-                    border: 2px solid #4F0074;
-                    transition: all .4s linear;
-                    font-size: 25px;
-    
-                    &:hover {
-                      background: rgb(245, 134, 52);
-                      background: linear-gradient(0deg, rgba(245, 134, 52, 1) 0%, rgba(254, 201, 37, 1) 100%);
-                      border: none;
-                    }
-    
-                    &:focus{
-                      outline: none;
-                    }
-                  }
+
+                .card__qtd{
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 20px;
+                  line-height: 20px;
+                  margin-bottom: 0;
+                  padding: 10px;
                 }
               }
     
@@ -259,29 +181,26 @@
                 }
     
                 .btn__remover{
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  min-width: 160px;
-                  height: 50px;
-                  padding: 20px;
-                  border-radius: 30px;
-                  color: #FFF;
-                  background-color: #4F0074;
+                  color: #000;
+                  background-color: transparent;
                   border: none;
-                  font-family: Righteous;
                   font-size: 20px;
                   line-height: 20px;
     
                   &:hover{
                     text-decoration: none;
-                    animation: swing 3s linear;
                   }
                 }
               }
             }
           }
         }
+    }
+
+    .segura__btns{
+      display: flex;
+      align-items: end;
+      justify-content: end;
     }
 
     .button__style {
@@ -293,5 +212,10 @@
         height: auto;
         width: auto;
         padding: 10px 20px;
+        text-decoration: none;
+
+        &:first-child{
+          margin-right: 30px;
+        }
     }
 }

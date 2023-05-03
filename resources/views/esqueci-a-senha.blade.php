@@ -34,7 +34,7 @@
           <input class="estilo_campos" type="email" name="email" id="email" placeholder="E-mail">
         </div>
         <div class="btn_center">
-          <button href="javascript:history.back()" class="estilo_botao">VOLTAR</button>
+          <a href="javascript:history.back()" class="estilo_botao">VOLTAR</a>
           <button type="submit" class="estilo_botao">ENVIAR</button>
         </div>
       </form>

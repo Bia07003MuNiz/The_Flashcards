@@ -9,7 +9,7 @@
                 @if($orcamento && $orcamento->Itens()->count()>0)
                     <div class="carrinho__conteudo">
                         <div class="carrinho__header">
-                            <div class="carrinho__produto">PRODUTO(S) NO CARRINHO</div>
+                            <div class="carrinho__produto">PRODUTO(S)</div>
                             <div class="carrinho__quantidade">QUANTIDADE</div>
                         </div>
                         <div class="carrinho__listagem">
@@ -27,13 +27,13 @@
                                         <button wire:click="subItem({{$item->id}})">
                                             <i class="fa-solid fa-circle-minus"></i>
                                         </button>
-                                        <p class="card-text">{{$item->quantidade}}</p>
+                                        <p class="card__qtd">{{$item->quantidade}}</p>
                                         <button wire:click="addItem({{$item->id}})">
                                             <i class="fa-solid fa-circle-plus"></i>  
                                         </button>
                                     </div>
                                     <div class="carrinho__excluir">
-                                        <button wire:click="removeItem({{$item->id}})">
+                                        <button wire:click="removeItem({{$item->id}})" class="btn__remover">
                                             <i class="fa-solid fa-trash"></i>  
                                         </button>
                                     </div>
@@ -45,10 +45,12 @@
                     Nenhum produto adicionado.
                 @endif
             </div>
-            <a class="button__style" href="{{route('produtos.index')}}">ADICIONAR MAIS PRODUTOS</a>
-            @if($orcamento && $orcamento->Itens()->count()>0)
-                <button class="button__style" wire:click="solicitarOrcamento()" onclick="pushTest()" type="submit">SOLICITAR ORÇAMENTO</button>
-            @endif
+            <div class="segura__btns">
+                <a class="button__style" href="{{route('produtos.index')}}">ADICIONAR MAIS PRODUTOS</a>
+                @if($orcamento && $orcamento->Itens()->count()>0)
+                    <button class="button__style" wire:click="solicitarOrcamento()" onclick="pushTest()" type="submit">SOLICITAR ORÇAMENTO</button>
+                @endif
+            </div>
         </div>
     </main>
     @push('solicitacaoOrcamento')

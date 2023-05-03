@@ -31,7 +31,7 @@
           <a href="{{route('esqueci-senha')}}" class="esqueceu_senha">Esqueceu sua senha?</a>
         </div>
         <div class="btn_center">
-          <button type="submit" href="{{route('cadastre-se')}}" class="estilo_botao">CRIAR CONTA</button>
+          <a href="{{route('cadastre-se')}}" class="estilo_botao">CRIAR CONTA</a>
           <button type="submit" class="estilo_botao">ENTRAR</button>
         </div>
         <br>
