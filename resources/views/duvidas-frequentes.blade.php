@@ -74,11 +74,11 @@
     <div class="text-center my-5 form-control ">
         <br>
         <br>
-    <h1 class="text-center fs-4 mb-4 ">Não encontrou o que precisa?</h1>
-    <a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg rounded-pill">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=60" alt="WhatsApp Icon" class="mr-3" style="width: 60px; height: 60px; border-radius: 50%; display: inline-block; vertical-align: middle;">
-        <span>Entre em contato conosco pelo <br> WhatsApp</span>
-                    </a>
+        <h1 class="text-center fs-4 mb-6">Não encontrou o que precisa?</h1><br>
+<a href="https://wa.me/SEUNUMERODOTELEFONE" target="_blank" rel="noopener" class="btn btn-success btn-lg rounded-pill center-image">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png?w=60" alt="WhatsApp Icon" class="mr-3" style="width: 60px; height: 60px; border-radius: 50%; display: inline-block; vertical-align: middle;">
+  <span>Entre em contato pelo WhatsApp</span>
+</a>
 </div>
 </div>
 </div>

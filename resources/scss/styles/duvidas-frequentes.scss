@@ -21,10 +21,13 @@
   .accordion-button {
         background-color: #084298;
         color: white;
-  }
+  }   
+
   
   
+    
   
+
   .accordion-body{
     width: 150%;
     border-style: solid;
@@ -44,6 +47,30 @@
     overflow: auto;
   }
 
+  .center-image {
+    position: relative;
+  }
+  
+  .center-image img {
+    position: absolute;
+    top: 50%;
+    right:85%;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn-lg.center-image {
+    font-size: 1.5rem;
+    padding: 15px 60px;
+  }
+  
+  .btn-lg.center-image img {
+    border: 5px solid #fff;
+  }
+  
+  .btn-lg.center-image span {
+    white-space: nowrap;
+  }
+  
   .container{
     //overflow: hidden;
   }
