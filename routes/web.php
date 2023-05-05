@@ -63,6 +63,10 @@ Route::view('/duvidas-frequentes','duvidas-frequentes')->name('duvidas');
 Route::view('/esqueci-a-senha','esqueci-a-senha')->name('esqueci-senha');
 Route::get('/carrinho', LvCarrinho::class)->name('carrinho');
 Route::view('/cadastre-se','cadastre-se')->name('cadastre-se');
+Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('forgot-password');
+Route::get('/reset-password/{token}', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+
+
 
 //Área restrita do vendedor
 Route::view('/area-restrita','area-restrita-vendedor/area-restrita')->name('boas-vindas');
