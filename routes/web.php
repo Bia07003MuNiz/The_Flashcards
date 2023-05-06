@@ -64,7 +64,7 @@ Route::view('/esqueci-a-senha','esqueci-a-senha')->name('esqueci-senha');
 Route::get('/carrinho', LvCarrinho::class)->name('carrinho');
 Route::view('/cadastre-se','cadastre-se')->name('cadastre-se');
 Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('forgot-password');
-Route::get('/reset-password/{token}', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
 
 
