@@ -84,3 +84,6 @@ Route::get('/teste', function () {
     $carrinho = $carrinhoAux->PegaCarrinho();
     dd($carrinho->Itens[0]->Produto);
 })->name('teste');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

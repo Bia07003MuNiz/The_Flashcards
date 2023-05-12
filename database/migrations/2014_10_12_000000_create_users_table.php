@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('remember_token')->default("");
             $table->tinyInteger('tipo')->default(0)->comment('0 - cliente, 1 - funcionario');
             $table->timestamps();
         });

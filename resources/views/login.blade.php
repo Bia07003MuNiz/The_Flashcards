@@ -11,19 +11,19 @@
         </h2>
       </div>
 
-      <div class="radio_bton text_label justify-content-center">
-          <span>Entrar como:</span>
-          <div >
-          <input class="text_label" type="radio" name="tipo" id="tipoCliente" value="1"> 
-          <label class="text_check" for="tipoCliente">Cliente</label>
-           
-          </div>
-          <div>
-          <input class="text_label" type="radio" name="tipo" id="tipoVendedor" value="2"> 
-          <label class="text_check" for="tipoVendedor">Vendedor</label>
-           
-          </div>
-        </div>
+{{--      <div class="radio_bton text_label justify-content-center">--}}
+{{--          <span>Entrar como:</span>--}}
+{{--          <div >--}}
+{{--          <input class="text_label" type="radio" name="tipo" id="tipoCliente" value="1"> --}}
+{{--          <label class="text_check" for="tipoCliente">Cliente</label>--}}
+{{--           --}}
+{{--          </div>--}}
+{{--          <div>--}}
+{{--          <input class="text_label" type="radio" name="tipo" id="tipoVendedor" value="2"> --}}
+{{--          <label class="text_check" for="tipoVendedor">Vendedor</label>--}}
+{{--           --}}
+{{--          </div>--}}
+{{--        </div>--}}
 
       <form action="{{route('logar')}}" method="POST">
         @csrf
