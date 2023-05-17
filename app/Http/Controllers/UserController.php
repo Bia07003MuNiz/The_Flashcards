@@ -36,6 +36,18 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->tipo = $request->tipo;
+               /**
+            * migração do banco 
+            * 
+            *   $user->cep = $request->cep;
+        *$user->uf = $request->uf;
+        *$user->Cidade = $request->Cidade;
+        *$user->num = $request->num;
+        *$user->Bairro = $request->Bairro;
+        *$user->rua = $request->rua;
+        *$user->compl= $request->compl;
+
+                        */
 
         $user->save();
 
@@ -68,6 +80,18 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->tipo = $request->tipo;
+           
+    /**
+     * colocar no banco de dados 
+     * 
+     *   $user->cep = $request->cep;
+     * $user->uf = $request->uf;
+    *  $user->Cidade = $request->Cidade;
+    * $user->num = $request->num;
+    * $user->Bairro = $request->Bairro;
+    * user->rua = $request->rua;
+    * $user->compl= $request->compl;
+ */
 
         $user->save();
 

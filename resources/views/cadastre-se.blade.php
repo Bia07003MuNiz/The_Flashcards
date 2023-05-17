@@ -5,7 +5,9 @@
     <main>
         <div class="container">
             <h1 class="titulo"><span>CADASTRE-SE</span></h1>
-            <form class="centro" method= "POST"  action ="" >
+            <form class="centro" action="{{route('users.store')}}" method="POST">
+            @method('POST')
+            @csrf
                 <div class="row">
                     <div class="col-lg-2 custom__checkbox margin__style">
                         <b class="style__letras">Você é:</b>

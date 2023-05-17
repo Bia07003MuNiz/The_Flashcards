@@ -17,14 +17,32 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('email')->unique();
             $table->string('password');
+                  
+    /**
+     * Reverse the migrations.
+     * 
+     *   $table->string('cep');
+           * $table->string('uf');
+            *$table->string('Cidade');
+            *$table->string('num');
+            *$table->string('Bairro');
+            *$table->string('rua');
+            *$table->string('compl');
+                 */
+            $table->string('compl');
             $table->string('remember_token')->default("");
             $table->tinyInteger('tipo')->default(0)->comment('0 - cliente, 1 - funcionario');
+
+
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     * 
+     * 
      */
     public function down(): void
     {
