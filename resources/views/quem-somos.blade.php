@@ -27,13 +27,13 @@
         <div class="margin__style">
           <ul class="nav nav-pills navegador" id="pills-tab" role="tablist">
             <li class="nav-item nav__estilo" >
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">MISSÃO</a>
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><font color="#fff">Nossa Missão</font></a>
             </li>
             <li class="nav-item  nav__estilo">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">VISÃO</a>
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"> <font color="#fff">Nossa Visão</font></a>
             </li>
             <li class="nav-item  nav__estilo">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">VALORES</a>
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><font color="#fff">Nossos Valores</font></a>
             </li>
           </ul>
           <div class="tab-content posit__nav" id="pills-tabContent">

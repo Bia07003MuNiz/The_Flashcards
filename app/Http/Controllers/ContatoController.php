@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ContatoController extends Controller
 {
-    /*public function create()
+    public function create()
     {
         return view('contato');
     }
@@ -43,5 +43,5 @@ class ContatoController extends Controller
         return back()->withErrors([
             'email' => 'Usuário ou senha não encontrados!',
         ])->onlyInput('email');
-    }*/
+    }
 }

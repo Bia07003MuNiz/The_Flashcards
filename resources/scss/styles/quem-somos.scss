@@ -36,22 +36,26 @@
 
   .navegador{            
       .nav{ 
-        background-color: #6fbaff;
-        border-radius: 20px 20px 0px 0px;
+        background-color: #fff;
+        border-radius: 50px 0px 0px 0px;
         line-height: 40px;
         padding: 0 20px;
         float: left;
-        color: #fff;
+    
         transition: background ease-in-out .3s;
         position: relative;
         left: 70px;
       }
   }
-
+  .tab-pane {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+    margin: 15px;
+  }
   .posit__nav{
     width: 85%;
     border-style: solid;
-    border-color: #2063a0;
+    border-color: #3370a8;
     border-radius: 0px 0px 20px 20px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     position: relative;
@@ -59,7 +63,7 @@
   }
 
   .nav__estilo{
-    background-color: #6fbaff;;
+    background-color: #3370a8;;
     position: relative;
     left: 10%;
     border-radius:10px 10px 0px 0px ;

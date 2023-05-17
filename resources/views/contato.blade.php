@@ -21,19 +21,19 @@
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="e-mail"> E-mail</label>
-                                <input type="email" class="style__campo" name="e-mail" placeholder="E-mail" id="e-mail">
+                                <input type="email" class="style__campo" name="e-mail" placeholder="E-mail" id="email">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="telefone"> Telefone</label>
-                                <input type="tel" class="style__campo" name="telefone" placeholder="Telefone" id="Telefone">
+                                <input type="tel" class="style__campo" name="telefone" placeholder="Telefone" id="telefone">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="segura__select">
                             <label class="sr-only" for="nome"> Assunto</label>
-                            <select class="sub__select">
+                            <select class="sub__select" id="assunto">
                                 <option selected disabled>Assunto</option>
                                 <option>Reclamações</option>
                                 <option>Dúvidas</option>
@@ -44,11 +44,11 @@
                     <div class="col-lg-12">
                         <div class="campo__input">
                             <label class="sr-only" for="mensagem">Mensagem</label>
-                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem"></textarea>
+                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem" id="mensagem"></textarea>
                         </div>
                     </div>
-                    <div class="col-lg-12 custom__checkbox">
-                        <input class="rodape__check" type="checkbox" name="termos" id="contato__termos">
+                    <div class="col-lg-12 ">
+                        <input class="rodape__check" type="radio" name="termos" id="contato__termos">
                         <label class="rodape__check__label" for="contato__termos">
                             Eu li e concordo com os <a href="termos-de-uso">termos e condições de uso</a>.
                         </label>			
