@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('cpf');
+            $table->string('Celular');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('cep');

@@ -33,6 +33,7 @@ class UserController extends Controller
         $user = new User();
         $user->nome = $request->nome;
         $user->cpf = $request->cpf;
+        $user->Celular = $request->Celular;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->tipo = $request->tipo;
