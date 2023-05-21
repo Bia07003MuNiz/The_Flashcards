@@ -25,6 +25,13 @@ class ProdutoController extends Controller
         return view('produtos.lista-produtos', compact('produtos'));
     }
 
+    public function Listar()
+    {
+        $produtos = Produto::all();
+
+        return view('produtos.listar-produtos-clientes', compact('produtos'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -115,13 +122,6 @@ class ProdutoController extends Controller
     public function confirmaExclusao(Produto $produto)
     {
         return view('produtos.excluir-produto', compact('produto'));
-    }
-
-    public function Listar()
-    {
-        $produtos = Produto::all();
-
-        return view('produtos.listar-produtos-clientes', compact('produtos'));
     }
 
     public function AddCarrinho(Produto $produto)

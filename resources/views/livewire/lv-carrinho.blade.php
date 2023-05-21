@@ -1,3 +1,6 @@
+<x-slot:title>
+    Carrinho 
+</x-slot>
 <div>
     {{-- The Master doesn't talk, he acts. --}}
     <main id="carrinho">

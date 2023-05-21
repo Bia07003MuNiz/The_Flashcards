@@ -66,13 +66,10 @@ Route::view('/cadastre-se','cadastre-se')->name('cadastre-se');
 Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('forgot-password');
 Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
-
-
 //Área restrita do vendedor
 Route::view('/area-restrita','area-restrita-vendedor/area-restrita')->name('boas-vindas');
 Route::view('/meus-dados','area-restrita-vendedor/meus-dados')->name('meus-dados');
 Route::view('/alterar-senha','area-restrita-vendedor/alterar-senha')->name('alterar-senha');
-Route::view('/cadastrar-nova-categoria','area-restrita-vendedor/cadastrar-nova-categoria')->name('cadastrar-nova-categoria');
 Route::view('/cadastrar-novo-produto','area-restrita-vendedor/cadastrar-novo-produto')->name('cadastrar-novo-produto');
 
 //Área restrita do cliente
@@ -84,6 +81,6 @@ Route::get('/teste', function () {
     $carrinho = $carrinhoAux->PegaCarrinho();
     dd($carrinho->Itens[0]->Produto);
 })->name('teste');
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

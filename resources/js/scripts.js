@@ -1,5 +1,5 @@
 $('.close').click(function(event){
-    $('#modalCookies').fadeOut();
+    $('#modalCookies').modal('hide');
     event.preventDefault();
 });
 

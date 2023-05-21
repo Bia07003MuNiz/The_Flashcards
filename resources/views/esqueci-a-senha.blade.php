@@ -22,23 +22,12 @@
         {{ session('success') }}
     </div>
 @endif
-        <div class="radio_bton text_label justify-content-center">
-          <span>Sou:</span>
-          <div >
-            <input class="text_label" type="radio" name="tipo" id="tipoCliente" value="1"> 
-            <label class="text_check" for="tipoCliente">Cliente</label>
-          </div>
-          <div>
-          <input class="text_label" type="radio" name="tipo" id="tipoVendedor" value="2"> 
-          <label class="text_check" for="tipoVendedor">Vendedor</label>
-            </div>
-        </div>
         <div class="campos_input">
           <label class="sr-only" for="email">E-mail</label>
           <input class="estilo_campos"  type="email" name="email" id="email" placeholder="E-mail" required>
         </div>
         <div class="btn_center">
-          <button href="javascript:history.back()" class="estilo_botao">VOLTAR</button>
+          <a href="javascript:history.back()" class="estilo_botao" style="text-align: center">VOLTAR</a>
           <button type="submit" class="estilo_botao">ENVIAR</button>
         </div>
         <br>

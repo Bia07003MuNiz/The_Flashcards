@@ -7,7 +7,9 @@
         <div class="container">
             <h1 class="titulo"><span>NOSSOS PRODUTOS</span></h1>
             @auth
-                <a href="{{route('produtos.create')}}">Novo Produto</a>
+                @if(auth()->user()->tipo == 1)
+                    <a href="{{route('produtos.create')}}">Novo Produto</a>
+                @endif
             @endauth
             <div class="segura__cards">
                 @foreach ($produtos as $produto)
