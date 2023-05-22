@@ -1,44 +1,91 @@
 <x-layout-base>
     <x-slot:title>
-        Cadastro de produtos
+        Área restrita > Cadastrar produto
     </x-slot>
-    <div class="container">
-        <h1>Cadastro</h1>
-        <form action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
-            @method('POST')
-            @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome">
+    <main id="cadastra__produto">
+        <div class="container">
+            <h1 class="titulo">
+                <span>Área restrita</span>
+            </h1>
+            <div class="bloco__segura">
+                <div class="bloco__menu">
+                    <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
+                    <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
+                    <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
+                    <a class="menu__item " href="">Relatórios</a>
+                </div>
+                <div class="bloco__conteudo">
+                    <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
+                    <h2 class="campo_titulo2">Cadastrar novo produto</h2>
+                    <form class="centro" action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
+                        @method('POST')
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="nome">Nome</label>
+                                    <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="codigo">Código</label>
+                                    <input type="text" class="style__campo" placeholder="Código" id="codigo" name="codigo">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <select class="form-select" multiple aria-label="Categorias" name="categoria[]">
+                                    <option selected disabled>Categorias</option>
+                                    @foreach (\App\Models\Categoria::all() as $categoria)
+                                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="informacoes">Informações</label>
+                                        <textarea class="form-control style__campo" placeholder="Informações" id="informacoes" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="valor">Valor</label>
+                                    <input type="text" class="style__campo" placeholder="Valor" id="valor" name="valor">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="campo__input ">
+                                    <label for="arquivo" class="sr-only">Imagens</label>
+                                    <input type="file" multiple class="form-control" id="arquivo" name="arquivo[]">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="status">Status</label>
+                                    <select class="sub__select" name="status" id="status">
+                                        <option disabled selected>Status</option>
+                                        <option value="1">Habiliado</option>
+                                        <option value="0">Desativado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="campo__input ">
+                                    <label class="sr-only" for="destaque">Destaque</label>
+                                    <select class="sub__select" name="destaque" id="destaque">
+                                        <option disabled selected>Destaque</option>
+                                        <option value="1">Habiliado</option>
+                                        <option value="0">Desativado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="lim__estilo">
+                                <button type=submit class="button">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Valor</label>
-                <input type="text" class="form-control" id="valor" name="valor">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Código externo</label>
-                <input type="text" class="form-control" id="codigo" name="codigo">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Informações</label>
-                <textarea class="form-control" name="informacoes" id="informacoes" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <label for="arquivo" class="form-label">Imagens</label>
-                <input type="file" multiple class="form-control" id="arquivo" name="arquivo[]">
-            </div>
-            Categorias:
-            <div class="border">
-                @foreach (\App\Models\Categoria::all() as $categoria)
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="categoria[]" value="{{$categoria->id}}" id="categoria.{{$categoria->id}}">
-                        <label class="form-check-label" for="categoria.{{$categoria->id}}">
-                            {{$categoria->nome}}
-                        </label>
-                    </div>
-                @endforeach
-            </div>
-            <button class="btn btn-success" type="submit">Salvar</button>
-        </form>
-    </div>
+        </div>
+    </main>
 </x-layout-base>
