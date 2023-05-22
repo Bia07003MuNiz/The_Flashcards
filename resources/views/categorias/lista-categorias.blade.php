@@ -15,14 +15,19 @@
                     <a class="menu__item " href="">Relatórios</a>
                 </div>
                 <div class="bloco__conteudo">
-                    <h1>LISTA DE CATEGORIAS</h1>
-                    <a href="{{route('categorias.create')}}"><i class="fa-solid fa-plus"></i> Adicionar</a>
+                    <h2 class="title__box">Lista de categorias</h2>
+                    <div class="posiciona__btn">
+                        <a class="btn__adicionar" href="{{route('categorias.create')}}"><i class="fa-solid fa-plus"></i> Adicionar</a>
+                    </div>
                     <div class="list-group mt-5">
                         @foreach ($categorias as $categoria)
-                            <div>
+                            <div class="listagem__categorias">
+                                <div>{{$categoria->ordem}}</div>
                                 <div>{{$categoria->nome}}</div>
-                                <a href="{{route('categorias.edit',$categoria)}}"><i class="fa-solid fa-pencil"></i></a>
-                                <a href="{{route('categorias.show',$categoria)}}"><i class="fa-solid fa-eye"></i></i></a>
+                                <div>
+                                    <a href="{{route('categorias.edit',$categoria)}}"><i class="fa-solid fa-pencil"></i></a>
+                                    <a href="{{route('categorias.show',$categoria)}}"><i class="fa-solid fa-eye"></i></i></a>
+                                </div>
                             </div>
                         @endforeach
                     </div>

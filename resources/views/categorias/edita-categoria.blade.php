@@ -16,7 +16,7 @@
                 </div>
                 <div class="bloco__conteudo">
                     <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
-                    <h1>Editar categoria</h1>
+                    <h2 class="title__box">Editar categoria</h2>
                     <form action="{{route('categorias.update',$categoria)}}" method="POST">
                         @method('PUT')
                         @csrf

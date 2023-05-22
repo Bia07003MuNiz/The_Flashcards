@@ -7,6 +7,41 @@
 #editar_categorias,
 #cadastrar_categoria{
     padding: 100px;
+
+    .title__box{
+        text-align: center;
+        color: #004C93;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 30px;
+    }
+}
+
+#listar_categorias,
+#exibir__categorias{
+    .posiciona__btn{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .btn__adicionar{
+            background-color: #004C93;
+            color: #FFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 20px;
+            line-height: 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 15px;
+        }
+    }
+
+    .listagem__categorias{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 #cadastrar_nova_categoria{

@@ -16,10 +16,10 @@
                 </div>
                 <div class="bloco__conteudo">
                     <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
+                    <h2 class="title__box">Cadastrar nova categoria</h2>
                     <form class="centro" action="{{route('categorias.store')}}" method="POST">
                         @method('POST')
                         @csrf
-                        <h2 class="campo_titulo2">Cadastrar nova categoria</h2>
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="campo__input">

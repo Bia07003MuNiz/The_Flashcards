@@ -9,10 +9,16 @@
             </h1>
             <div class="bloco__segura">
                 <div class="bloco__menu">
-                    <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
-                    <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-                    <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                    <a class="menu__item " href="">Relatórios</a>
+                    @auth
+                        <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
+                        @if(auth()->user()->tipo == 0)
+                            <a class="menu__item " href="">Meus pedidos</a>
+                        @elseif(auth()->user()->tipo == 1)
+                            <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
+                            <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
+                            <a class="menu__item " href="">Relatórios</a>
+                        @endif
+                    @endauth
                 </div>
                 <div class="bloco__conteudo">
                     <form class="centro" method="POST"  action=""> 

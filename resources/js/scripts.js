@@ -13,3 +13,7 @@ $(document).ready(function() {
 $('#modalCookies').on('shown.bs.modal', function(){
     localStorage.setItem("modal", false);
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
