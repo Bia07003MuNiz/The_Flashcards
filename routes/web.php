@@ -26,14 +26,14 @@ Route::get('/', function () {
 
 Route::resources([
     'produtos' => ProdutoController::class,
-    'users' => UserController::class, 
+    'users' => UserController::class,
 ]);
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', function () {
         return view('login');
     })->name('login');
-    
+
     Route::post('/logar', [loginController::class, 'logar'])->name('logar');
 });
 
@@ -43,13 +43,18 @@ Route::middleware(['auth'])->group(function () {
     Route::resources([
         'categorias' => CategoriaController::class,
     ]);
-    
+
     Route::get('/users/{user}/aviso', [UserController::class, 'confirmaExclusao'])->name('users.aviso');
     Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
 });
 
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
 Route::get('/add-produto/{produto}', [ProdutoController::class, 'AddCarrinho'])->name('produtos.adicionar');
+Route::get('/relatorio', function () {
+    $produtos = Produto::all();
+
+    return view('report', ['produtos' => $produtos]);
+});
 
 //Outros
 Route::view('/quem-somos','quem-somos')->name('quem-somos');
