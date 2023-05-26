@@ -5,7 +5,8 @@
     <main>
         <div class="container">
             <h1 class="titulo"><span>CADASTRE-SE</span></h1>
-            <form class="centro" action="{{route('users.store')}}" method="POST">
+            <form class="centro" action="{{route('users.store')}}" method="POST" class="needs-validation">
+
             @method('POST')
             @csrf
                <div class="row">
@@ -29,37 +30,55 @@
                     <div class="col-lg-12 margin__style">
                         <div class="campo__input ">
                             <label class="sr-only" for="exampleInputEmail1">Nome</label>
-                            <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
+                            <input type="text" required class="style__campo" placeholder="Nome*" id="nome" name="nome">
+                            <div class="invalid-feedback">
+                                Nome é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input ">
                             <label class="sr-only" for="exampleInputEmail1">CPF</label>
-                            <input type="text" class="style__campo" placeholder="CPF" id="cpf" name="cpf">
+                            <input type="text" required class="style__campo" placeholder="CPF*" id="cpf" name="cpf">
+                            <div class="invalid-feedback">
+                                CPF é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                      <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="exampleInputEmail1">Celular</label>
-                                <input type="text" class="style__campo" name="Celular" placeholder="Celular" id="Celular">
-                        </div>
+                                <input type="text" required class="style__campo" name="Celular" placeholder="Celular*" id="Celular">
+                                <div class="invalid-feedback">
+                                Celular é obrigatório !!!!
+                            </div>
+                            </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="campo__input ">
                             <label class="sr-only" for="exampleInputEmail1E-mail">E-mail</label>
-                            <input type="email" class="style__campo" placeholder="E-mail" id="email" name="email">
+                            <input type="email" required class="style__campo" placeholder="E-mail*" id="email" name="email">
+                            <div class="invalid-feedback">
+                                E-mail é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="exampleInputEmail1">Senha</label>
-                            <input type="password" class="style__campo" name="password" placeholder="Senha" id="password">
+                            <input type="password" required class="style__campo" name="password"  placeholder="Senha*" id="password">
+                            <div class="invalid-feedback">
+                                senha é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="exampleInputEmail1"> Confirmação de senha</label>
-                            <input type="password" class="style__campo" name="Confirmação de senha" placeholder="Senha" id="password">
+                            <input type="password" required class="style__campo" name="Confirmação de senha" placeholder="Senha" id="password">
+                            <div class="invalid-feedback">
+                                senha é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-12">

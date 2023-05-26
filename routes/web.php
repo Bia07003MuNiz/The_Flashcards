@@ -60,6 +60,7 @@ Route::get('/relatorio', function () {
 Route::view('/quem-somos','quem-somos')->name('quem-somos');
 Route::view('/onde-estamos','onde-estamos')->name('onde-estamos');
 Route::view('/contato','contato')->name('contato');
+Route::post('/salvacontato', [App\Http\Controllers\ContatoController::class, 'store'])->name('salvacontato');
 Route::view('/politica-de-privacidade','politica-de-privacidade')->name('politicas');
 Route::view('/termos-de-uso','termos-de-uso')->name('termos');
 Route::view('/duvidas-frequentes','duvidas-frequentes')->name('duvidas');
