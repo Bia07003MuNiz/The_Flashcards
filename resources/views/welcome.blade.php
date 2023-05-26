@@ -99,6 +99,34 @@
             <div class="container">
                 <h1 class="title__home">Conheça os produtos do<br>momento</h1>
                 <!--Carousel-->
+                @if(!empty(\App\Models\Produto::all()))
+                    <div class="container">
+                    <div class="box__categorias">
+                        <ul class="itens__lista">
+                            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+                            <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                            @foreach (\App\Models\Produto::all() as $produto)
+                            <div class="carousel-item active">
+                            <img src="{{$produto->imagens()->first()->url}}" class="w-40">
+                            </div>
+                            @endforeach
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </button>
+                            </div>                            
+                            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+                        
+                        </ul>
+                    </div>
+                    </div>
+                @endif
             </div>
         </section>
         <section id="secaoComoFazer">

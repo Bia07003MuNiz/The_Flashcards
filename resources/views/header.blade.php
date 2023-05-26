@@ -78,7 +78,8 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
           <div class="dropdown-menu" id="form__pesquisa">
-            <form>
+            <form method="POST" action="{{route('produtos.pesquisar')}}">
+              @csrf
               <div class="campo__input">
                   <label for="busca" class="label__titulo">O que esta buscando:</label>
                   <input type="text" class="campo__pesquisa" placeholder="XXXXXX XXXXXXX" id="busca" name="busca">
