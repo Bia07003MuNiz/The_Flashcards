@@ -5,76 +5,97 @@
     <main>
         <div class="container">
             <h1 class="titulo"><span>CADASTRE-SE</span></h1>
-            <form class="centro" action="{{route('users.store')}}" method="POST">
+            <form class="centro" action="{{route('users.store')}}" method="POST" class="needs-validation">
+
             @method('POST')
             @csrf
-                <div class="row">
+               <div class="row">
                     <div class="col-lg-2 custom__checkbox margin__style">
                         <b class="style__letras">Você é:</b>
                     </div>
-                    <div class="col-lg-2 custom__checkbox margin__style">
-                        <input class="rodape__check style__letras " type="checkbox" name="termos" id="contato__termos">
-                        <label class="rodape__check__label style__letras" for="contato__termos">
-                        <b class="style__letras">Cliente</b>
+                     <div class="col-lg-2 custom__checkbox margin__style">
+                        <input class="rodape__check style__letras " type="radio" name="tipo" value="0" id="categoria0">
+                        <label class="rodape__check__label style__letras" for="categoria0">
+                            <b class="style__letras">Cliente</b>
                         </label>
-                    </div>    	
-                    <div class="col-lg-2 custom__checkbox margin__style">
-                        <input class="rodape__check" type="checkbox" name="termos" id="contato__termos">
-                        <label class="rodape__check__label" for="contato__termos">
-                            <b class="style__letras">vendedor</b>
-                        </label>		
-                    </div>
+                </div>    
+
+                <div class="col-lg-2 custom__checkbox margin__style">
+                    <input class="rodape__check"type="radio" name="tipo" value="1" id="categoria1">
+                    <label class="rodape__check__label" for="categoria1">
+                        <b class="style__letras">Vendedor</b>
+                    </label>		
+                </div>
+                    
                     <div class="col-lg-12 margin__style">
                         <div class="campo__input ">
-                            <label class="sr-only" for="nome">Nome</label>
-                            <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
+                            <label class="sr-only" for="exampleInputEmail1">Nome</label>
+                            <input type="text" required class="style__campo" placeholder="Nome*" id="nome" name="nome">
+                            <div class="invalid-feedback">
+                                Nome é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input ">
-                            <label class="sr-only" for="CPF">CPF</label>
-                            <input type="text" class="style__campo" placeholder="CPF" id="CPF" name="CPF">
+                            <label class="sr-only" for="exampleInputEmail1">CPF</label>
+                            <input type="text" required class="style__campo" placeholder="CPF*" id="cpf" name="cpf">
+                            <div class="invalid-feedback">
+                                CPF é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="Celular">Celular</label>
-                                <input type="email" class="style__campo" name="Celular" placeholder="Celular" id="Celular">
-                        </div>
+                            <label class="sr-only" for="exampleInputEmail1">Celular</label>
+                                <input type="text" required class="style__campo" name="Celular" placeholder="Celular*" id="Celular">
+                                <div class="invalid-feedback">
+                                Celular é obrigatório !!!!
+                            </div>
+                            </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="campo__input ">
-                            <label class="sr-only" for="E-mail">E-mail</label>
-                            <input type="text" class="style__campo" placeholder="E-mail" id="E-mail" name="E-mail">
+                            <label class="sr-only" for="exampleInputEmail1E-mail">E-mail</label>
+                            <input type="email" required class="style__campo" placeholder="E-mail*" id="email" name="email">
+                            <div class="invalid-feedback">
+                                E-mail é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="Senha">Senha</label>
-                            <input type="tel" class="style__campo" name="Senha" placeholder="Senha" id="Senha">
+                            <label class="sr-only" for="exampleInputEmail1">Senha</label>
+                            <input type="password" required class="style__campo" name="password"  placeholder="Senha*" id="password">
+                            <div class="invalid-feedback">
+                                senha é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="Confirmação de senha"> Confirmação de senha</label>
-                            <input type="tel" class="style__campo" name="Confirmação de senha" placeholder="Confirmação de senha" id="Confirmação de senha">
+                            <label class="sr-only" for="exampleInputEmail1"> Confirmação de senha</label>
+                            <input type="password" required class="style__campo" name="Confirmação de senha" placeholder="Senha" id="password">
+                            <div class="invalid-feedback">
+                                senha é obrigatório !!!!
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="col-lg-2 custom__checkbox margin__style">
-                            <b class="style__letras">Enderço</b>
+                            <b class="style__letras">Endereço</b>
                         </div>
                     </div>
                     <div class="col-lg-6 margin__style">
                         <div class="campo__input ">
-                            <label class="sr-only" for="CEP">CEP</label>
-                            <input type="text" class="style__campo" placeholder="CEP" id="CEP" name="CEP">
+                            <label class="sr-only" for="exampleInputEmail1">CEP</label>
+                            <input type="text" class="style__campo" placeholder="CEP" id="cep" name="cep">
                         </div>
                     </div>
                     <div class="col-lg-6 margin__style">
                         <div class="segura__select ">
-                            <label class="sr-only" for="Estado"> Estado</label>
-                            <select class="sub__select">
+                            <label class="sr-only" for="exampleInputEmail1"> Estado</label>
+                            <select class="sub__select" id="uf" name="uf">
                                 <option selected disabled>Estado</option>
                                 <option>Acre</option>
                                 <option>Alagoas</option>
@@ -108,32 +129,32 @@
                     </div>
                     <div class="col-lg-10">
                         <div class="campo__input">
-                            <label class="sr-only" for="Cidade"> Cidade</label>
-                            <input type="tel" class="style__campo" name="Cidade" placeholder="Cidade" id="Cidade">
+                            <label class="sr-only" for="exampleInputEmail1"> Cidade</label>
+                            <input type="text" class="style__campo" name="Cidade" placeholder="Cidade" id="Cidade">
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="campo__input">
-                            <label class="sr-only" for="Numero">Numero</label>
-                            <input type="email" class="style__campo" name="Numero" placeholder="Numero" id="Numero">
+                            <label class="sr-only" for="exampleInputEmail1">Número</label>
+                            <input type="num" class="style__campo" name="num" placeholder="Numero" id="num">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="Bairro"> Bairro</label>
-                                <input type="tel" class="style__campo" name="Bairro" placeholder="Bairro" id="Bairro">
+                            <label class="sr-only" for="exampleInputEmail1"> Bairro</label>
+                                <input type="text" class="style__campo" name="Bairro" placeholder="Bairro" id="Bairro">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
-                            <label class="sr-only" for="Endereço">Endereço</label>
-                            <input type="email" class="style__campo" name="Endereço" placeholder="Endereço" id="Endereço">
+                            <label class="sr-only" for="exampleInputEmail1">Rua</label>
+                            <input type="text" class="style__campo" name="rua" placeholder="Endereço" id="rua">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="campo__input ">
-                            <label class="sr-only" for="Complemento">Complemento</label>
-                            <input type="text" class="style__campo" placeholder="Complemento" id="Complemento" name="Complemento">
+                            <label class="sr-only" for="exampleInputEmail1">Complemento</label>
+                            <input type="text" class="style__campo" placeholder="Complemento" id="compl" name="compl">
                         </div>
                     </div>
                     <div class="col-lg-6 custom__checkbox">

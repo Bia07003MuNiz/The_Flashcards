@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.cria-user');
+        return view('cadastre-se');
     }
 
     /**
@@ -33,21 +33,19 @@ class UserController extends Controller
         $user = new User();
         $user->nome = $request->nome;
         $user->cpf = $request->cpf;
+        $user->Celular = $request->Celular;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->tipo = $request->tipo;
-               /**
-            * migração do banco 
-            * 
-            *   $user->cep = $request->cep;
-        *$user->uf = $request->uf;
-        *$user->Cidade = $request->Cidade;
-        *$user->num = $request->num;
-        *$user->Bairro = $request->Bairro;
-        *$user->rua = $request->rua;
-        *$user->compl= $request->compl;
 
-                        */
+        $user->cep = $request->cep;
+        $user-> uf = $request->uf;
+        $user->Cidade = $request->Cidade;
+        $user->num = $request->num;
+        $user->Bairro = $request->Bairro;
+        $user->rua = $request->rua;
+        $user->compl= $request->compl;
+
 
         $user->save();
 

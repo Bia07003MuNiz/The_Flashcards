@@ -14,11 +14,11 @@
                 <p>Utilizamos cookies para personalizar a garantir que você obtenha a melhor experiência em nosso site. Ao usar o nosso site, você concorda com a nossa <a href="{{route('politicas')}}" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
               </div>
               <div class="btn__center">
-                <button type="button" class="btn btn__style" data-dismiss="modal">Fechar e concordar</button>
+                <button type="button" aria-label="Close" class="close btn btn__style" data-dismiss="modal">Fechar e concordar</button>
               </div>
             </div>
             <div class="col-lg-5">
-              <img src="assets/images/cookies.png" class="d-block w-100 img-fluid" alt="Banner" width="433" height="650">
+              <img src="assets/images/cookies.png" class="d-block w-100 img-fluid" alt="Banner" width="450" height="643">
             </div>
           </div>
         </div>

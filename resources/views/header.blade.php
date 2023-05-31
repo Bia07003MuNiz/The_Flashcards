@@ -1,15 +1,22 @@
 <header id="topo">
   <div class="box__frase">
     <div class="container">
-      @auth
-        @if(auth()->user()->tipo == 0)
-          Seja bem vindo(a) {{Auth::user()->nome}}
-        @elseif(auth()->user()->tipo == 1)
-          Seja bem vindo(a)@auth vendedor(a) {{Auth::user()->nome}}@endauth
-        @endif
-      @else
-        Seja bem vindo(a)
-      @endauth
+      <div class="frase__alinhamento">
+        <div>
+          @auth
+            @if(auth()->user()->tipo == 0)
+              Seja bem vindo(a) {{Auth::user()->nome}}
+            @elseif(auth()->user()->tipo == 1)
+              Seja bem vindo(a)@auth vendedor(a) {{Auth::user()->nome}}@endauth
+            @endif
+          @else
+            Seja bem vindo(a)
+          @endauth
+        </div>
+        @auth
+          <a href="{{route('logout')}}">Encerrar sessão <i class="fa-solid fa-right-from-bracket"></i></a>
+        @endauth
+      </div>
     </div>
   </div>
   <div class="box__menu">
@@ -37,10 +44,9 @@
                 <i class="fa-solid fa-user"></i>
               </button>
               <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
-                <a class="dropdown-item {{ Request::is('meus-dados-cadastrais') ? 'active' : '' }}" href="{{route('meus-dados-cadastrais')}}">Meus dados</a>
-                <a class="dropdown-item {{ Request::is('mudar-senha') ? 'active' : '' }}" href="{{route('mudar-senha')}}">Alterar senha</a>
+                <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
+                <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
                 <a class="dropdown-item" href="">Pedidos realizados</a>
-                <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
               </div>
             </div>
           @elseif(auth()->user()->tipo == 1)
@@ -53,11 +59,11 @@
                 <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
                 <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
                 <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                <a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
+                <a class="dropdown-item" href="">Relatórios</a>
+                <!--<a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
                 <a class="dropdown-item" href="">Solicitações de contato</a>
                 <a class="dropdown-item" href="">Relatório clientes cadastrados</a>
-                <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>
-                <a class="dropdown-item" href="{{route('logout')}}">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+                <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>-->
               </div>
             </div>
           @endif
@@ -90,9 +96,15 @@
             </form>
           </div>
         </div>
-        <a class="btn box__carrinho" href="{{route('carrinho')}}">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </a>
+        @auth
+          <a class="btn box__carrinho" href="{{route('carrinho')}}">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        @else
+          <button type="button" class="btn box__carrinho" data-toggle="tooltip" data-placement="bottom" title="Faça login ou cadastre-se para poder ter acesso ao carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        @endauth
       </div>
     </div>
   </div>

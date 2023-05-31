@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('cpf');
+            $table->string('celular');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('cep');
             $table->string('uf');
-            $table->string('Cidade');
+            $table->string('cidade');
             $table->string('num');
-            $table->string('Bairro');
+            $table->string('bairro');
             $table->string('rua');
             $table->string('compl');
             $table->string('remember_token')->default("");

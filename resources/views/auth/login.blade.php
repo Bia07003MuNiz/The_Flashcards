@@ -7,24 +7,9 @@
             <h1 class="titulo"><span>LOGIN</span></h1>
             <div class="centro_inicio">
                 <h2 class="campo_titulosegundoo">
-                    <spain>Entre com seus dados </sapin>
+                    <spain>Entre com seus dados </span>
                 </h2>
             </div>
-
-{{--            <div class="radio_bton text_label justify-content-center">--}}
-{{--                <span>Entrar como:</span>--}}
-{{--                <div >--}}
-{{--                    <input class="text_label" type="radio" name="tipo" id="tipoCliente" value="1">--}}
-{{--                    <label class="text_check" for="tipoCliente">Cliente</label>--}}
-
-{{--                </div>--}}
-{{--                <div>--}}
-{{--                    <input class="text_label" type="radio" name="tipo" id="tipoVendedor" value="2">--}}
-{{--                    <label class="text_check" for="tipoVendedor">Vendedor</label>--}}
-
-{{--                </div>--}}
-{{--            </div>--}}
-
             <form action="{{route('logar')}}" method="POST">
                 @csrf
                 <div class="campos_input ">
@@ -47,7 +32,7 @@
                 </div>
 
                 <div class="btn_center">
-                    <button href="{{route('cadastre-se')}}" class="estilo_botao">CRIAR CONTA</button>
+                    <a href="{{route('cadastre-se')}}" class="estilo_botao">CRIAR CONTA</a>
                     <button type="submit" class="estilo_botao">ENTRAR</button>
                 </div>
                 <br>

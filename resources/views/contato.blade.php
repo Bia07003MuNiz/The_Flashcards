@@ -8,7 +8,7 @@
             <div class="texto__style">
                 <p>Non arcu duis massa facilisis auctor et curabitur, eros mi aliquam commodo lacus sodales malesuada in, amet augue dui tellus suspendisse ligula. sociosqu taciti aliquet class bibendum ad etiam pretium rutrum, taciti blandit congue cursus suscipit a vitae mollis sapien, placerat lacinia venenatis purus sed consectetur est. metus litora tortor cubilia tristique eget id eget interdum proin elementum placerat, euismod nibh torquent ornare consequat leo vulputate habitasse ullamcorper laoreet.</p>
             </div>
-            <form method="POST" action ="{{route('logar')}}" >
+            <form method="POST" action ="{{route('salvacontato')}}" >
                 @method('POST')
                 @csrf
                 <div class="row">
@@ -21,7 +21,7 @@
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="e-mail"> E-mail</label>
-                                <input type="email" class="style__campo" name="e-mail" placeholder="E-mail" id="email">
+                                <input type="email " class="style__campo" name="email" placeholder="E-mail" id="email">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -33,7 +33,7 @@
                     <div class="col-lg-6">
                         <div class="segura__select">
                             <label class="sr-only" for="nome"> Assunto</label>
-                            <select class="sub__select" id="assunto">
+                            <select class="sub__select" id="assunto" name="assunto">
                                 <option selected disabled>Assunto</option>
                                 <option>Reclamações</option>
                                 <option>Dúvidas</option>
@@ -44,7 +44,7 @@
                     <div class="col-lg-12">
                         <div class="campo__input">
                             <label class="sr-only" for="mensagem">Mensagem</label>
-                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem" id="mensagem"></textarea>
+                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem" id="mensagem" name="mensagem"></textarea>
                         </div>
                     </div>
                     <div class="col-lg-12 ">

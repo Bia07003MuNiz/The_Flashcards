@@ -1,5 +1,5 @@
 $('.close').click(function(event){
-    $('#modalCookies').fadeOut();
+    $('#modalCookies').modal('hide');
     event.preventDefault();
 });
 
@@ -13,3 +13,7 @@ $(document).ready(function() {
 $('#modalCookies').on('shown.bs.modal', function(){
     localStorage.setItem("modal", false);
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })

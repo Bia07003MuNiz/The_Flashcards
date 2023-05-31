@@ -206,3 +206,57 @@ body{
     }
   }
 }
+
+.bloco__segura{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding-top: 50px;
+
+  .bloco__menu{
+      display: flex;
+      flex-direction: column;
+
+      .menu__item{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #A780B9;
+          color: #FFF;
+          border-radius: 30px 0 0 30px;
+          text-decoration: none;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 16px;
+          line-height: 16px;
+          padding: 20px 15px;
+          writing-mode: vertical-rl;
+          letter-spacing: 1px;
+
+          &.active{
+              background-color: #4F0074;
+          }
+
+          &:hover{
+              background-color: #4F0074;
+          }
+      }
+  }
+
+  .bloco__conteudo{
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      border-top: 2px solid #4F0074;
+      border-right: 2px solid #4F0074;
+      border-bottom: 2px solid #4F0074;
+
+      .btn__voltar{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        text-decoration: none;
+        color: #000;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+  }
+}

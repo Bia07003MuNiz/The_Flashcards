@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
+            $table->integer('ordem');
             $table->string('nome');
+            $table->boolean('status')->default(false);
             $table->boolean('destaque')->default(false);
             $table->timestamps();
         });
