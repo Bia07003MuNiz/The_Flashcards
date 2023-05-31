@@ -16,8 +16,8 @@
                     @livewire('lv-card-produto', ['produto'=>$produto])
                 @endforeach
             </div>
-            <div class="btn">
-                <a class="btn__style" href="javascript:history.back()">VOLTAR</a>
+            <div class="btn____prod">
+                <a class="btn__style ms-5" href="javascript:history.back()">VOLTAR</a>
             </div>
         </div>
     </main>

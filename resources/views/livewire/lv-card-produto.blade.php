@@ -1,18 +1,20 @@
 <div>
     {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
+    
+    <h5 class="card-title mb-3 m-3">{{$produto->nome}}</h5>
+
     <div class="card text-center bg-light">
         @foreach ($produto->imagens as $imagem)
             <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
         @endforeach
-        <div class="card-header">
+        <div class="btn__style mt-3">
             R$ {{number_format($produto->valor, 2, ',','.')}}
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{$produto->nome}}</h5>
             @auth
                 @if(auth()->user()->tipo == 0)
                     <a href="{{route('produtos.show',$produto)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn btn-danger bg-purple-900"><i class="fa-solid fa-cart-plus"></i></button>
+                    <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn btn-primary bg-purple-900 rounded-pill"><i class="fa-solid fa-cart-plus"></i></button>
                 @elseif(auth()->user()->tipo == 1)
                     <a href="{{route('produtos.edit',$produto)}}"><i class="fa-solid fa-pencil"></i></a>
                     <a href="{{route('produtos.aviso',$produto)}}"><i class="fa-solid fa-trash"></i></a>
