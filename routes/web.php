@@ -48,10 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/produtos/{produto}/aviso', [ProdutoController::class, 'confirmaExclusao'])->name('produtos.aviso');
 });
 
-<<<<<<< HEAD
 Route::post('/produtos/pesquisar', [produtoController::class, 'pesquisar'])->name('produtos.pesquisar');
-=======
->>>>>>> d183718cc8b19c906efef77ed27b0a176599de6b
+
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
 Route::get('/add-produto/{produto}', [ProdutoController::class, 'AddCarrinho'])->name('produtos.adicionar');
 Route::get('/relatorio', function () {
