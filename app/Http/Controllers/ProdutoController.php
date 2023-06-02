@@ -11,7 +11,7 @@ class ProdutoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth')->except(['index','show','pesquisar']);
     }
 
 
@@ -31,7 +31,7 @@ class ProdutoController extends Controller
 
         return view('produtos.listar-produtos-clientes', compact('produtos'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      */
@@ -123,6 +123,15 @@ class ProdutoController extends Controller
     {
         return view('produtos.excluir-produto', compact('produto'));
     }
+
+    public function pesquisar(Request $request)
+    {
+        $produtos=Produto::where('nome', 'like', "%".$request->busca."%")->get();
+        return view('produtos.lista-produtos', compact('produtos'));
+    }
+
+   
+
 
     public function AddCarrinho(Produto $produto)
     {
