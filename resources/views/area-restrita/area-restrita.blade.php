@@ -10,7 +10,9 @@
                     <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
                     <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
                     <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                    <a class="menu__item " href="">Relatórios</a>
+                    <a class="menu__item " href="">Relatórios produtos </a>
+                    <a class="menu__item menu__item {{ Request::is('cadastre-se*') ? 'active' : '' }}" href="{{route('users.index')}}">Relatórios Cliente </a>
+                    
                 </div>
                 <div class="bloco__conteudo">
                     <div class="saudacoes">Bem vindo(a)!</div>

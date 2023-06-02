@@ -15,26 +15,26 @@
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="nome">Nome</label>
-                            <input type="text" class="style__campo" placeholder="Nome" id="nome" name="nome">
+                            <input type="text" required class="style__campo" placeholder="Nome*" id="nome" name="nome" >
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="e-mail"> E-mail</label>
-                                <input type="email " class="style__campo" name="email" placeholder="E-mail" id="email">
+                                <input type="email " required class="style__campo" name="email" placeholder="E-mail*" id="email" required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="telefone"> Telefone</label>
-                                <input type="tel" class="style__campo" name="telefone" placeholder="Telefone" id="telefone">
+                                <input type="tel" required class="style__campo" name="telefone" placeholder="Telefone*" id="telefone" required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="segura__select">
                             <label class="sr-only" for="nome"> Assunto</label>
-                            <select class="sub__select" id="assunto" name="assunto">
-                                <option selected disabled>Assunto</option>
+                            <select class="sub__select" required id="assunto" name="assunto" >
+                                <option selected disabled>Assunto*</option>
                                 <option>Reclamações</option>
                                 <option>Dúvidas</option>
                                 <option>Sugestões</option>
@@ -43,12 +43,12 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="campo__input">
-                            <label class="sr-only" for="mensagem">Mensagem</label>
-                            <textarea class="form-control style__campo" rows="5" placeholder="Mensagem" id="mensagem" name="mensagem"></textarea>
+                            <label class="sr-only" for="mensagem">Mensagem*</label>
+                            <textarea class="form-control style__campo" required rows="5" placeholder="Mensagem" id="mensagem" name="mensagem" ></textarea>
                         </div>
                     </div>
                     <div class="col-lg-12 ">
-                        <input class="rodape__check" type="radio" name="termos" id="contato__termos">
+                        <input class="rodape__check" type="radio" required name="termos" id="contato__termos">
                         <label class="rodape__check__label" for="contato__termos">
                             Eu li e concordo com os <a href="termos-de-uso">termos e condições de uso</a>.
                         </label>			

@@ -49,14 +49,21 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect(route('users.index'));
+        return redirect(route('cadastre-se'));
+
+
+
+
+        
     }
 
     /**
      * Display the specified resource.
      */
     public function show(User $user)
+    
     {
+       
         return view('users.exibe-user', compact('user'));
     }
 
