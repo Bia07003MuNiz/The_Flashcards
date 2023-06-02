@@ -3,6 +3,7 @@
 use App\Auxiliares\CarrinhoAux;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\LvCarrinho;
@@ -49,7 +50,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('/produtos/pesquisar', [produtoController::class, 'pesquisar'])->name('produtos.pesquisar');
-
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
 Route::get('/add-produto/{produto}', [ProdutoController::class, 'AddCarrinho'])->name('produtos.adicionar');
 Route::get('/relatorio', function () {
@@ -73,6 +73,8 @@ Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::
 Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
 //Área restrita (Vendedor e Cliente)
+Route::view('/pedidos-periodo','area-restrita/relatorios/pedidos-periodo')->name('pedidos-periodo');
+Route::post('/resultados-periodo', [OrcamentoController::class, 'PedidosPeriodo'])->name('resultados-periodo');
 Route::view('/area-restrita','area-restrita/area-restrita')->name('boas-vindas'); //Exclusivo cliente
 Route::view('/meus-dados','area-restrita/meus-dados')->name('meus-dados');
 Route::view('/alterar-senha','area-restrita/alterar-senha')->name('alterar-senha');
