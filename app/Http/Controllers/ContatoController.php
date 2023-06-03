@@ -24,7 +24,9 @@ class ContatoController extends Controller
         $contato->save();
 
         return redirect(route('contato'));
+       
     }
+   
 
     public function enviar(Request $request)
     {

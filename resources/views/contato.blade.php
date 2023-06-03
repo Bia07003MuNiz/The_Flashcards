@@ -56,9 +56,13 @@
                 </div>
                 <div class="btn__center">
                     <a href="javascript:history.back()" class="btn__style">VOLTAR</a>
-                    <button type="submit" class="btn__style">ENVIAR</button>
+                    <button type="submit"  class="btn__style">ENVIAR</button>
+                   
                 </div>
             </form>
         </div>
+        
+        
+        
     </main>
 </x-layout-base>

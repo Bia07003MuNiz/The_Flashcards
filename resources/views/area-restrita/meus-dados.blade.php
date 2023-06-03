@@ -16,7 +16,8 @@
                         @elseif(auth()->user()->tipo == 1)
                             <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
                             <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                            <a class="menu__item " href="">Relatórios</a>
+                            <a class="menu__item " href="">Relatórios produtos </a>
+                    <a class="menu__item menu__item {{ Request::is('cadastre-se*') ? 'active' : '' }}" href="{{route('users.index')}}">Relatórios Cliente </a>
                         @endif
                     @endauth
                 </div>
