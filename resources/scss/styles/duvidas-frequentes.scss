@@ -1,77 +1,107 @@
 #duvidas-frequentes{
+  padding: 100px 0;
 
-  .container.py-5.form-control {
-    width: 1000px;  
-  }
-  
-  .text-center.my-5.form-control{
-    height: 300px;
-  
+  .accordion{
+    margin-top: 50px;
   }
 
-  .linha-horizontal{
-    display: inline-block;
+  .accordion-item{
     border: none;
-    border-left: 200px solid rgb(75, 13, 132);
-    height: 2px;
-    margin-right: 10px;
-    vertical-align: middle;
+    margin-bottom: 20px;
+
+    .accordion-header{
+      display: inline-block;
+
+      @include media-breakpoint-up(lg){
+        min-width: 900px;
+      }
+
+      .accordion-button{
+        background-color: #004C93;
+        border-radius: 20px 20px 0 0;
+        color: #FFF;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        line-height: 20px;
+
+        &:after{
+          content: '-';
+          background-image: none;
+          width: auto;
+          height: auto;
+          font-size: 25px;
+        }
+
+        &.collapsed{
+          &:after{
+            content: '+';
+            background-image: none;
+            width: auto;
+            height: auto;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+
+    .accordion-collapse{
+      border: 3px solid #004C93;
+      border-radius: 0 0 30px 30px;
+
+      .accordion-body{
+
+      }
+    }
   }
 
-  .accordion-button {
-        background-color: #084298;
-        color: white;
-  }   
+  .box__whatsapp{
+    margin-top: 70px;
+    padding-top: 50px;
+    border-top: 7px solid rgba(#939393,.2);
 
-  
-  
-    
-  
+    .title__whats{
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 30px;
+      line-height: 34px;
+      text-align: center;
+      color: #000;
+      font-weight: bold;
+    }
 
-  .accordion-body{
-    width: 150%;
-    border-style: solid;
-    border-color: #2063a0;
-    border-radius: 0px 0px 20px 20px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    position: relative;
-  }
+    .btn__duvida__whatsapp{
+      margin-top: 40px;
 
-  .bg-white {
-    width: 80%;
-    max-width: 800px;
-    height: 80%;
-    max-height: 600px;
-    border: 2px solid #084298;
-    border-radius: 10px;
-    overflow: auto;
-  }
+      a{
+        display: flex;
+        align-items: center;
+      justify-content: center;
+        text-decoration: none;
+        i{
+          position: relative;
+          left: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background-color: #009721;
+          border: 6px solid #FFF;
+          color: #FFF;
+          font-size: 60px;
+        }
 
-  .center-image {
-    position: relative;
-  }
-  
-  .center-image img {
-    position: absolute;
-    top: 50%;
-    right:85%;
-    transform: translate(-50%, -50%);
-  }
-
-  .btn-lg.center-image {
-    font-size: 1.5rem;
-    padding: 15px 60px;
-  }
-  
-  .btn-lg.center-image img {
-    border: 5px solid #fff;
-  }
-  
-  .btn-lg.center-image span {
-    white-space: nowrap;
-  }
-  
-  .container{
-    //overflow: hidden;
+        span{
+          background-color: #009721;
+          border-radius: 0 50px 50px 0;
+          color: #FFF;
+          text-align: center;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 25px;
+          line-height: 25px;
+          padding: 20px 40px 20px 50px;
+        }
+      }
+    }
   }
 }

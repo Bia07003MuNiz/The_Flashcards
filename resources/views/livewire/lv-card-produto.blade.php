@@ -1,28 +1,23 @@
-<div>
-    {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
-    
-    <h5 class="card-title mb-3 m-3">{{$produto->nome}}</h5>
-
-    <div class="card text-center bg-light">
-        @foreach ($produto->imagens as $imagem)
-            <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
-        @endforeach
-        <div class="btn__style mt-3">
-            R$ {{number_format($produto->valor, 2, ',','.')}}
+<div class="card__produto">
+    <div class="card__produto__style">
+        <div class="card__produto__dados">
+            <div class="card__dados__titulo">{{$produto->nome}}</div>
+            <div class="card__dados__img">
+                <img src="{{$produto->imagens()->first()->url}}" width="300" height="300" class="img-fluid" loading="lazy">
+                <!--@foreach ($produto->imagens as $imagem)
+                    <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
+                @endforeach-->
+            </div>
         </div>
-        <div class="card-body">
+        <div class="card__produto__btns">
+            <a href="{{route('produtos.show',$produto)}}" class="btn__acao"><i class="fa-solid fa-magnifying-glass"></i></a>
             @auth
-                @if(auth()->user()->tipo == 0)
-                    <a href="{{route('produtos.show',$produto)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn btn-primary bg-purple-900 rounded-pill"><i class="fa-solid fa-cart-plus"></i></button>
-                @elseif(auth()->user()->tipo == 1)
-                    <a href="{{route('produtos.edit',$produto)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <a href="{{route('produtos.aviso',$produto)}}"><i class="fa-solid fa-trash"></i></a>
-                @endif
-            @else
-              <a href="{{route('produtos.show',$produto)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <button wire:click="AddCarrinho()" onclick="pushTest()" class="btn__acao"><i class="fa-solid fa-cart-plus"></i></button>
             @endauth
         </div>
+    </div>
+    <div class="card__produto__preco">
+        <span>R$ {{number_format($produto->valor, 2, ',','.')}}</span>
     </div>
     @push('adicionaCarrinho')
         @once
@@ -39,4 +34,3 @@
         @endonce
     @endpush
 </div>
-

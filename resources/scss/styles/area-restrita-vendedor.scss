@@ -1,12 +1,18 @@
 #boas-vindas,
-#meus_dados,
+#meus__dados,
 #alterar-senha,
 #boas-vindas,
-#listar_categorias,
+#listar__categorias,
 #exibir__categorias,
-#editar_categorias,
-#cadastrar_categoria{
+#editar__categorias,
+#cadastrar__categoria,
+#produtos-area-restrita,
+#relatorios__vendedor{
     padding: 100px;
+    
+    .error{
+        color: red;
+    }
 
     .title__box{
         text-align: center;
@@ -16,10 +22,43 @@
         line-height: 42px;
         margin-bottom: 30px;
     }
+
+    .style__espacamento{
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 50px;
+    }
+
+    .btn__voltar{
+        i{
+            margin-right: 5px;
+        }
+    }
+
+    .lim__estilo{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-top: 50px;
+
+        .btn__salvar{
+            min-width: 200px;
+            background-color: #4F0074;
+            color: #FFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            line-height: 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            border: none;
+            padding: 15px;
+        }
+    }
 }
 
-#listar_categorias,
-#exibir__categorias{
+#listar__categorias,
+#exibir__categorias,
+#produtos-area-restrita{
     .posiciona__btn{
         display: flex;
         align-items: center;
@@ -29,50 +68,180 @@
             background-color: #004C93;
             color: #FFF;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 18px;
+            line-height: 20px;
             text-decoration: none;
             border-radius: 30px;
             padding: 15px;
         }
     }
 
-    .listagem__categorias{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .style__dados{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        line-height: 18px;
+
+        .item__dado{
+            margin-bottom: 10px;
+        }
+    }
+
+    .table__categorias{
+        margin-top: 50px;
+        
+        .listagem__categorias{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(#000,.5);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            line-height: 16px;
+
+            &:first-child{
+                padding-top: 0;
+            }
+
+            &:last-child{
+                border-bottom: none;
+            }
+
+            .btn__edicao{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    color: #FFF;
+                    text-decoration: none;
+
+                    &:last-child{
+                        margin-left: 10px;
+                    }
+
+                    &:hover{
+                        background-color: #004C93;
+                    }
+                }
+            }
+        }
     }
 }
 
-#cadastrar_nova_categoria{
-    padding: 100px;
+#boas-vindas{
+    padding: 100px 0;
 
-    .campo__input{
-        margin-bottom: 10px;
-    }
-
-    .centro {
+    .saudacoes{
+        display: inline-block;
+        background-color: #004C93;
+        border-radius: 30px;
+        padding: 10px 15px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 20px;
         text-align: center;
-        margin-left: 80px;
-        margin-right: 80px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin-bottom: 40px;
     }
 
-    .button {
-        background-color: #4f0074;
-        border: 1px solid #4f0074;
+    p{
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+#produtos-cadastrados{
+    html {
+        font-family: 'Arial';
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th {
+        background-color: #337ab7;
+        color: #fff;
+        font-weight: bold;
+        text-align: left;
+        padding: 8px;
+    }
+    td {
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #cce0ff;
+    }
+    tr:nth-child(odd) {
+        background-color: #b3d1ff;
+    }
+}
+
+#relatorios__vendedor{
+    .title__box{
+        text-align: start;
+        margin-bottom: 0;
+    }
+
+    .dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .btn__drop__opcoes{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 250px;
+            padding: 10px 20px;
+            background-color: #006ACB;
+            border-radius: 30px;
+            color: #FFF;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .dropdown-menu{
+            background-color: #57AEFF;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            transform: translate3d(270px, 44px, 0px)!important;
+
+            .dropdown-item{
+                color: #FFF;
+
+                &:hover{
+                    background-color: #004C93;
+                }
+            }
+        }
+    }
+}
+
+#meus__dados{
+    .campo__input{
+        border: 1px solid #006acb;
         border-radius: 30px;
         color: white;
         display: inline-block;
-        height: auto;
-        width: auto;
-        min-width: 150px;
-        padding: 10px 20px;
-        font-size: 22px;
-        line-height: 22px;
-    }
+        height: 60px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
-    .lim__estilo{
-        padding: 50px;
+        input,
+        textarea{
+            border: none;
+        }
+
     }
 
     .campo_titulo2{
@@ -101,242 +270,16 @@
         }
     }
 
-    .sub__select{
-        border: 1px solid #006acb;
-        background-color: #FFF;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-        box-sizing: border-box;
-        color: #006acb;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 15px;
-        line-height: 15px;
-    
-        &:focus{
-          outline: none;
-        }
-    
-        &::-ms-expand{
-          display: none;
-        }
-    
-        option{
-          background-color: #FFF;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 14px;
-          color: #000000;
-        }
-    }
-}
-
-#meus_dados{
-    .button {
-        background-color: #4f0074;
-        border: 1px solid #4f0074;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: auto;
-        width: auto;
-        padding: 10px 20px;
+    .cliente__group{
+        margin-top: 30px;
     }
 
-    .lim__estilo{
-        padding: 50px;
-    }
-
-    .centro {
-        text-align: center;
-    }
-    .campo__input{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: 60px;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        input,
-        textarea{
-            border: none;
-        }
-
-    }
-
-    .campo_titulo2{
-        color:#006acb
-    }
-    .style__campo{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-
-        &::placeholder{
-            font-family: 'Plus Jakarta Sans';
-            font-size: 15px;
-            line-height: 15px;
-            color: #006acb;
-        }
-
-        &:focus{
-            outline: none;
-        }
-    }
-}
-
-#boas-vindas{
-    padding: 100px 0;
-
-    .saudacoes{
-        display: inline-block;
-        background-color: #004C93;
-        border-radius: 30px;
-        padding: 10px 15px;
-        color: #FFF;
+    .style__letras{
+        font-family: 'Plus Jakarta Sans';
         font-size: 20px;
         line-height: 20px;
-        text-align: center;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        margin-bottom: 40px;
-    }
-
-    p{
-        font-size: 18px;
-        line-height: 18px;
-    }
-}
-
-#alterar-senha{
-    padding: 100px;
-
-    .centro_inicio{
-        text-align: center;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 50px;
-        border-radius: 30px;
-    }
-
-    .centro {
-        text-align: center;
-    }
-
-    .campo__input{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: 60px;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        input,
-        textarea{
-            border: none;
-        }
-    }
-
-    .button {
-        background-color: #4f0074;
-        border: 1px solid #4f0074;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: auto;
-        width: auto;
-        padding: 10px 20px;
-        }
-
-    .lim__estilo{
-        padding: 50px;
-    }
-    
-    .campo_titulo2{
-        color:#006acb
-    }
-
-    .style__campo{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-
-        &::placeholder{
-            font-family: 'Plus Jakarta Sans';
-            font-size: 15px;
-            line-height: 15px;
-            color: #006acb;
-        }
-
-        &:focus{
-            outline: none;
-        }
-    }
-}
-
-#cadastrar_novo_produto{
-
-    .button {
-        background-color: #4f0074;
-        border: 1px solid #4f0074;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: auto;
-        width: auto;
-        padding: 10px 20px;
-    }
-
-    .lim__estilo{
-        padding: 50px;
-    }
-
-    .centro {
-        text-align: center;
-    }
-
-    .campo__input{
-        margin-bottom: 10px;
-
-    }
-
-    .campo_titulo2{
-        color:#006acb
-    }
-    .style__campo{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-
-        &::placeholder{
-            font-family: 'Plus Jakarta Sans';
-            font-size: 15px;
-            line-height: 15px;
-            color: #006acb;
-        }
-
-        &:focus{
-            outline: none;
-        }
-    }
+        color: #006acb;
+      }
 
     .sub__select{
         border: 1px solid #006acb;

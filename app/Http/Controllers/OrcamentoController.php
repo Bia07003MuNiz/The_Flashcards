@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orcamento;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrcamentoController extends Controller
@@ -21,7 +22,8 @@ class OrcamentoController extends Controller
         }
 
         $resultados=$resultados->get();
-        dd($resultados);
+
+        return view('area-restrita/relatorios/pedidos-periodo', compact('resultados'));
     }
     
 

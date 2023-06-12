@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('codigo');
             $table->text('informacoes');
             $table->float('valor');
+            $table->boolean('status')->default(false);
+            $table->boolean('destaque')->default(false);
             $table->timestamps();
         });
     }

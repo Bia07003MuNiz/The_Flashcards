@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Auxiliares\CarrinhoAux;
+use App\Models\Categoria;
 use App\Models\Imagem;
 use App\Models\Produto;
 use Illuminate\Http\Request;
@@ -23,6 +24,20 @@ class ProdutoController extends Controller
         $produtos = Produto::all();
 
         return view('produtos.lista-produtos', compact('produtos'));
+    }
+
+    public function produtoCategoriaIndex($categoria)
+    {
+        $categoria = Categoria::find($categoria);
+
+        return view('produtos.lista-produtos-categoria', compact('categoria'));
+    }
+
+    public function adminIndex()
+    {
+        $produtos = Produto::all();
+
+        return view('produtos.admin.lista-produtos', compact('produtos'));
     }
 
     public function Listar()

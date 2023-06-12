@@ -1,6 +1,18 @@
-#login{
+#login,
+#esqueci-senha{
+  padding: 100px 0;
 
- 
+  .style__form{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+  }
+
+  .campo_titulosegundo{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   .form-check-input {
     position: absolute;
     margin-top: 0.3rem;

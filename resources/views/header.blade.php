@@ -44,8 +44,7 @@
                 <i class="fa-solid fa-user"></i>
               </button>
               <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
-                <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
-                <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
+                <a class="dropdown-item {{ Request::is('users*') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
                 <a class="dropdown-item" href="">Pedidos realizados</a>
               </div>
             </div>
@@ -55,15 +54,10 @@
                 <i class="fa-solid fa-user"></i>
               </button>
               <div class="dropdown-menu dropdownRestrito" aria-labelledby="optionsRestrito">
-                <a class="dropdown-item {{ Request::is('meus-dados') ? 'active' : '' }}" href="{{route('meus-dados')}}">Meus dados</a>
-                <a class="dropdown-item {{ Request::is('alterar-senha') ? 'active' : '' }}" href="{{route('alterar-senha')}}">Alterar senha</a>
+                <a class="dropdown-item {{ Request::is('users*') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
                 <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
                 <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                <a class="dropdown-item" href="">Relatórios</a>
-                <!--<a class="dropdown-item" href="">Pedidos solicitados<br>(relatório pedidos por período)</a>
-                <a class="dropdown-item" href="">Solicitações de contato</a>
-                <a class="dropdown-item" href="">Relatório clientes cadastrados</a>
-                <a class="dropdown-item" href="">Relatório de produtos cadastrados</a>-->
+                <a class="dropdown-item {{ Request::is('relatorios') ? 'active' : '' }}" href="{{route('relatorios')}}">Relatórios</a>
               </div>
             </div>
           @endif
@@ -88,7 +82,7 @@
               @csrf
               <div class="campo__input">
                   <label for="busca" class="label__titulo">O que esta buscando:</label>
-                  <input type="text" class="campo__pesquisa" placeholder="XXXXXX XXXXXXX" id="busca" name="busca">
+                  <input type="text" class="campo__pesquisa" id="busca" name="busca">
               </div>
               <button type="submit" class="btn__busca__style" value="Enviar">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -114,7 +108,7 @@
         <ul class="itens__lista">
           @foreach (\App\Models\Categoria::all() as $categoria)
             <li class="item">
-              <a href="{{route('categorias.show', $categoria->id)}}" title="{{$categoria->nome}}">{{$categoria->nome}}</a>
+              <a href="{{route('produtos.categoria.listar', $categoria->id)}}" title="{{$categoria->nome}}">{{$categoria->nome}}</a>
             </li>
           @endforeach
         </ul>

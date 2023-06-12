@@ -5,14 +5,10 @@
   <main id="login">
     <div class="container">
       <h1 class="titulo"><span>LOGIN</span></h1>
-      <div class="centro_inicio">
-        <h2 class="campo_titulosegundoo">
-            <spain>Entre com seus dados </sapin>
-        </h2>
-      </div>
-      <form action="{{route('logar')}}" method="POST">
+      <form class="style__form" action="{{route('logar')}}" method="POST">
         @csrf
-        <div class="campos_input ">
+        <h2 class="campo_titulosegundo">Entre com seus dados</h2>
+        <div class="campos_input">
           <label class="sr-only" for="email">E-mail</label>
           <input class="estilo_campos" id="email" name="email" type="email" placeholder="E-mail">
           @error('email')
@@ -26,7 +22,6 @@
             <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
           @enderror
         </div>
-
         <div class="esqueceu_senha">
           <a href="{{route('esqueci-senha')}}" class="esqueceu_senha">Esqueceu sua senha?</a>
         </div>

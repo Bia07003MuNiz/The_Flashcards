@@ -8,14 +8,9 @@
                 <span>Área restrita</span>
             </h1>
             <div class="bloco__segura">
-                <div class="bloco__menu">
-                    <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
-                    <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-                    <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                    <a class="menu__item " href="">Relatórios</a>
-                </div>
+                @include('menu-area-restrita')
                 <div class="bloco__conteudo">
-                    <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
+                    <a class="btn__voltar" href="{{route('lista-produtos')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
                     <h2 class="campo_titulo2">Cadastrar novo produto</h2>
                     <form class="centro" action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
                         @method('POST')

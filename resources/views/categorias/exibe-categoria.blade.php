@@ -8,23 +8,20 @@
                 <span>Área restrita</span>
             </h1>
             <div class="bloco__segura">
-                <div class="bloco__menu">
-                    <a class="menu__item @if(Request::is('meus-dados') || Request::is('alterar-senha')) active @endif" href="{{route('meus-dados')}}">Meus dados</a>
-                    <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-                    <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                    <a class="menu__item " href="">Relatórios</a>
-                </div>
+                @include('menu-area-restrita')
                 <div class="bloco__conteudo">
-                    <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i> Voltar a listagem</a>
-                    <h2 class="title__box">Dados categoria</h2>
-                    <div class="posiciona__btn">
-                        <a class="btn__adicionar" href="{{route('categorias.edit',$categoria)}}"><i class="fa-solid fa-pencil"></i> Editar</a>
-                    </div>
-                    <div>
-                        <div>Ordem: {{$categoria->ordem}}</div>
-                        <div>Nome: {{$categoria->nome}}</div>
-                        <div>Status: @if($categoria->status == 1) Habilitado @elseif($categoria->status == 0) Desabilitado @endif</div>
-                        <div>Destaque: @if($categoria->destaque == 1) Habilitado @elseif($categoria->destaque == 0) Desabilitado @endif</div>
+                    <a class="btn__voltar" href="{{route('categorias.index')}}"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar à listagem</a>
+                    <div class="style__espacamento">
+                        <h2 class="title__box">Dados categoria</h2>
+                        <div class="posiciona__btn">
+                            <a class="btn__adicionar" href="{{route('categorias.edit',$categoria)}}"><i class="fa-solid fa-pencil"></i> Editar</a>
+                        </div>
+                        <div class="style__dados">
+                            <div class="item__dado"><b>Ordem:</b> {{$categoria->ordem}}</div>
+                            <div class="item__dado"><b>Nome:</b> {{$categoria->nome}}</div>
+                            <div class="item__dado"><b>Status:</b> @if($categoria->status == 1) Habilitado @elseif($categoria->status == 0) Desabilitado @endif</div>
+                            <div class="item__dado"><b>Destaque:</b> @if($categoria->destaque == 1) Habilitado @elseif($categoria->destaque == 0) Desabilitado @endif</div>
+                        </div>
                     </div>
                 </div>
             </div>

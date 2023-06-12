@@ -1,5 +1,9 @@
 #contatos{
     padding: 100px;
+
+    .error{
+      color: red!important;
+    }
      
     .button {
         background-color: #4f0074;
@@ -43,6 +47,7 @@
         width: 100%;
         height: auto;
         padding: 15px 25px;
+        color: #000;
 
         &::placeholder{
             font-family: 'Plus Jakarta Sans';

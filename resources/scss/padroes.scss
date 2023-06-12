@@ -216,6 +216,9 @@ body{
   .bloco__menu{
       display: flex;
       flex-direction: column;
+      position: relative;
+      left: 1px;
+      z-index: 10;
 
       .menu__item{
           display: flex;
@@ -248,6 +251,7 @@ body{
       padding: 30px;
       border-top: 2px solid #4F0074;
       border-right: 2px solid #4F0074;
+      border-left: 2px solid #4F0074;
       border-bottom: 2px solid #4F0074;
 
       .btn__voltar{

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\LvCarrinho;
 use App\Models\Produto;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,11 +53,13 @@ Route::middleware(['auth'])->group(function () {
 Route::post('/produtos/pesquisar', [produtoController::class, 'pesquisar'])->name('produtos.pesquisar');
 Route::get('/produtos/listar', [ProdutoController::class, 'listar'])->name('produtos.listar');
 Route::get('/add-produto/{produto}', [ProdutoController::class, 'AddCarrinho'])->name('produtos.adicionar');
-Route::get('/relatorio', function () {
+Route::get('/produtos/{categoria}/listar', [ProdutoController::class, 'produtoCategoriaIndex'])->name('produtos.categoria.listar');
+
+Route::get('/report', function () {
     $produtos = Produto::all();
 
     return view('report', ['produtos' => $produtos]);
-});
+})->name('produtos-cadastros');
 
 //Outros
 Route::view('/quem-somos','quem-somos')->name('quem-somos');
@@ -75,9 +78,8 @@ Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswo
 //Área restrita (Vendedor e Cliente)
 Route::view('/pedidos-periodo','area-restrita/relatorios/pedidos-periodo')->name('pedidos-periodo');
 Route::post('/resultados-periodo', [OrcamentoController::class, 'PedidosPeriodo'])->name('resultados-periodo');
-Route::view('/area-restrita','area-restrita/area-restrita')->name('boas-vindas'); //Exclusivo cliente
-Route::view('/meus-dados','area-restrita/meus-dados')->name('meus-dados');
-Route::view('/alterar-senha','area-restrita/alterar-senha')->name('alterar-senha');
+Route::view('/area-restrita','area-restrita/area-restrita')->name('boas-vindas'); //Exclusivo vendedor
+Route::view('/relatorios','area-restrita/relatorios')->name('relatorios'); //Exclusivo vendedor
 
 Route::get('/teste', function () {
     $carrinhoAux = new CarrinhoAux();
@@ -85,5 +87,13 @@ Route::get('/teste', function () {
     dd($carrinho->Itens[0]->Produto);
 })->name('teste');
 
+Route::prefix('admin')->middleware(['admin'])->group(function () {
+    Route::get('/lista-produtos', [ProdutoController::class, 'adminIndex'])->name('lista-produtos');
+    Route::get('/produtos-cadastrados', function () {
+        $produtos = Produto::all();
+    
+        return view('area-restrita.relatorios.produtos-cadastrados', ['produtos' => $produtos]);
+    })->name('produtos-cadastros');
+});
 //Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <img class="img-fluid" src="assets/images/consumo.jpg" width="500" height="500" alt="imagem 1">
+              <img class="img-fluid" src="assets/images/consumo.jpg" width="750" height="500" alt="imagem 1">
             </div>
         </div>
         <div class="margin__style">

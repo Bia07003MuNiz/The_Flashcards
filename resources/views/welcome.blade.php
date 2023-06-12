@@ -8,23 +8,13 @@
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="indicatorItem active" aria-current="true" aria-label="Banner 1"></button>
                     <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1" class="indicatorItem" aria-label="Banner 2"></button>
-                    <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="2" class="indicatorItem" aria-label="Banner 3"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <a href="https://google.com" target="_blank" rel="noopener" title="Banner">
-                            <img src="assets/images/Banner.jpg" class="d-block w-100 img-fluid" alt="Banner" width="1920" height="600">
-                        </a>
+                        <img src="assets/images/Banner.jpg" class="d-block w-100 img-fluid" alt="Banner" width="1920" height="600">
                     </div>
                     <div class="carousel-item" data-bs-interval="20000">
-                        <a href="https://google.com" target="_blank" rel="noopener" title="Banner">
-                            <img src="assets/images/Banner.jpg" class="d-block w-100 img-fluid" alt="Banner" width="1920" height="600">
-                        </a>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="30000">
-                        <a href="https://google.com" target="_blank" rel="noopener" title="Banner">
-                            <img src="assets/images/Banner.jpg" class="d-block w-100 img-fluid" alt="Banner" width="1920" height="600">
-                        </a>
+                        <img src="assets/images/Banner.jpg" class="d-block w-100 img-fluid" alt="Banner" width="1920" height="600">
                     </div>
                 </div>
             </div>
@@ -44,28 +34,28 @@
             <div class="container container__style">
                 <div class="row">
                     <div class="col-lg-4" data-animate="zoomIn animated">
-                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Alta qualidade">
+                        <div class="card__chamada" title="Alta qualidade">
                             <div class="chamada__icone">
                                 <img src="assets/images/chamada1.png" width="90" height="90" alt="Ícone selo de aprovação">
                             </div>
                             <h5 class="chamada__texto">Produtos de alta qualidade</h5>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 card__chamada" data-animate="bounceIn animated">
-                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Preço baixo">
+                        <div class="card__chamada" title="Preço baixo">
                             <div class="chamada__icone">
                                 <img src="assets/images/chamada2.png" width="90" height="90" alt="Ícone mão de preço baixo">
                             </div>
                             <h5 class="chamada__texto">Preço mais baixo<br>do mercado</h5>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4" data-animate="fadeIn animated">
-                        <a class="card__chamada" href="#" target="_blank" rel="noopener" title="Descontos">
+                        <div class="card__chamada" title="Descontos">
                             <div class="chamada__icone">
                                 <img src="assets/images/chamada3.png" width="90" height="90" alt="Ícone de desconto">
                             </div>
                             <h5 class="chamada__texto">Descontos exclusivos</h5>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,22 +64,22 @@
             <div class="container">
                 <div class="row row__style">
                     <div class="col-lg-5 box__img__cats">
-                        <a href="#" title="Categoria 3" class="categoria__bloco">
-                            <img src="assets/images/categoria3.png" class="img-fluid" alt="Categoria 3" width="500" height="200">
+                        <a href="{{route('produtos.categoria.listar', 9)}}" title="Categoria Churrasco" class="categoria__bloco">
+                            <img src="assets/images/categoria3.png" class="img-fluid" alt="Categoria Churrasco" width="500" height="200">
                         </a>
-                        <a href="#" title="Categoria 4" class="categoria__bloco">
-                            <img src="assets/images/categoria4.png" class="img-fluid" alt="Categoria 4" width="500" height="200">
+                        <a href="{{route('produtos.categoria.listar', 5)}}" title="Categoria Peixes" class="categoria__bloco">
+                            <img src="assets/images/categoria4.png" class="img-fluid" alt="Categoria Peixes" width="500" height="200">
                         </a>
                     </div>
                     <div class="col-lg-2">
                         <h1 class="title__home">Veja por categorias</h1>
                     </div>
                     <div class="col-lg-5 box__img__cats">
-                        <a href="#" title="Categoria 1" class="categoria__bloco">
-                            <img src="assets/images/categoria1.png" class="img-fluid" alt="Categoria 1" width="500" height="200">
+                        <a href="{{route('produtos.categoria.listar', 8)}}" title="Categoria Massas" class="categoria__bloco">
+                            <img src="assets/images/categoria1.png" class="img-fluid" alt="Categoria Massas" width="500" height="200">
                         </a>
-                        <a href="#" title="Categoria 2" class="categoria__bloco">
-                            <img src="assets/images/categoria2.png" class="img-fluid" alt="Categoria 2" width="500" height="200">
+                        <a href="{{route('produtos.categoria.listar', 10)}}" title="Categoria Ofertas" class="categoria__bloco">
+                            <img src="assets/images/categoria2.png" class="img-fluid" alt="Categoria Ofertas" width="500" height="200">
                         </a>
                     </div>
                 </div>
@@ -98,40 +88,33 @@
         <section id="secaoProdutos">
             <div class="container">
                 <h1 class="title__home">Conheça os produtos do<br>momento</h1>
-                <!--Carousel-->
-                @if(!empty(\App\Models\Produto::all()))
-                    <div class="container">
-                    <div class="box__categorias">
-                        <ul class="itens__lista">
-                            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-                            <div id="carouselExample" class="carousel slide">
-                            <div class="carousel-inner">
+                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                    <div class="carousel-inner w-100" role="listbox">
+                        @if(!empty(\App\Models\Produto::all()))
                             @foreach (\App\Models\Produto::all() as $produto)
-                            <div class="carousel-item active">
-                            <img src="{{$produto->imagens()->first()->url}}" class="w-40">
-                            </div>
+                                <div class="carousel-item active">
+                                    <div class="col-md-4">
+                                        @livewire('lv-card-produto', ['produto'=>$produto])
+                                    </div>
+                                </div>
                             @endforeach
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Anterior</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Próximo</span>
-                            </button>
-                            </div>                            
-                            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-                        
-                        </ul>
+                        @endif
                     </div>
-                    </div>
-                @endif
+                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
             </div>
         </section>
         <section id="secaoComoFazer">
             <div class="container">
                 <h1 class="title__home">Como fazer meu pedido?</h1>
+                <p style="text-align: center">Para começar faça <a href="{{route('login')}}">login</a> e caso não tenha um cadastro, <a href="{{route('cadastre-se')}}">cadastre-se</a> e faça login.</p>
                 <div class="blogo__cards">
                     <div class="card__fazer">
                         <div class="card__fazer__icone">
@@ -142,7 +125,7 @@
                         </div>
                         <div class="card__fazer__textos">
                             <div class="fazer__title">Adicionar os produtos no carrinho</div>
-                            <div class="fazer__texto">Adicione todos os produtos do seu interesse ao seu carrinho de comprar.</div>
+                            <div class="fazer__texto">Adicione todos os produtos do seu interesse ao seu carrinho de compras.</div>
                         </div>
                     </div>
                     <div class="card__fazer">
@@ -154,7 +137,7 @@
                         </div>
                         <div class="card__fazer__textos">
                             <div class="fazer__title">Solicitar<br>orçamento</div>
-                            <div class="fazer__texto">Clique no botão solicitar orçamento, disponivel no seu carrinho e preencha o formulário.</div>
+                            <div class="fazer__texto">Clique no botão solicitar orçamento, disponivel no seu carrinho.</div>
                         </div>
                     </div>
                     <div class="card__fazer">
@@ -170,9 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<button data-toggle="modal" data-target="#modalCookies">modal de abertura</button>-->
             </div>
         </section>
     </main>
-    @include('cookies')
 </x-layout-base>

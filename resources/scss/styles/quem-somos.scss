@@ -22,17 +22,33 @@
     }
   }
 
-  .media-body{
-    margin-bottom: 40px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    display: block;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
+  .margin__style{
+    margin-top: 50px;
   }
- .margin__style{
-  margin-top: 10px;
- }
+
+  .nav__estilo{
+    .nav-link{
+      background-color: rgba(#004C93, .8);
+      color: #FFF;
+      border-radius: 20px 20px 0 0;
+
+      &.active{
+        background-color: #004C93;
+      }
+    }
+  }
+
+  .posit__nav{
+    .tab-pane{
+      border: 3px solid #004C93;
+      border-radius: 0 0 30px 30px;
+      padding: 30px;
+    }
+  }
+
+  /*.margin__style{
+    margin-top: 10px;
+  }
 
   .navegador{            
       .nav{ 
@@ -70,5 +86,5 @@
     position: relative;
     left: 7.5%;
     top: 100%;
-  }
+  }*/
 }

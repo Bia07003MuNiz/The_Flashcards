@@ -1,56 +1,50 @@
 <x-layout-base>
     <x-slot:title>
-        Área restrita > Relatório > Clientes cadastrados
+        Área restrita > Relatório > Produtos cadastrados
     </x-slot>
-    <main id="relatorios__vendedor">
+    <main id="contatos">
         <div class="container">
-            <h1 class="titulo">
-                <span>Área restrita</span>
-            </h1>
+            <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">
                 @include('menu-area-restrita')
                 <div class="bloco__conteudo">
                     <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
                         @include('menu-relatorios')
-                        @isset($users)
+                        @isset($produtos)
                             <table id="example" class="display" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>CPF</th>
+                                        <th>Código</th>
                                         <th>Nome</th>
-                                        <th>E-mail</th>
-                                        <th>Celular</th>
-                                        <th>CEP</th>
+                                        <th>Categorias</th>
+                                        <th>Valor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $user)
-                                        @if ($user->tipo == 0)
-                                            <tr>
-                                                <td>{{ $user->cpf }}</td>
-                                                <td>{{ $user->nome }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->celular }}</td>
-                                                <td>{{ $user->cep }}</td>
-                                            </tr>
-                                        @endif
+                                    @foreach ($produtos as $produto)
+                                        <tr>
+                                            <td>{{ $produto->codigo }}</td>
+                                            <td>{{ $produto->nome }}</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                </ul>
+                                            </td>
+                                            <td>R$ {{ number_format($produto->valor, 2) }}</td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>CPF</th>
+                                        <th>Código</th>
                                         <th>Nome</th>
-                                        <th>E-mail</th>
-                                        <th>Celular</th>
-                                        <th>CEP</th>
+                                        <th>Categorias</th>
+                                        <th>Valor</th>
                                     </tr>
                                 </tfoot>
                             </table>
                         @endisset
-                        <div class="text-center">
-                            <a href="javascript:history.back()" class="btn__style mt-2 mb-3">VOLTAR</a>
-                        </div>
                     </div>
                 </div>
             </div>
