@@ -12,7 +12,7 @@ class ProdutoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','show','pesquisar']);
+        $this->middleware('auth')->except(['index','show','pesquisar', 'produtoCategoriaIndex']);
     }
 
 
@@ -66,6 +66,9 @@ class ProdutoController extends Controller
         $produto->valor = $request->valor;
         $produto->codigo = $request->codigo;
         $produto->informacoes = $request->informacoes;
+        $produto->status = $request->status;
+        $produto->destaque = $request->destaque;
+
 
         $produto->save();
 
@@ -81,11 +84,10 @@ class ProdutoController extends Controller
                 $imagem->produto_id = $produto->id;
                 $imagem->url = 'http://127.0.0.1:8000/assets/images/'.$filePath;
                 $imagem->save();
-                # code...
             }
         }
 
-        return redirect(route('produtos.index'));
+        return redirect(route('lista-produtos'));
     }
 
     /**
@@ -113,14 +115,17 @@ class ProdutoController extends Controller
         $produto->nome = $request->nome;
         $produto->valor = $request->valor;
         $produto->codigo = $request->codigo;
-        $produto->informacoes = $request->informacoes;
+
+        if(!empty($request->informacoes)){
+            $produto->informacoes = $request->informacoes;
+        }
 
         $produto->save();
 
         $produto->categorias()->detach();
         $produto->categorias()->attach($request->categoria);
 
-        return redirect(route('produtos.index'));
+        return redirect(route('lista-produtos'));
     }
 
     /**
@@ -131,7 +136,7 @@ class ProdutoController extends Controller
         $produto->categorias()->detach();
         $produto->delete();
 
-        return redirect(route('produtos.index'));
+        return redirect(route('lista-produtos'));
     }
 
     public function confirmaExclusao(Produto $produto)
@@ -144,9 +149,6 @@ class ProdutoController extends Controller
         $produtos=Produto::where('nome', 'like', "%".$request->busca."%")->get();
         return view('produtos.lista-produtos', compact('produtos'));
     }
-
-   
-
 
     public function AddCarrinho(Produto $produto)
     {

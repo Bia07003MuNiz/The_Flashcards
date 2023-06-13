@@ -64,7 +64,7 @@
             <div class="container">
                 <div class="row row__style">
                     <div class="col-lg-5 box__img__cats">
-                        <a href="{{route('produtos.categoria.listar', 9)}}" title="Categoria Churrasco" class="categoria__bloco">
+                        <a href="{{route('produtos.categoria.listar', 6)}}" title="Categoria Churrasco" class="categoria__bloco">
                             <img src="assets/images/categoria3.png" class="img-fluid" alt="Categoria Churrasco" width="500" height="200">
                         </a>
                         <a href="{{route('produtos.categoria.listar', 5)}}" title="Categoria Peixes" class="categoria__bloco">
@@ -75,42 +75,30 @@
                         <h1 class="title__home">Veja por categorias</h1>
                     </div>
                     <div class="col-lg-5 box__img__cats">
-                        <a href="{{route('produtos.categoria.listar', 8)}}" title="Categoria Massas" class="categoria__bloco">
+                        <a href="{{route('produtos.categoria.listar', 7)}}" title="Categoria Massas" class="categoria__bloco">
                             <img src="assets/images/categoria1.png" class="img-fluid" alt="Categoria Massas" width="500" height="200">
                         </a>
-                        <a href="{{route('produtos.categoria.listar', 10)}}" title="Categoria Ofertas" class="categoria__bloco">
+                        <a href="{{route('produtos.categoria.listar', 8)}}" title="Categoria Ofertas" class="categoria__bloco">
                             <img src="assets/images/categoria2.png" class="img-fluid" alt="Categoria Ofertas" width="500" height="200">
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="secaoProdutos">
-            <div class="container">
-                <h1 class="title__home">Conheça os produtos do<br>momento</h1>
-                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                    <div class="carousel-inner w-100" role="listbox">
-                        @if(!empty(\App\Models\Produto::all()))
-                            @foreach (\App\Models\Produto::all() as $produto)
-                                <div class="carousel-item active">
-                                    <div class="col-md-4">
-                                        @livewire('lv-card-produto', ['produto'=>$produto])
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
+        @if(!empty(\App\Models\Produto::where('destaque',1)->get()))
+            <section id="secaoProdutos">
+                <div class="container">
+                    <h1 class="title__home">Conheça os produtos do<br>momento</h1>
+                    <div class="row">
+                        @foreach (\App\Models\Produto::where('destaque',1)->limit(3)->get() as $produto)
+                            <div class="col-lg-4">
+                                @livewire('lv-card-produto', ['produto'=>$produto])
+                            </div>
+                        @endforeach
                     </div>
-                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <section id="secaoComoFazer">
             <div class="container">
                 <h1 class="title__home">Como fazer meu pedido?</h1>

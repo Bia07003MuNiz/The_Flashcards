@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('imagems', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Produto::class)->constrained();
+            $table->foreignIdFor(Produto::class)->constrained()->cascadeOnDelete();
             $table->string('url');
             $table->timestamps();
         });

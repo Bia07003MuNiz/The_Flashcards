@@ -2,7 +2,7 @@
     <x-slot:title>
         Produtos
     </x-slot>
-    <main id="produtos-area-restrita">
+    <main id="produtos-area-restrita" class="area-restrita">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">

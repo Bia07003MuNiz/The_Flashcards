@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Relatórios
     </x-slot>
-    <main id="relatorios__vendedor">
+    <main id="relatorios__vendedor"  class="area-restrita">
         <div class="container">
             <h1 class="titulo">
                 <span>Área restrita</span>

@@ -11,11 +11,11 @@
                 <div class="opcoes__style">
                     <b class="style__letras">Você é:</b>
                     <div class="custom__opcoes">
-                        <input class="rodape__check" type="radio" name="tipo" value="0" id="cliente" onchange="formCliente()">
+                        <input class="rodape__check" type="radio" name="tipo" value="0" id="cliente" onchange="formCliente()" required>
                         <label class="rodape__check__label style__letras" for="cliente">Cliente</label>
                     </div>
                     <div class="custom__opcoes">
-                        <input class="rodape__check" type="radio" name="tipo" value="1" id="vendedor" onchange="formVendedor()">
+                        <input class="rodape__check" type="radio" name="tipo" value="1" id="vendedor" onchange="formVendedor()" required>
                         <label class="rodape__check__label style__letras" for="vendedor">Vendedor</label>		
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                      <div class="col-lg-6">
                         <div class="campo__input">
                             <label class="sr-only" for="Celular">Celular</label>
-                            <input type="text" required class="style__campo" placeholder="Celular*" name="celular" id="Celular">
+                            <input type="text" required class="style__campo" placeholder="Celular*" name="celular" id="celular">
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -166,6 +166,7 @@
             rules: {
                 password: {
                     required: true,
+                    minlength: 6,
                 },
                 confirmacao: {
                     required: true,
@@ -173,11 +174,15 @@
                 }
             },
             messages: {
+                tipo: "Tipo é obrigatório",
                 nome: "Nome é obrigatório",
                 cpf: "CPF é obrigatório",
                 celular: "Celular é obrigatório",
                 email: "E-mail é obrigatório",
-                password: "Senha é obrigatório",
+                password: {
+                    required: "Senha é obrigatório",
+                    minlength: "Senha deve possuir no mínimo 6 caracteres!",
+                },
                 confirmacao: {
                     required: "Campo obrigatório",
                     equalTo: "Senhas não conferem",

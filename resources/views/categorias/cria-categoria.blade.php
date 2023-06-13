@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Cadastrar nova categoria
     </x-slot>
-    <main id="cadastrar__categoria">
+    <main id="cadastrar__categoria" class="area-restrita">
         <div class="container">
             <h1 class="titulo">
                 <span>Área restrita</span>

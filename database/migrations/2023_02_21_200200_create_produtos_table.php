@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('codigo');
-            $table->text('informacoes');
+            $table->text('informacoes')->nullable();
             $table->float('valor');
             $table->boolean('status')->default(false);
             $table->boolean('destaque')->default(false);

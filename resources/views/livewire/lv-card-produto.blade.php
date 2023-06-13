@@ -3,10 +3,9 @@
         <div class="card__produto__dados">
             <div class="card__dados__titulo">{{$produto->nome}}</div>
             <div class="card__dados__img">
-                <img src="{{$produto->imagens()->first()->url}}" width="300" height="300" class="img-fluid" loading="lazy">
-                <!--@foreach ($produto->imagens as $imagem)
+                @foreach ($produto->imagens as $imagem)
                     <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
-                @endforeach-->
+                @endforeach
             </div>
         </div>
         <div class="card__produto__btns">

@@ -2,11 +2,10 @@
     Carrinho 
 </x-slot>
 <div>
-    {{-- The Master doesn't talk, he acts. --}}
     <main id="carrinho">
         <div class="container">
             <div class="titulo">
-                <span>ORÇAMENTO</span>
+                <span>CARRINHO</span>
             </div>
             <div class="box__carrinho">
                 @if($orcamento && $orcamento->Itens()->count()>0)
@@ -49,7 +48,7 @@
                 @endif
             </div>
             <div class="segura__btns">
-                <a class="button__style" href="{{route('produtos.index')}}">ADICIONAR MAIS PRODUTOS</a>
+                <a class="button__style" href="{{route('produtos.index')}}">ADICIONAR @if($orcamento && $orcamento->Itens()->count()!=0) MAIS @endif PRODUTOS</a>
                 @if($orcamento && $orcamento->Itens()->count()>0)
                     <button class="button__style" wire:click="solicitarOrcamento()" onclick="pushTest()" type="submit">SOLICITAR ORÇAMENTO</button>
                 @endif

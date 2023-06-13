@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Excluir produto
     </x-slot>
-    <main id="exibir__categorias">
+    <main id="exibir__categorias" class="area-restrita">
         <div class="container">
             <h1 class="titulo">
                 <span>Área restrita</span>

@@ -1,4 +1,4 @@
-<a class="btn__whatsapp" href="#" target="_blank" rel="noopener" title="Contate-nos via Whatsapp" style="right: 15px; bottom: 15px">
+<a class="btn__whatsapp" href="https://api.whatsapp.com/send?phone=5511111111111" target="_blank" rel="noopener" title="Contate-nos via Whatsapp" style="right: 15px; bottom: 15px">
   <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
 </a>
 

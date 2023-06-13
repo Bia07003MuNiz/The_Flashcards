@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Lista de categorias
     </x-slot>
-    <main id="listar__categorias">
+    <main id="listar__categorias" class="area-restrita">
         <div class="container">
             <h1 class="titulo">
                 <span>Área restrita</span>

@@ -2,7 +2,7 @@
     <x-slot:title>
         Boas vindas
     </x-slot>
-    <main id="boas-vindas">
+    <main id="boas-vindas" class="area-restrita">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('num');
             $table->string('bairro');
             $table->string('rua');
-            $table->string('compl');
+            $table->string('compl')->nullable();
             $table->string('remember_token')->default("");
             $table->tinyInteger('tipo')->default(0)->comment('0 - cliente, 1 - funcionario');
 

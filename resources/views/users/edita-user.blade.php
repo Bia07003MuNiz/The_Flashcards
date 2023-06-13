@@ -2,60 +2,49 @@
     <x-slot:title>
         Área restrita > Meus dados
     </x-slot>
-    <main id="meus__dados">
+    <main id="meus__dados" class="area-restrita">
         <div class="container">
             <h1 class="titulo">
                 <span>Área restrita</span>
             </h1>
             <div class="bloco__segura">
-                <div class="bloco__menu">
-                    @auth
-                        <a class="menu__item {{ Request::is('users*') ? 'active' : '' }}" href="{{route('users.edit',$user)}}">Meus dados</a>
-                        @if(auth()->user()->tipo == 0)
-                            <a class="menu__item " href="">Meus pedidos</a>
-                        @elseif(auth()->user()->tipo == 1)
-                            <a class="menu__item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-                            <a class="menu__item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                            <a class="menu__item " href="">Relatórios</a>
-                        @endif
-                    @endauth
-                </div>
+                @include('menu-area-restrita')
                 <div class="bloco__conteudo">
                     <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
                         <h2 class="title__box">Meus dados cadastrais</h2>
-                        <form action="{{route('users.update',$user)}}" method="POST">
+                        <form action="{{route('users.update',$user)}}" method="POST" id="form-user-atualiza">
                             @method('PUT')
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="campo__input">
-                                        <label for="nome">Nome:</label>
-                                        <input type="text" class="style__campo" placeholder="Nome:" id="nome" name="nome" value="{{$user->nome}}">
+                                        <label class="label__campos" for="nome">Nome:</label>
+                                        <input type="text" class="style__campo" placeholder="Nome:" id="nome" name="nome" value="{{$user->nome}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="campo__input">
-                                        <label for="CPF">CPF:</label>
-                                        <input type="text" class="style__campo" placeholder="CPF:" id="cpf" name="cpf" value="{{$user->cpf}}" disabled>
+                                        <label class="label__campos" for="cpf">CPF:</label>
+                                        <input type="text" class="style__campo" placeholder="CPF:" id="cpf" name="cpf" value="{{$user->cpf}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="campo__input">
-                                        <label class="sr-only" for="telefone"> Telefone:</label>
-                                        <input type="tel" class="style__campo" placeholder="Telefone:" id="telefone" name="TELEFONE" value="{{$user->celular}}">
+                                        <label class="label__campos" for="celular">Celular:</label>
+                                        <input type="tel" class="style__campo" placeholder="Celular:" id="celular" name="celular" value="{{$user->celular}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="campo__input">
-                                        <label class="sr-only" for="e-mail">E-mail:</label>
-                                        <input type="email" class="style__campo" placeholder="E-mail" id="e-mail" name="email" value="{{$user->email}}">
+                                        <label class="label__campos" for="e-mail">E-mail:</label>
+                                        <input type="email" class="style__campo" placeholder="E-mail" id="e-mail" name="email" value="{{$user->email}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="campo__input ">
-                                        <label class="sr-only" for="nome">Senha:</label>
-                                        <input type="password" class="style__campo" placeholder="Senha:" id="senha" name="senha">
+                                        <label class="label__campos" for="nome">Senha:</label>
+                                        <input type="password" class="style__campo" placeholder="Senha:" id="password" name="password" required>
                                     </div>
                                 </div>
                                 @if(auth()->user()->tipo == 0)
@@ -66,73 +55,73 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="campo__input ">
-                                                    <label class="sr-only" for="cep">CEP</label>
-                                                    <input type="text" class="style__campo" placeholder="CEP*" id="cep" name="cep" required onchange="buscaCep()">
+                                                    <label class="label__campos" for="cep">CEP</label>
+                                                    <input type="text" class="style__campo" placeholder="CEP*" id="cep" name="cep" required onchange="buscaCep()" value="{{$user->cep}}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="segura__select ">
-                                                    <label class="sr-only" for="uf">Estado</label>
-                                                    <select class="sub__select" id="uf" name="uf">
+                                                    <label class="label__campos" for="uf">Estado</label>
+                                                    <select class="sub__select" id="uf" name="uf" required>
                                                         <option selected disabled>Estado</option>
-                                                        <option value="Acre">Acre</option>
-                                                        <option value="Alagoas">Alagoas</option>
-                                                        <option value="Amapá">Amapá</option>
-                                                        <option value="Amazonas">Amazonas</option>
-                                                        <option value="Bahia">Bahia</option>
-                                                        <option value="Ceará">Ceará</option>
-                                                        <option value="Distrito Federal">Distrito Federal</option>
-                                                        <option value="Espírito Santo">Espírito Santo</option>
-                                                        <option value="Goiás">Goiás</option>
-                                                        <option value="Maranhão">Maranhão</option>
-                                                        <option value="Mato Grosso">Mato Grosso</option>
-                                                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                                                        <option value="Minas Gerais">Minas Gerais</option>
-                                                        <option value="Pará">Pará</option>
-                                                        <option value="Paraíba">Paraíba</option>
-                                                        <option value="Paraná">Paraná</option>
-                                                        <option value="Pernambuco">Pernambuco</option>
-                                                        <option value="Piauí">Piauí</option>
-                                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                                                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                                                        <option value="Rondônia">Rondônia</option>
-                                                        <option value="Roraima">Roraima</option>
-                                                        <option value="Santa Catarina">Santa Catarina</option>
-                                                        <option value="São Paulo">São Paulo</option>
-                                                        <option value="Sergipe">Sergipe</option>
-                                                        <option value="Tocantins">Tocantins</option>
+                                                        <option value="Acre" @if($user->uf == "Acre") selected @endif>Acre</option>
+                                                        <option value="Alagoas" @if($user->uf == "Alagoas") selected @endif>Alagoas</option>
+                                                        <option value="Amapá" @if($user->uf == "Amapá") selected @endif>Amapá</option>
+                                                        <option value="Amazonas" @if($user->uf == "Amazonas") selected @endif>Amazonas</option>
+                                                        <option value="Bahia" @if($user->uf == "Bahia") selected @endif>Bahia</option>
+                                                        <option value="Ceará" @if($user->uf == "Ceará") selected @endif>Ceará</option>
+                                                        <option value="Distrito Federal" @if($user->uf == "Distrito Federal") selected @endif>Distrito Federal</option>
+                                                        <option value="Espírito Santo" @if($user->uf == "Espírito Santo") selected @endif>Espírito Santo</option>
+                                                        <option value="Goiás" @if($user->uf == "Goiás") selected @endif>Goiás</option>
+                                                        <option value="Maranhão" @if($user->uf == "Maranhão") selected @endif>Maranhão</option>
+                                                        <option value="Mato Grosso" @if($user->uf == "Mato Grosso") selected @endif>Mato Grosso</option>
+                                                        <option value="Mato Grosso do Sul" @if($user->uf == "Mato Grosso do Sul") selected @endif>Mato Grosso do Sul</option>
+                                                        <option value="Minas Gerais" @if($user->uf == "Minas Gerais") selected @endif>Minas Gerais</option>
+                                                        <option value="Pará" @if($user->uf == "Pará") selected @endif>Pará</option>
+                                                        <option value="Paraíba" @if($user->uf == "Paraíba") selected @endif>Paraíba</option>
+                                                        <option value="Paraná" @if($user->uf == "Paraná") selected @endif>Paraná</option>
+                                                        <option value="Pernambuco" @if($user->uf == "Pernambuco") selected @endif>Pernambuco</option>
+                                                        <option value="Piauí" @if($user->uf == "Piauí") selected @endif>Piauí</option>
+                                                        <option value="Rio de Janeiro" @if($user->uf == "Rio de Janeiro") selected @endif>Rio de Janeiro</option>
+                                                        <option value="Rio Grande do Norte" @if($user->uf == "Rio Grande do Norte") selected @endif>Rio Grande do Norte</option>
+                                                        <option value="Rio Grande do Sul" @if($user->uf == "Rio Grande do Sul") selected @endif>Rio Grande do Sul</option>
+                                                        <option value="Rondônia" @if($user->uf == "Rondônia") selected @endif>Rondônia</option>
+                                                        <option value="Roraima" @if($user->uf == "Roraima") selected @endif>Roraima</option>
+                                                        <option value="Santa Catarina" @if($user->uf == "Santa Catarina") selected @endif>Santa Catarina</option>
+                                                        <option value="São Paulo" @if($user->uf == "São Paulo") selected @endif>São Paulo</option>
+                                                        <option value="Sergipe" @if($user->uf == "Sergipe") selected @endif>Sergipe</option>
+                                                        <option value="Tocantins" @if($user->uf == "Tocantins") selected @endif>Tocantins</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-10">
                                                 <div class="campo__input">
-                                                    <label class="sr-only" for="cidade">Cidade</label>
-                                                    <input type="text" class="style__campo" name="Cidade" placeholder="Cidade*" id="Cidade" required>
+                                                    <label class="label__campos" for="cidade">Cidade</label>
+                                                    <input type="text" class="style__campo" name="cidade" placeholder="Cidade*" id="cidade" value="{{$user->cidade}}" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-2">
                                                 <div class="campo__input">
-                                                    <label class="sr-only" for="numero"></label>
-                                                    <input type="num" class="style__campo" name="num" placeholder="Número*" id="num">
+                                                    <label class="label__campos" for="numero">Número</label>
+                                                    <input type="num" class="style__campo" name="num" placeholder="Número*" id="num" value="{{$user->num}}" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="campo__input">
-                                                    <label class="sr-only" for="bairro">Bairro</label>
-                                                        <input type="text" class="style__campo" name="bairro" placeholder="Bairro*" id="Bairro" required>
+                                                    <label class="label__campos" for="bairro">Bairro</label>
+                                                        <input type="text" class="style__campo" name="bairro" placeholder="Bairro*" id="Bairro" value="{{$user->bairro}}" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="campo__input">
-                                                    <label class="sr-only" for="rua">Endereço</label>
-                                                    <input type="text" class="style__campo" name="rua" placeholder="Endereço*" id="rua" required>
+                                                    <label class="label__campos" for="rua">Endereço</label>
+                                                    <input type="text" class="style__campo" name="rua" placeholder="Endereço*" id="rua" value="{{$user->rua}}" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="campo__input ">
-                                                    <label class="sr-only" for="complemento">Complemento</label>
-                                                    <input type="text" class="style__campo" placeholder="Complemento" id="compl" name="compl">
+                                                    <label class="label__campos" for="complemento">Complemento</label>
+                                                    <input type="text" class="style__campo" placeholder="Complemento" id="compl" name="compl" value="{{$user->compl}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -148,4 +137,38 @@
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>    
+    @if(auth()->user()->tipo == 0)
+        <script>
+            $( "#form-user-atualiza" ).validate({
+                messages: {
+                    nome: "Nome é obrigatório",
+                    cpf: "CPF é obrigatório",
+                    celular: "Telefone é obrigatório",
+                    email: "E-mail é obrigatório",
+                    password: "Senha é obrigatório",
+                    cep: "CEP é obrigatório",
+                    uf: "Estado é obrigatório",
+                    cidade: "Cidade é obrigatório",
+                    num: "Número é obrigatório",
+                    bairro: "Bairro é obrigatório",
+                    rua: "Endereço é obrigatório",
+                }
+            });
+        </script>
+    @elseif(auth()->user()->tipo == 1)
+        <script>
+            $( "#form-user-atualiza" ).validate({
+                messages: {
+                    nome: "Nome é obrigatório",
+                    cpf: "CPF é obrigatório",
+                    celular: "Telefone é obrigatório",
+                    email: "E-mail é obrigatório",
+                    password: "Senha é obrigatório",
+                }
+            });
+        </script>
+    @endif
 </x-layout-base>

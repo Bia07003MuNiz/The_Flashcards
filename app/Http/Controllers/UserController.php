@@ -31,30 +31,44 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
+        $user->tipo = $request->tipo;
         $user->nome = $request->nome;
         $user->cpf = $request->cpf;
-        $user->Celular = $request->Celular;
+        $user->celular = $request->celular;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->tipo = $request->tipo;
 
-        $user->cep = $request->cep;
-        $user-> uf = $request->uf;
-        $user->Cidade = $request->Cidade;
-        $user->num = $request->num;
-        $user->Bairro = $request->Bairro;
-        $user->rua = $request->rua;
-        $user->compl= $request->compl;
+        if(!empty($request->cep)){
+            $user->cep = $request->cep;
+        }
 
+        if(!empty($request->uf)){
+            $user->uf = $request->uf;
+        }
+
+        if(!empty($request->cidade)){
+            $user->cidade = $request->cidade;
+        }
+
+        if(!empty($request->num)){
+            $user->num = $request->num;
+        }
+
+        if(!empty($request->bairro)){
+            $user->bairro = $request->bairro;
+        }
+
+        if(!empty($request->rua)){
+            $user->rua = $request->rua;
+        }
+
+        if(!empty($request->compl)){
+            $user->compl= $request->compl;
+        }
 
         $user->save();
 
-        return redirect(route('cadastre-se'));
-
-
-
-
-        
+        return redirect(route('login'));
     }
 
     /**
@@ -82,25 +96,41 @@ class UserController extends Controller
     {
         $user->nome = $request->nome;
         $user->cpf = $request->cpf;
+        $user->celular = $request->celular;
         $user->email = $request->email;
-        $user->password = $request->password;
-        $user->tipo = $request->tipo;
-           
-    /**
-     * colocar no banco de dados 
-     * 
-     *   $user->cep = $request->cep;
-     * $user->uf = $request->uf;
-    *  $user->Cidade = $request->Cidade;
-    * $user->num = $request->num;
-    * $user->Bairro = $request->Bairro;
-    * user->rua = $request->rua;
-    * $user->compl= $request->compl;
- */
+        $user->password = Hash::make($request->password);
+
+        if(!empty($request->cep)){
+            $user->cep = $request->cep;
+        }
+
+        if(!empty($request->uf)){
+            $user->uf = $request->uf;
+        }
+
+        if(!empty($request->cidade)){
+            $user->cidade = $request->cidade;
+        }
+
+        if(!empty($request->num)){
+            $user->num = $request->num;
+        }
+
+        if(!empty($request->bairro)){
+            $user->bairro = $request->bairro;
+        }
+
+        if(!empty($request->rua)){
+            $user->rua = $request->rua;
+        }
+
+        if(!empty($request->compl)){
+            $user->compl= $request->compl;
+        }
 
         $user->save();
 
-        return redirect(route('users.index'));
+        return redirect(route('users.edit',auth()->user()->id));
     }
 
     /**

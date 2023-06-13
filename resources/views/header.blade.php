@@ -102,11 +102,11 @@
       </div>
     </div>
   </div>
-  @if(!empty(\App\Models\Categoria::all()))
+  @if(!empty(\App\Models\Categoria::where('destaque',1)->get()))
     <div class="container">
       <div class="box__categorias">
         <ul class="itens__lista">
-          @foreach (\App\Models\Categoria::all() as $categoria)
+          @foreach (\App\Models\Categoria::where('destaque',1)->get() as $categoria)
             <li class="item">
               <a href="{{route('produtos.categoria.listar', $categoria->id)}}" title="{{$categoria->nome}}">{{$categoria->nome}}</a>
             </li>

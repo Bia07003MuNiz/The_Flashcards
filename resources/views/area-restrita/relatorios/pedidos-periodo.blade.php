@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Relatório > Pedidos por período
     </x-slot>
-    <main id="contatos">
+    <main id="contatos" class="area-restrita">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">

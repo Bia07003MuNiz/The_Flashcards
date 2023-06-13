@@ -1,13 +1,4 @@
-#boas-vindas,
-#meus__dados,
-#alterar-senha,
-#boas-vindas,
-#listar__categorias,
-#exibir__categorias,
-#editar__categorias,
-#cadastrar__categoria,
-#produtos-area-restrita,
-#relatorios__vendedor{
+.area-restrita{
     padding: 100px;
     
     .error{
@@ -53,6 +44,82 @@
             border: none;
             padding: 15px;
         }
+    }
+
+    .campo__input{
+        margin-bottom: 10px;
+    }
+
+    .style__campo{
+        border: 1px solid #006acb;
+        border-radius: 30px;
+        color: white;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 15px 25px;
+        color: #000;
+
+        &::placeholder{
+            font-family: 'Plus Jakarta Sans';
+            font-size: 15px;
+            line-height: 15px;
+            color: #006acb;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .label__campos{
+        font-family: 'Plus Jakarta Sans';
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 15px;
+        color: #006acb;
+        margin-left: 30px;
+    }
+
+    .sub__select{
+        border: 1px solid #006acb;
+        background-color: #FFF;
+        border-radius: 30px;
+        color: white;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        color: #006acb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        line-height: 15px;
+
+        &:focus{
+            outline: none;
+        }
+
+        &::-ms-expand{
+            display: none;
+        }
+
+        option{
+            background-color: #FFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            color: #000000;
+        }
+    }
+}
+
+#cadastra__produto{
+    .label__campo{
+        font-family: 'Plus Jakarta Sans';
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 15px;
+        color: #006acb;
     }
 }
 
@@ -137,8 +204,6 @@
 }
 
 #boas-vindas{
-    padding: 100px 0;
-
     .saudacoes{
         display: inline-block;
         background-color: #004C93;
@@ -158,33 +223,7 @@
     }
 }
 
-#produtos-cadastrados{
-    html {
-        font-family: 'Arial';
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th {
-        background-color: #337ab7;
-        color: #fff;
-        font-weight: bold;
-        text-align: left;
-        padding: 8px;
-    }
-    td {
-        padding: 8px;
-    }
-    tr:nth-child(even) {
-        background-color: #cce0ff;
-    }
-    tr:nth-child(odd) {
-        background-color: #b3d1ff;
-    }
-}
-
-#relatorios__vendedor{
+.relatorios{
     .title__box{
         text-align: start;
         margin-bottom: 0;
@@ -227,47 +266,8 @@
 }
 
 #meus__dados{
-    .campo__input{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: inline-block;
-        height: 60px;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        input,
-        textarea{
-            border: none;
-        }
-
-    }
-
     .campo_titulo2{
         color:#006acb
-    }
-
-    .style__campo{
-        border: 1px solid #006acb;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-        color: #000;
-
-        &::placeholder{
-            font-family: 'Plus Jakarta Sans';
-            font-size: 15px;
-            line-height: 15px;
-            color: #006acb;
-        }
-
-        &:focus{
-            outline: none;
-        }
     }
 
     .cliente__group{
@@ -279,36 +279,5 @@
         font-size: 20px;
         line-height: 20px;
         color: #006acb;
-      }
-
-    .sub__select{
-        border: 1px solid #006acb;
-        background-color: #FFF;
-        border-radius: 30px;
-        color: white;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 15px 25px;
-        box-sizing: border-box;
-        color: #006acb;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 15px;
-        line-height: 15px;
-    
-        &:focus{
-          outline: none;
-        }
-    
-        &::-ms-expand{
-          display: none;
-        }
-    
-        option{
-          background-color: #FFF;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 14px;
-          color: #000000;
-        }
-      }
+    }
 }

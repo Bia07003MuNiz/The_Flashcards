@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Relatório > Produtos cadastrados
     </x-slot>
-    <main id="contatos">
+    <main id="contatos" class="area-restrita">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">
@@ -28,7 +28,9 @@
                                             <td>{{ $produto->nome }}</td>
                                             <td>
                                                 <ul>
-                                                    
+                                                    @foreach ($produto->categorias as $categoria)
+                                                        <li>{{$categoria->nome}}</li>
+                                                    @endforeach
                                                 </ul>
                                             </td>
                                             <td>R$ {{ number_format($produto->valor, 2) }}</td>
