@@ -56,7 +56,7 @@
                                 <div class="col-lg-12">
                                     <div class="campo__input">
                                         <label for="arquivo" class="label__campos">Imagem(ns)*</label>
-                                        <input type="file" multiple class="form-control style__campo" id="arquivo" name="arquivo[]" required>
+                                        <input type="file" multiple class="form-control style__campo" id="arquivo" name="arquivo[]">
                                         <p>Segure o crtl para anexar mais de 1 arquivo.</p>
                                     </div>
                                     @foreach ($produto->imagens as $imagem)

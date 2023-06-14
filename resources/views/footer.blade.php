@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 box__logo">
-                <img src="assets/images/logo-rodape.png" class="img-fluid" alt="Logo" width="289" height="32">
+                <img src="http://127.0.0.1:8000/assets/images/logo-rodape.png" class="img-fluid" alt="Logo" width="289" height="32">
                 <div class="cnpj">XX. XXX. XXX/0001-XX</div>
             </div>
             <div class="col-lg-4">

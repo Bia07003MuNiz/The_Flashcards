@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('produtos_orcamentos', function (Blueprint $table) {
             $table->id();
             $table->integer('quantidade')->default(1);
-            $table->foreignIdFor(Orcamento::class)->constrained();
-            $table->foreignIdFor(Produto::class)->constrained();
+            $table->foreignIdFor(Orcamento::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Produto::class)->constrained()->cascadeOnDelete();
         });
     }
 

@@ -22,6 +22,11 @@
           align-items: center;
           justify-content: space-between;
 
+          @include media-breakpoint-down(md){
+            flex-direction: column;
+            justify-content: center;
+          }
+
           a{
             text-decoration: none;
             color: #FFF;
@@ -96,6 +101,10 @@
           line-height: 30px;
           text-align: end;
 
+          @include media-breakpoint-down(md){
+            padding: 0;
+          }
+
           a{
             color: #FFF;
             text-decoration: none;
@@ -108,6 +117,10 @@
             line-height: 15px;
             color: #FFF;
             margin-right: 10px;
+
+            @include media-breakpoint-down(md){
+              display: none;
+            }
           }
         }
 
@@ -144,6 +157,10 @@
             color: #FFF;
             font-size: 25px;
             line-height: 25px;
+
+            @include media-breakpoint-down(md){
+              padding: 0 7px;
+            }
           }
 
           #form__pesquisa{
@@ -155,6 +172,11 @@
             left: -5px!important;
             top: -20px!important;
 
+            @include media-breakpoint-down(md){
+              left: 100%!important;
+              top: 55px!important;
+            }
+
             &:before{
               content: '';
               position: absolute;
@@ -164,6 +186,10 @@
               top: 50%;
               transform: translateY(-50%);
               right: -15px;
+
+              @include media-breakpoint-down(md){
+                display: none;
+              }
             }
 
             form{
@@ -211,6 +237,10 @@
           color: #FFF;
           font-size: 25px;
           line-height: 25px;
+
+          @include media-breakpoint-down(md){
+            padding: 0;
+          }
         }
       }
     }
@@ -231,7 +261,29 @@
             padding: 0;
             margin: 0;
 
+            @include media-breakpoint-down(md){
+              display: grid;
+              column-gap: 20px;
+              row-gap: 35px;
+
+              @include media-breakpoint-only(md){
+                grid-template-columns: repeat(4, 1fr);
+              }
+
+              @include media-breakpoint-only(sm){
+                grid-template-columns: repeat(3, 1fr);
+              }
+
+              @include media-breakpoint-only(xs){
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+
             .item{
+              @include media-breakpoint-down(md){
+                text-align: center;
+              }
+
                 a{
                     color: #FFF;
                     font-size: 18px;

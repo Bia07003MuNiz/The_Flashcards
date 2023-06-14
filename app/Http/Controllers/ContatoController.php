@@ -46,4 +46,28 @@ class ContatoController extends Controller
             'email' => 'Usuário ou senha não encontrados!',
         ])->onlyInput('email');
     }
+
+    function listaContatos(Request $request) {
+        $contatos = Contato::all();
+
+        return view('area-restrita.relatorios.lista-contatos', compact('contatos'));
+    }
+
+    public function ContatoPeriodo(Request $request)
+    {
+        $resultados=Contato::WHERE('id','>',0);
+        if (isset($request->dtinicial)){
+            $resultados->WHERE('created_at','>=',$request->dtinicial);
+        }
+        if (isset($request->dtfinal)){
+            $resultados->WHERE('created_at','<=',$request->dtfinal);
+        }
+        if ($request->has('status')){
+            $resultados->WHERE('assunto','=',$request->status);
+        }
+
+        $resultados=$resultados->get();
+
+        return view('area-restrita/relatorios/contatos-periodo', compact('resultados'));
+    }
 }

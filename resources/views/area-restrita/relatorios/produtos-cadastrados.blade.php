@@ -2,7 +2,7 @@
     <x-slot:title>
         Área restrita > Relatório > Produtos cadastrados
     </x-slot>
-    <main id="contatos" class="area-restrita">
+    <main id="relatorio__produtos__cadastrados" class="area-restrita relatorios">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">
@@ -11,6 +11,7 @@
                     <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
                         @include('menu-relatorios')
+                        <h3>Produtos cadastrados</h3>
                         @isset($produtos)
                             <table id="example" class="display" style="width:100%">
                                 <thead>
@@ -52,13 +53,19 @@
             </div>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />  
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
     <script>
         $(document).ready(function () {
-            $('#example').DataTable();
+            $('#example').DataTable( {
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json',
+                    },
+                    paging: true,
+                    ordering: true,
+                });
         });
-    </script>
+    </script>
 </x-layout-base>

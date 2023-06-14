@@ -109,14 +109,31 @@
             }
         });
     </script>
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
-    <link href="https://releases.transloadit.com/uppy/v3.7.0/uppy.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
-   
+    <script>
+        // Register the plugin with FilePond
+        FilePond.registerPlugin(FilePondPluginImagePreview);
 
-    <script type="module">
-        import { Uppy, Dashboard } from "https://releases.transloadit.com/uppy/v3.7.0/uppy.min.js"
-        const uppy = new Uppy()
-        uppy.use(Dashboard, { target: '#uppy', inline: true })
-      </script>
+        // Get a reference to the file input element
+        const inputElement = document.querySelector('input[type="file"]');
+
+        // Create the FilePond instance
+        const pond = FilePond.create(inputElement, {
+                                        storeAsFile: true,
+                                        imagePreviewHeight: 100
+                                    });
+    </script>
+
+    <style>
+        .filepond--item {
+            width: 100px;
+        }
+    </style>
+
+
 </x-layout-base>

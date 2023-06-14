@@ -1,6 +1,6 @@
 <x-layout-base>
     <x-slot:title>
-        Área restrita > Relatório > Pedidos por período
+        Área restrita > Relatório > Contatos por período
     </x-slot>
     <main id="contatos" class="area-restrita">
         <div class="container">
@@ -11,7 +11,7 @@
                     <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
                         @include('menu-relatorios')
-                        <form method="POST" action ="{{route('resultados-periodo')}}" >
+                        <form method="POST" action ="{{route('resultados-contatos-periodo')}}" >
                             @method('POST')
                             @csrf
                             <div class="row">
@@ -31,10 +31,10 @@
                                     <div class="segura__select">
                                         <label class="" for="status">Status</label>
                                         <select class="sub__select" id="status" name="status">
-                                            <option selected disabled>Tudo</option>
-                                            <option value="1">Recebido</option>
-                                            <option value="2">Em andamento</option>
-                                            <option value="3">Finalizado</option>
+                                            <option selected disabled>Assunto*</option>
+                                            <option>Reclamações</option>
+                                            <option>Dúvidas</option>
+                                            <option>Sugestões</option>
                                         </select>
                                     </div>
                                 </div>
@@ -54,40 +54,31 @@
                             <table id="example" class="display" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Cliente</th>
-                                        <th>Produtos</th>
-                                        <th>Data</th>
-                                        <th>Status</th>
-                                        <th></th>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>Telefone</th>
+                                        <th>Assunto</th>
+                                        <th>Mensagem</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($resultados as $item)
                                         <tr>
-                                            <td>{{$item->user->nome}}</td>
-                                            <td>
-                                                <ul>
-                                                @foreach ($item->produtosOrcamentos as $produtoOrcamento)
-                                                    <li>{{$produtoOrcamento->Produto->nome}} ({{$produtoOrcamento->quantidade}})</li>
-                                                @endforeach
-                                                </ul>
-                                            </td>
-                                            <td>{{$item->dataFormatada()}}</td>
-                                            <td>{{$item->statusTexto()}}</td>
-                                            <td>
-                                                <a href="{{route('view-editar-orcamento', $item->id)}}"><i class="fa-solid fa-pencil"></i></a>
-                                                <a href="{{route('aviso-exclui-orcamento', $item->id)}}"><i class="fa-solid fa-trash"></i></a>
-                                            </td>
+                                            <td>{{$item->nome}}</td>
+                                            <td>{{$item->email}}</td>
+                                            <td>{{$item->telefone}}</td>
+                                            <td>{{$item->assunto}}</td>
+                                            <td>{{$item->mensagem}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Cliente</th>
-                                        <th>Produtos</th>
-                                        <th>Data</th>
-                                        <th>Status</th>
-                                        <th></th>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>Telefone</th>
+                                        <th>Assunto</th>
+                                        <th>Mensagem</th>
                                     </tr>
                                 </tfoot>
                             </table>

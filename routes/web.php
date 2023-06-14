@@ -2,6 +2,7 @@
 
 use App\Auxiliares\CarrinhoAux;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
@@ -76,10 +77,6 @@ Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::
 Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
 //Área restrita (Vendedor e Cliente)
-Route::view('/pedidos-periodo','area-restrita/relatorios/pedidos-periodo')->name('pedidos-periodo');
-Route::post('/resultados-periodo', [OrcamentoController::class, 'PedidosPeriodo'])->name('resultados-periodo');
-Route::view('/area-restrita','area-restrita/area-restrita')->name('boas-vindas'); //Exclusivo vendedor
-Route::view('/relatorios','area-restrita/relatorios')->name('relatorios'); //Exclusivo vendedor
 
 Route::get('/teste', function () {
     $carrinhoAux = new CarrinhoAux();
@@ -97,3 +94,26 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
 });
 //Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// -----------------------------novas rotas-------------------------------------
+Route::middleware(['auth'])->group(function () {
+    Route::view('/pedidos-periodo-cliente','area-restrita/relatorios/pedidos-periodo-cliente')->name('pedidos-periodo-cliente');
+    Route::post('/pedidos-periodo-cliente', [OrcamentoController::class, 'PedidosPeriodoCliente'])->name('resultados-periodo-cliente');
+
+    Route::prefix('admin')->middleware(['admin'])->group(function () {
+        Route::view('/contatos-periodo','area-restrita/relatorios/contatos-periodo')->name('contatos-periodo');
+        Route::post('/contatos-periodo', [ContatoController::class, 'ContatoPeriodo'])->name('resultados-contatos-periodo');
+        Route::view('/pedidos-periodo','area-restrita/relatorios/pedidos-periodo')->name('pedidos-periodo');
+        Route::post('/resultados-periodo', [OrcamentoController::class, 'PedidosPeriodo'])->name('resultados-periodo');
+        Route::view('/area-restrita','area-restrita/area-restrita')->name('boas-vindas'); //Exclusivo vendedor
+        Route::view('/relatorios','area-restrita/relatorios')->name('relatorios'); //Exclusivo vendedor
+
+    });
+
+    Route::get('/orcamento/{id}/excluir',[OrcamentoController::class, 'avisoExcluir'])->name('aviso-exclui-orcamento');
+    Route::delete('/orcamento/{orcamento}/excluir',[OrcamentoController::class, 'excluirOrcamento'])->name('excluir-orcamento');
+    
+    Route::get('/orcamento/{id}/editar',[OrcamentoController::class, 'viewEditar'])->name('view-editar-orcamento');
+    Route::put('/orcamento/{orcamento}/editar',[OrcamentoController::class, 'editarOrcamento'])->name('editar-orcamento');
+});

@@ -37,8 +37,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="item__dado"><b>Status:</b> {{$produto->status}}</div>
-                            <div class="item__dado"><b>Destaque:</b> {{$produto->destaque}}</div>
+                            <div class="item__dado"><b>Status:</b> @if($produto->status == 1) Habilitado @elseif($produto->status == 0) Desabilitado @endif</div>
+                            <div class="item__dado"><b>Destaque:</b> @if($produto->destaque == 1) Habilitado @elseif($produto->destaque == 0) Desabilitado @endif</div>
                         </div>
                         <form action="{{route('produtos.destroy', $produto)}}" method="POST">
                             @method('DELETE')

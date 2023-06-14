@@ -113,16 +113,6 @@
     }
 }
 
-#cadastra__produto{
-    .label__campo{
-        font-family: 'Plus Jakarta Sans';
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 15px;
-        color: #006acb;
-    }
-}
-
 #listar__categorias,
 #exibir__categorias,
 #produtos-area-restrita{
@@ -229,6 +219,16 @@
         margin-bottom: 0;
     }
 
+    h3{
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .menu__relatorio{
+        margin-bottom: 50px;
+    }
+
     .dropdown{
         display: flex;
         align-items: center;
@@ -252,7 +252,7 @@
             border: none;
             border-radius: 0;
             padding: 0;
-            transform: translate3d(270px, 44px, 0px)!important;
+            //transform: translate3d(270px, 44px, 0px)!important;
 
             .dropdown-item{
                 color: #FFF;
@@ -260,6 +260,46 @@
                 &:hover{
                     background-color: #004C93;
                 }
+
+                &.active{
+                    background-color: #004C93;
+                }
+            }
+        }
+    }
+
+    .form__filtro{
+        margin-bottom: 50px;
+
+        .style__btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .btns__atualizacao{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #000;
+            color: #FFF;
+            text-decoration: none;
+
+            &:last-child{
+                margin-left: 10px;
+            }
+
+            &:hover{
+                background-color: #004C93;
             }
         }
     }

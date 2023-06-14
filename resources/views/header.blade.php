@@ -28,7 +28,7 @@
         <div class="dropdown-menu dropdown__style" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item item__style {{ Request::is('/') ? 'active' : '' }}" href="{{route('home')}}">Home</a>
           <a class="dropdown-item item__style {{ Request::is('quem-somos') ? 'active' : '' }}" href="{{route('quem-somos')}}">Quem somos</a>
-          <a class="dropdown-item item__style {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
+          <a class="dropdown-item item__style {{ Request::is('produtos') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
           <a class="dropdown-item item__style {{ Request::is('onde-estamos') ? 'active' : '' }}" href="{{route('onde-estamos')}}">Localização</a>
           <a class="dropdown-item item__style {{ Request::is('contato') ? 'active' : '' }}" href="{{route('contato')}}">Contato</a>
         </div>
@@ -44,8 +44,8 @@
                 <i class="fa-solid fa-user"></i>
               </button>
               <div class="dropdown-menu dropdownRestritoCliente" aria-labelledby="optionsRestrito">
-                <a class="dropdown-item {{ Request::is('users*') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
-                <a class="dropdown-item" href="">Pedidos realizados</a>
+                <a class="dropdown-item {{ Request::is('users/'.auth()->user()->id.'/edit') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
+                <a class="dropdown-item {{ Request::is('') ? 'active' : '' }}" href="{{route('pedidos-periodo-cliente')}}">Pedidos realizados</a>
               </div>
             </div>
           @elseif(auth()->user()->tipo == 1)
@@ -54,10 +54,10 @@
                 <i class="fa-solid fa-user"></i>
               </button>
               <div class="dropdown-menu dropdownRestrito" aria-labelledby="optionsRestrito">
-                <a class="dropdown-item {{ Request::is('users*') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
+                <a class="dropdown-item {{ Request::is('users/'.auth()->user()->id.'/edit') ? 'active' : '' }}" href="{{route('users.edit',auth()->user()->id)}}">Meus dados</a>
                 <a class="dropdown-item {{ Request::is('categorias*') ? 'active' : '' }}" href="{{route('categorias.index')}}">Categorias</a>
-                <a class="dropdown-item {{ Request::is('produtos*') ? 'active' : '' }}" href="{{route('produtos.index')}}">Produtos</a>
-                <a class="dropdown-item {{ Request::is('relatorios') ? 'active' : '' }}" href="{{route('relatorios')}}">Relatórios</a>
+                <a class="dropdown-item {{ Request::is('produtos*') && !Request::is('produtos') || Request::is('admin/lista-produtos') ? 'active' : '' }}" href="{{route('lista-produtos')}}">Produtos</a>
+                <a class="dropdown-item {{ Request::is('relatorios') || Request::is('pedidos-periodo') || Request::is('') || Request::is('users') || Request::is('admin/produtos-cadastrados') ? 'active' : '' }}" href="{{route('relatorios')}}">Relatórios</a>
               </div>
             </div>
           @endif

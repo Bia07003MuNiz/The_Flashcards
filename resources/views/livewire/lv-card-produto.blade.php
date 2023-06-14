@@ -3,8 +3,10 @@
         <div class="card__produto__dados">
             <div class="card__dados__titulo">{{$produto->nome}}</div>
             <div class="card__dados__img">
-                @foreach ($produto->imagens as $imagem)
-                    <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
+                @foreach ($produto->imagens as $key => $imagem)
+                    @if($key==0)
+                        <img src="{{$imagem->url}}" width="300" height="300" class="img-fluid" loading="lazy">
+                    @endif
                 @endforeach
             </div>
         </div>

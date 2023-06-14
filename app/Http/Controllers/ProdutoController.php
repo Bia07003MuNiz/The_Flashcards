@@ -60,6 +60,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         
         $produto = new Produto();
         $produto->nome = $request->nome;
@@ -115,10 +116,9 @@ class ProdutoController extends Controller
         $produto->nome = $request->nome;
         $produto->valor = $request->valor;
         $produto->codigo = $request->codigo;
-
-        if(!empty($request->informacoes)){
-            $produto->informacoes = $request->informacoes;
-        }
+        $produto->informacoes = $request->informacoes;
+        $produto->status = $request->status;
+        $produto->destaque = $request->destaque;
 
         $produto->save();
 
