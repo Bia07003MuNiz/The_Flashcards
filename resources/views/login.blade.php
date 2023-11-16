@@ -1,37 +1,40 @@
 <x-layout-base>
-  <x-slot:title>
-      Login
-  </x-slot>
-  <main id="login">
-    <div class="container">
-      <h1 class="titulo"><span>LOGIN</span></h1>
-      <form class="style__form" action="{{route('logar')}}" method="POST">
-        @csrf
-        <h2 class="campo_titulosegundo">Entre com seus dados</h2>
-        <div class="campos_input">
-          <label class="sr-only" for="email">E-mail</label>
-          <input class="estilo_campos" id="email" name="email" type="email" placeholder="E-mail">
-          @error('email')
-            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
-          @enderror
+    <x-slot:title>
+        login
+    </x-slot>
+    <main class="form-signin m-auto " style="width: 500px; padding-top:15px;">
+        <div class="container Login">
+
+            <form class="style__form" action="{{ route('logar') }}" method="POST">
+                @csrf
+                <h1>LOGIN</h1>
+                <div class="form-floating">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" type="email"
+                            placeholder="E-mail">
+                        <label for="floatingInput">E-mail</label>
+                        @error('email')
+                            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <p></p>
+
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" name="password" type="password"
+                            placeholder="Senha" />
+                        <label for="password">Senha</label>
+                        @error('password')
+                            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <p></p>
+                    <div class="btn_center">
+                        <button type="submit" class="btn btn-primary w-100 py-">ENTRAR</button>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <a href="/esqueci-a-senha" class="senha">Esqueci minha senha </a>
+            </form>
         </div>
-        <div class="campos_input ">
-          <label class="sr-only" for="password">Senha</label>
-          <input class="estilo_campos" id="password" name="password" type="password" placeholder="Senha" />
-          @error('password')
-            <p class="text-danger text-sm italic mt-2">{{ $message }}</p>
-          @enderror
-        </div>
-        <div class="esqueceu_senha">
-          <a href="{{route('esqueci-senha')}}" class="esqueceu_senha">Esqueceu sua senha?</a>
-        </div>
-        <div class="btn_center">
-          <a href="{{route('cadastre-se')}}" class="estilo_botao" style="text-align: center">CRIAR CONTA</a>
-          <button type="submit" class="estilo_botao">ENTRAR</button>
-        </div>
-        <br>
-        <br>
-      </form>
-    </div>
-  </main>
+    </main>
 </x-layout-base>

@@ -1,349 +1,53 @@
-.seguraBanner{
-    position: relative;
-    max-width: 1920px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+.imagens{
+    max-width: 300px;
+    margin-top: 0px;
 
-    .carousel-inner{
-        max-width: 1920px;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 160%;
-    }
-
-    @media (min-width: 1300px){
-        margin-top: -40px;
-    }
-
-    #redesSociais{
-        @include media-breakpoint-up(lg){
-            position: absolute;
-            flex-direction: column;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 190px;
-            border-radius: 40px;
-        }
-
-        @include media-breakpoint-down(md){
-            margin-top: 30px;
-        }
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #FFF;
-        padding: 10px 8px;
-
-        .style__rede{
-            margin: 5px 0;
-
-            @include media-breakpoint-down(md){
-                margin: 0 15px;
-            }
-        }
-    }
-
-    .carousel-indicators{
-        justify-content: end;
-        margin-bottom: 2em;
-
-        @include media-breakpoint-down(md){
-            margin-bottom: 1em;
-        }
-
-        .indicatorItem{
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: 2px solid #FFF;
-            background-color: transparent;
-            opacity: 1;
-
-            &.active{
-                background-color: #FFF;
-            }
-        }
-    }
 }
-
-#secaoChamadas{
+.text{
+    text-align: justify;
+}
+h3{
+    color: #012845;
+    font-weight: bold;
+}
+.hrprincipal{
+    color: #012845;
+    border: 1px solid #012845;
     padding-top: 50px;
-
-    .container__style{
-        padding-bottom: 50px;
-        border-bottom: 8px solid rgba(#6B6B6B,.2);
-    }
-
-    .card__chamada{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-
-        @include media-breakpoint-down(md){
-            margin-bottom: 20px;
-        }
-
-        .chamada__icone{
-            margin-right: 15px;
-        }
-
-        .chamada__texto{
-            color: #000000;
-            font-size: 25px;
-            line-height: 27px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        &:hover{
-            text-decoration: none;
-        }
-    }
 }
-
-#secaoCategorias{
-    padding: 40px 0;
-
-    .row__style{
-        align-items: center;
-    }
-
-    .title__home{
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-weight: bold;
-        color: #004C93;
-        font-size: 34px;
-        line-height: 38px;
-        text-align: center;
-
-        @include media-breakpoint-down(md){
-            margin: 30px 0;            
-        }
-    }
-
-    .box__img__cats{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        .categoria__bloco{
-            &:first-child{
-                margin-bottom: 20px;
-            }
-        }
-    }
-
+.img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: 50px;
 }
-
-#secaoProdutos{
-    padding: 40px 0;
-    background-color: #4F0074;
-
-    .title__home{
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-weight: bold;
-        color: #FFF;
-        font-size: 34px;
-        line-height: 38px;
-        text-align: center;
-    }
-
-    .card__produto{
-        .card__produto__style{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30px;
-    
-            .card__produto__dados{
-                .card__dados__titulo{
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    text-align: center;
-                    margin-bottom: 10px;
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 24px;
-                    color: #FFF;
-                }
-    
-                .card__dados__img{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: none;
-                    border-radius: 30px;
-                    background-color: rgba($color: #FFF, $alpha: .5);
-    
-                    img{
-                        border-radius: 30px 0 30px 0;
-                    }
-                }
-            }
-    
-            .card__produto__btns{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 10px;
-                margin-left: 0;
-    
-                .btn__acao{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    text-decoration: none;
-                    background-color: #1fd0ed;
-                    color: #FFF;
-                    border: none;
-    
-                    &:first-child{
-                        margin-right: 5px;
-                    }
-                }
-    
-            }
-        }
-    
-        .card__produto__preco{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0;
-    
-            span{
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                color: #FFF;
-                border-radius: 30px;
-                padding: 10px 20px;
-                background-color: #ce0cd3;
-                text-align: center;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 20px;
-                line-height: 24px;
-                margin-top: 10px;
-            }
-        }
-    }
+.text{
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
-#secaoComoFazer{
-    padding: 40px 0;
-
-    .title__home{
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-weight: bold;
-        color: #000;
-        font-size: 34px;
-        line-height: 38px;
-        text-align: center;
-    }
-
-    .blogo__cards{
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        margin-top: 70px;
-
-        @include media-breakpoint-down(md){
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card__fazer{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            margin: 0 30px;
-
-            @include media-breakpoint-down(md){
-                margin-bottom: 40px;
-            }
-
-            .card__fazer__icone{
-                position: relative;
-                margin-bottom: 20px;
-
-                span{
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    font-weight: bold;
-                    background-color: #004C93;
-                    width: 35px;
-                    min-width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    color: #FFF;
-                    font-size: 17px;
-                    line-height: 17px;
-                    border: 2px solid #FFF;
-                    top: -5px;
-                    left: -5px;
-                }
-
-                .fundo__img{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: #3F84C3;
-                    width: 120px;
-                    min-width: 120px;
-                    height: 120px;
-                    border-radius: 50%;
-                }
-            }
-
-            .card__fazer__textos{
-                .fazer__title{
-                    position: relative;
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    color: #000;
-                    font-weight: bold;
-                    font-size: 18px;
-                    line-height: 20px;
-                    text-align: center;
-                    padding-bottom: 5px;
-                    margin-bottom: 15px;
-
-                    &:before{
-                        content: '';
-                        position: absolute;
-                        width: 75px;
-                        height: 1px;
-                        //background-color: #006ACB;
-                        border-bottom: 2px dotted #006ACB;
-                        /*background-image: url(../assets/images/Separador.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: auto;*/
-                        left: 50%;
-                        transform: translateX(-50%);
-                        bottom: 0;
-                    }
-                }
-
-                .fazer__texto{
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    color: #000;
-                    font-size: 14px;
-                    line-height: 16px;
-                    text-align: center;
-                }
-            }
-        }
-    }   
+.titulo{
+    color: #012845;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -2px;
+}
+.flashcards{
+    background-color: aqua;
+}
+h1{
+    color: #012845;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+h5{
+    color: #012845;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+    left: 70px;
 }

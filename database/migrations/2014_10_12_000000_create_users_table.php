@@ -14,19 +14,17 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('cpf');
-            $table->string('celular');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('cep');
+            $table->string('celular');
+            $table->string('genero');
             $table->string('uf');
             $table->string('cidade');
+            $table->string('rua');
             $table->string('num');
             $table->string('bairro');
-            $table->string('rua');
-            $table->string('compl')->nullable();
             $table->string('remember_token')->default("");
-            $table->tinyInteger('tipo')->default(0)->comment('0 - cliente, 1 - funcionario');
+            $table->tinyInteger('tipo')->default(0)->comment('0 - Estudante , 1 - Professor');
 
 
 

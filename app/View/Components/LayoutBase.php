@@ -21,6 +21,6 @@ class LayoutBase extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.layout-base');
+    return view('components.layout-base');
     }
 }

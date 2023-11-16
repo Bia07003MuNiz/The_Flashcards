@@ -1,266 +1,266 @@
-body{
-	overflow-x: hidden;
-}
+// body{
+// 	overflow-x: hidden;
+// }
 
-.titulo{
-    display: flex;
-    align-items: center;
-    position: relative;
+// .titulo{
+//     display: flex;
+//     align-items: center;
+//     position: relative;
 
-    & span{
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 44px;
-        color: #4F0074;
-    }
+//     & span{
+//         font-family: 'Plus Jakarta Sans', sans-serif;
+//         font-weight: bold;
+//         font-size: 40px;
+//         line-height: 44px;
+//         color: #4F0074;
+//     }
 
-    &:after{
-        content: '';
-        display: block;
-        flex-grow: 1;
-        margin-left: 40px;
-        width: auto;
-        height: 5px;
-        background-color: #4F0074;
-    }
-}
+//     &:after{
+//         content: '';
+//         display: block;
+//         flex-grow: 1;
+//         margin-left: 40px;
+//         width: auto;
+//         height: 5px;
+//         background-color: #4F0074;
+//     }
+// }
 
-.texto__style{
-  font-family: 'Plus Jakarta Sans', sans-serif;
-	font-size: 15px;
-	color: #000000;
-	line-height: calc(1em + 4px);
+// .texto__style{
+//   font-family: 'Plus Jakarta Sans', sans-serif;
+// 	font-size: 15px;
+// 	color: #000000;
+// 	line-height: calc(1em + 4px);
 
-	img{
-		max-width: 100%;
-		height: auto;
-	}
+// 	img{
+// 		max-width: 100%;
+// 		height: auto;
+// 	}
 
-	h1, h2, h3, h4, h5, h6{
-		font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: bold;
-		font-size: 18px;
-		color: #000000;
-		line-height: 22px;
-		margin-bottom: 15px;
-	}
-}
+// 	h1, h2, h3, h4, h5, h6{
+// 		font-family: 'Plus Jakarta Sans', sans-serif;
+//     font-weight: bold;
+// 		font-size: 18px;
+// 		color: #000000;
+// 		line-height: 22px;
+// 		margin-bottom: 15px;
+// 	}
+// }
 
-.btn__style{
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  border: none;
-  border-radius: 30px;
-  font-size: 15px;
-  line-height: 17px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #4F0074;
-  font-weight: 600;
-  color: #FFF;
-  text-decoration: none;
-  padding: 15px;
+// .btn__style{
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: auto;
+//   border: none;
+//   border-radius: 30px;
+//   font-size: 15px;
+//   line-height: 17px;
+//   font-family: 'Plus Jakarta Sans', sans-serif;
+//   background-color: #4F0074;
+//   font-weight: 600;
+//   color: #FFF;
+//   text-decoration: none;
+//   padding: 15px;
 
-  &:hover{
-    text-decoration: none;
-    color: #FFF;
-  }
-}
+//   &:hover{
+//     text-decoration: none;
+//     color: #FFF;
+//   }
+// }
 
-.btn__whatsapp{
-    position: fixed;
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    line-height: 50px;
-    background-color: #00bb2d;
-    border-radius: 50%;
-    z-index: 800;
-    text-decoration: none;
+// .btn__whatsapp{
+//     position: fixed;
+//     width: 65px;
+//     height: 65px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 50px;
+//     line-height: 50px;
+//     background-color: #00bb2d;
+//     border-radius: 50%;
+//     z-index: 800;
+//     text-decoration: none;
   
-    &:hover{
-      text-decoration: none;
-    }
+//     &:hover{
+//       text-decoration: none;
+//     }
   
-    &:after{
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: rgba(#00bb2d,.52);
-      animation: fadeShadow 2s linear infinite;
-      box-shadow: 0 0 0 0 #00bb2d, 0 0 0 0 #00bb2d;
-      z-index: -1;
-    }
-}
+//     &:after{
+//       content: '';
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%,-50%);
+//       width: 60px;
+//       height: 60px;
+//       border-radius: 50%;
+//       background-color: rgba(#00bb2d,.52);
+//       animation: fadeShadow 2s linear infinite;
+//       box-shadow: 0 0 0 0 #00bb2d, 0 0 0 0 #00bb2d;
+//       z-index: -1;
+//     }
+// }
 
-#modalCookies{
-  .modal-dialog{
-    max-width: 900px;
-    width: 100%;
+// #modalCookies{
+//   .modal-dialog{
+//     max-width: 900px;
+//     width: 100%;
 
-    .modal-content{
-      background-color: transparent;
-      border-radius: 0px;
-      border: none;
+//     .modal-content{
+//       background-color: transparent;
+//       border-radius: 0px;
+//       border: none;
 
-      .modal-header{
-        padding: 10px;
-        border: none;
-        display: flex;
-        justify-content: flex-end;
+//       .modal-header{
+//         padding: 10px;
+//         border: none;
+//         display: flex;
+//         justify-content: flex-end;
 
-        button{
-          background-color: transparent;
-          color: #fff;
-          border: none;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-      }
+//         button{
+//           background-color: transparent;
+//           color: #fff;
+//           border: none;
+//           font-family: 'Plus Jakarta Sans', sans-serif;
+//         }
+//       }
 
-      .modal-body{
-        padding: 0px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+//       .modal-body{
+//         padding: 0px;
+//         overflow: hidden;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//       }
 
-      .estrutura__modal{
-        width: 700px;
-        background-color: #FFF;
-        border-radius: 50px;
-        padding: 20px 20px 0 20px;
+//       .estrutura__modal{
+//         width: 700px;
+//         background-color: #FFF;
+//         border-radius: 50px;
+//         padding: 20px 20px 0 20px;
 
-        .row__style{
-          align-items: center;
-        }
+//         .row__style{
+//           align-items: center;
+//         }
 
-        .title__modal{
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: bold;
-          font-size: 40px;
-          line-height: 44px;
-          text-align: center;
-          color: #004C93;
-          margin-bottom: 30px;
-        }
+//         .title__modal{
+//           font-family: 'Plus Jakarta Sans', sans-serif;
+//           font-weight: bold;
+//           font-size: 40px;
+//           line-height: 44px;
+//           text-align: center;
+//           color: #004C93;
+//           margin-bottom: 30px;
+//         }
 
-        .texto__style{
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 18px;
-          line-height: 20px;
-          text-align: center;
-          color: #000;
+//         .texto__style{
+//           font-family: 'Plus Jakarta Sans', sans-serif;
+//           font-size: 18px;
+//           line-height: 20px;
+//           text-align: center;
+//           color: #000;
 
-          a{
-            color: #000;
-            font-weight: bold;
-          }
-        }
+//           a{
+//             color: #000;
+//             font-weight: bold;
+//           }
+//         }
 
-        .btn__center{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: 30px;
-        }
+//         .btn__center{
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           margin-top: 30px;
+//         }
 
-        .btn__style{
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: bold;
-          border: none;
-          background-color: #006ACB;
-          color: #FFF;
-          border-radius: 30px;
-          padding: 10px 20px;
-        }
-      }
-    }
-  }
-}
+//         .btn__style{
+//           font-family: 'Plus Jakarta Sans', sans-serif;
+//           font-weight: bold;
+//           border: none;
+//           background-color: #006ACB;
+//           color: #FFF;
+//           border-radius: 30px;
+//           padding: 10px 20px;
+//         }
+//       }
+//     }
+//   }
+// }
 
-.message__style{
-  position: fixed;
-  z-index:50;
-  right:40px;
-  top: 40px;
+// .message__style{
+//   position: fixed;
+//   z-index:50;
+//   right:40px;
+//   top: 40px;
 
-  .toast-body{
-    background-color: #198754;
-    color: #FFF;
-    font-size: 15px;
-    line-height: 17px;
+//   .toast-body{
+//     background-color: #198754;
+//     color: #FFF;
+//     font-size: 15px;
+//     line-height: 17px;
 
-    & a{
-      color: #FFF;
-    }
-  }
-}
+//     & a{
+//       color: #FFF;
+//     }
+//   }
+// }
 
-.bloco__segura{
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  padding-top: 50px;
+// .bloco__segura{
+//   display: flex;
+//   align-items: stretch;
+//   justify-content: space-between;
+//   padding-top: 50px;
 
-  .bloco__menu{
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      left: 1px;
-      z-index: 10;
+//   .bloco__menu{
+//       display: flex;
+//       flex-direction: column;
+//       position: relative;
+//       left: 1px;
+//       z-index: 10;
 
-      .menu__item{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #A780B9;
-          color: #FFF;
-          border-radius: 30px 0 0 30px;
-          text-decoration: none;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 16px;
-          line-height: 16px;
-          padding: 20px 15px;
-          writing-mode: vertical-rl;
-          letter-spacing: 1px;
+//       .menu__item{
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           background-color: #A780B9;
+//           color: #FFF;
+//           border-radius: 30px 0 0 30px;
+//           text-decoration: none;
+//           font-family: 'Plus Jakarta Sans', sans-serif;
+//           font-size: 16px;
+//           line-height: 16px;
+//           padding: 20px 15px;
+//           writing-mode: vertical-rl;
+//           letter-spacing: 1px;
 
-          &.active{
-              background-color: #4F0074;
-          }
+//           &.active{
+//               background-color: #4F0074;
+//           }
 
-          &:hover{
-              background-color: #4F0074;
-          }
-      }
-  }
+//           &:hover{
+//               background-color: #4F0074;
+//           }
+//       }
+//   }
 
-  .bloco__conteudo{
-      width: 100%;
-      height: auto;
-      padding: 30px;
-      border-top: 2px solid #4F0074;
-      border-right: 2px solid #4F0074;
-      border-left: 2px solid #4F0074;
-      border-bottom: 2px solid #4F0074;
+//   .bloco__conteudo{
+//       width: 100%;
+//       height: auto;
+//       padding: 30px;
+//       border-top: 2px solid #4F0074;
+//       border-right: 2px solid #4F0074;
+//       border-left: 2px solid #4F0074;
+//       border-bottom: 2px solid #4F0074;
 
-      .btn__voltar{
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        text-decoration: none;
-        color: #000;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-      }
-  }
-}
+//       .btn__voltar{
+//         display: flex;
+//         align-items: center;
+//         justify-content: end;
+//         text-decoration: none;
+//         color: #000;
+//         font-family: 'Plus Jakarta Sans', sans-serif;
+//       }
+//   }
+// }

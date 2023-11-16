@@ -1,298 +1,71 @@
-.categorias__drop{
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-#topo{
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
   position: relative;
-  z-index: 9;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
 
-    .box__frase{
-        padding: 8px 0;
-        background-color: #4F0074;
-        color: #FFF;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 15px;
-        list-style: 17px;
-        text-align: start;
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
 
-        .frase__alinhamento{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-          @include media-breakpoint-down(md){
-            flex-direction: column;
-            justify-content: center;
-          }
-
-          a{
-            text-decoration: none;
-            color: #FFF;
-          }
-        }
-    }
-
-    .box__menu{
-      background-color: #006ACB;
-      padding: 10px 0;
-
-      .container__style{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .dropdown__style{
-        border-radius: 0;
-        background-color: #710074;
-        border-bottom: 5px solid #3D003F;
-        padding: 20px 15px;
-        min-width: 230px;
-        top: 10px;
-        position: relative;
-
-        &:before{
-          content: '';
-          position: absolute;
-          border-left: 15px solid transparent;
-          border-right: 15px solid transparent;
-          border-bottom: 15px solid #710074;
-          top: -15px;
-          left: 20px;
-        }
-
-        .item__style{
-          padding: 7px 0;
-          border-bottom: 1px solid rgba(#FFF,.2);
-          font-family: 'Plus Jakarta Sans';
-          color: #FFF;
-          font-size: 20px;
-          line-height: 27px;
-
-          &:last-child{
-            border-bottom: none;
-          }
-
-          &:hover{
-            background-color: transparent;
-          }
-
-          &.active{
-            font-weight: bold;
-            background-color: transparent;
-          }
-        }
-      }
-
-      .main__lateral{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        .box__login{
-          display: flex;
-          align-items: end;
-          justify-content: center;
-          color: #FFF;
-          font-size: 30px;
-          line-height: 30px;
-          text-align: end;
-
-          @include media-breakpoint-down(md){
-            padding: 0;
-          }
-
-          a{
-            color: #FFF;
-            text-decoration: none;
-          }
-
-          .segura__links{
-            display: flex;
-            flex-direction: column;
-            font-size: 15px;
-            line-height: 15px;
-            color: #FFF;
-            margin-right: 10px;
-
-            @include media-breakpoint-down(md){
-              display: none;
-            }
-          }
-        }
-
-        .box__logado{
-          #optionsRestrito,
-          #optionsRestritoCliente{
-            color: #FFF;
-            font-size: 27px;
-          }
-
-          .dropdownRestrito,
-          .dropdownRestritoCliente{
-            padding: 0;
-
-            .dropdown-item{
-
-              &.active{
-                background-color: #4F0074;
-
-                &:hover{
-                  background-color: #4F0074;
-                }
-              }
-
-              &:hover{
-                background-color: rgba($color: #4F0074, $alpha: .3);
-              }
-            }
-          }
-        }
-
-        .box__pesquisa{
-          .btn__pesquisa{
-            color: #FFF;
-            font-size: 25px;
-            line-height: 25px;
-
-            @include media-breakpoint-down(md){
-              padding: 0 7px;
-            }
-          }
-
-          #form__pesquisa{
-            position: relative;
-            border: 1px solid #747474;
-            border-radius: 15px;
-            padding: 10px;
-            min-width: 300px;
-            left: -5px!important;
-            top: -20px!important;
-
-            @include media-breakpoint-down(md){
-              left: 100%!important;
-              top: 55px!important;
-            }
-
-            &:before{
-              content: '';
-              position: absolute;
-              border-top: 10px solid transparent;
-              border-bottom: 10px solid transparent;
-              border-left: 15px solid #FFF;
-              top: 50%;
-              transform: translateY(-50%);
-              right: -15px;
-
-              @include media-breakpoint-down(md){
-                display: none;
-              }
-            }
-
-            form{
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-
-              .label__titulo{
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                color: #4F0074;
-                font-size: 16px;
-                line-height: 18px;
-                font-weight: bold;
-              }
-
-              .campo__pesquisa{
-                display: block;
-                width: 100%;
-                border: none;
-                border-bottom: 2px solid #4F0074;
-
-                &::placeholder{
-                  font-family: 'Plus Jakarta Sans';
-                  font-size: 15px;
-                  line-height: 15px;
-                  color: #000;
-                }
-        
-                &:focus{
-                    outline: none;
-                }
-              }
-            }
-
-            .btn__busca__style{
-              border: none;
-              background-color: transparent;
-              color: #4F0074;
-              font-size: 30px;
-            }
-          }
-        }
-
-        .box__carrinho{
-          color: #FFF;
-          font-size: 25px;
-          line-height: 25px;
-
-          @include media-breakpoint-down(md){
-            padding: 0;
-          }
-        }
-      }
-    }
-
-    .box__categorias{
-        position: relative;
-        width: 100%;
-        z-index: 10;
-        background-color: rgba($color: #006ACB, $alpha: .4);
-        border-bottom: 2px solid #006ACB;
-        padding: 7px 20px;
-
-        .itens__lista{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            @include media-breakpoint-down(md){
-              display: grid;
-              column-gap: 20px;
-              row-gap: 35px;
-
-              @include media-breakpoint-only(md){
-                grid-template-columns: repeat(4, 1fr);
-              }
-
-              @include media-breakpoint-only(sm){
-                grid-template-columns: repeat(3, 1fr);
-              }
-
-              @include media-breakpoint-only(xs){
-                grid-template-columns: repeat(2, 1fr);
-              }
-            }
-
-            .item{
-              @include media-breakpoint-down(md){
-                text-align: center;
-              }
-
-                a{
-                    color: #FFF;
-                    font-size: 18px;
-                    line-height: 20px;
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    margin: 0 20px;
-                    text-decoration: none;
-                }
-            }
-        }
-    }
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+.bd-mode-toggle {
+  z-index: 1500;
 }

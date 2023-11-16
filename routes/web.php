@@ -64,7 +64,7 @@ Route::get('/report', function () {
 
 //Outros
 Route::view('/quem-somos','quem-somos')->name('quem-somos');
-Route::view('/onde-estamos','onde-estamos')->name('onde-estamos');
+Route::view('/logado','logado')->name('logado');
 Route::view('/contato','contato')->name('contato');
 Route::post('/salvacontato', [App\Http\Controllers\ContatoController::class, 'store'])->name('salvacontato');
 Route::view('/politica-de-privacidade','politica-de-privacidade')->name('politicas');

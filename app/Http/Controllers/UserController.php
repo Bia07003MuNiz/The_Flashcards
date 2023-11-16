@@ -30,16 +30,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->isMethod('post')) { // Verifique se a solicitação é um POST
+            // Verifique se o email já existe no banco de dados
+            $existingUser = User::where('email', $request->email)->first();
+    
+            if ($existingUser) {
+                // Se o email já existe, retorne uma mensagem de erro
+                return redirect()->route('cadastre-se')->with('error', 'O email já existe. Por favor, use outro email.');
+            }
         $user = new User();
         $user->tipo = $request->tipo;
         $user->nome = $request->nome;
-        $user->cpf = $request->cpf;
-        $user->celular = $request->celular;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-
-        if(!empty($request->cep)){
-            $user->cep = $request->cep;
+        $user->celular = $request->celular;
+        
+        if(!empty($request->genero)){
+            $user->genero = $request->genero;
         }
 
         if(!empty($request->uf)){
@@ -49,6 +56,9 @@ class UserController extends Controller
         if(!empty($request->cidade)){
             $user->cidade = $request->cidade;
         }
+        if(!empty($request->rua)){
+            $user->rua = $request->rua;
+        }
 
         if(!empty($request->num)){
             $user->num = $request->num;
@@ -56,21 +66,14 @@ class UserController extends Controller
 
         if(!empty($request->bairro)){
             $user->bairro = $request->bairro;
-        }
+        }       
 
-        if(!empty($request->rua)){
-            $user->rua = $request->rua;
-        }
-
-        if(!empty($request->compl)){
-            $user->compl= $request->compl;
-        }
+        
 
         $user->save();
-
-        return redirect(route('login'));
+        return redirect(route('login'))->with('success', 'Cadastro efetuado com sucesso. Faça o login.');
     }
-
+    }
     /**
      * Display the specified resource.
      */

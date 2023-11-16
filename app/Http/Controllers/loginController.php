@@ -37,7 +37,7 @@ class loginController extends Controller
                 //Cliente
                 $request->session()->regenerate();
  
-                return redirect()->intended(route('home'));
+                return redirect()->intended(route('logado'));
             } elseif(auth()->user()->tipo == 1){
                 //Vendedor
                 $request->session()->regenerate();
