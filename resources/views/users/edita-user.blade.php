@@ -5,66 +5,63 @@
     <main id="meus__dados" class="area-restrita">
         <div class="container">
             <h1 class="titulo">
-                <span>Área restrita</span>
+                <span>Meus dados cadastrais</span>
             </h1>
-            <div class="bloco__segura">
-                @include('menu-area-restrita')
+            <div class="form-signin m-auto" style="width: 800px">
+
                 <div class="bloco__conteudo">
-                    <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
-                        <h2 class="title__box">Meus dados cadastrais</h2>
+
                         <form action="{{route('users.update',$user)}}" method="POST" id="form-user-atualiza">
                             @method('PUT')
                             @csrf
                             <div class="row">
+                                @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+@endif
+
                                 <div class="col-lg-12">
-                                    <div class="campo__input">
-                                        <label class="label__campos" for="nome">Nome:</label>
-                                        <input type="text" class="style__campo" placeholder="Nome:" id="nome" name="nome" value="{{$user->nome}}" required>
+
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" placeholder="Nome:" id="nome" name="nome" value="{{$user->nome}}" required>
+                                            <label for="floatingNome">Nome Completo</label>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="campo__input">
-                                        <label class="label__campos" for="cpf">CPF:</label>
-                                        <input type="text" class="style__campo" placeholder="CPF:" id="cpf" name="cpf" value="{{$user->cpf}}" required>
+
+                                    <p></p>
+
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" placeholder="E-mail" id="e-mail" name="email" value="{{$user->email}}" required>
+                                            <label for="floatingNome">E-mail</label>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="campo__input">
-                                        <label class="label__campos" for="celular">Celular:</label>
-                                        <input type="tel" class="style__campo" placeholder="Celular:" id="celular" name="celular" value="{{$user->celular}}" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="campo__input">
-                                        <label class="label__campos" for="e-mail">E-mail:</label>
-                                        <input type="email" class="style__campo" placeholder="E-mail" id="e-mail" name="email" value="{{$user->email}}" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="campo__input ">
-                                        <label class="label__campos" for="nome">Senha:</label>
-                                        <input type="password" class="style__campo" placeholder="Senha:" id="password" name="password" required>
-                                    </div>
-                                </div>
-                                @if(auth()->user()->tipo == 0)
-                                    <div class="cliente__group">
-                                        <div class="row">
-                                            <div class="col-lg-12" style="text-align: start; margin-bottom: 20px">
-                                                <b class="style__letras">Endereço</b>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="campo__input ">
-                                                    <label class="label__campos" for="cep">CEP</label>
-                                                    <input type="text" class="style__campo" placeholder="CEP*" id="cep" name="cep" required onchange="buscaCep()" value="{{$user->cep}}">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="segura__select ">
-                                                    <label class="label__campos" for="uf">Estado</label>
-                                                    <select class="sub__select" id="uf" name="uf" required>
-                                                        <option selected disabled>Estado</option>
-                                                        <option value="Acre" @if($user->uf == "Acre") selected @endif>Acre</option>
+                                    <p></p>
+
+                    <div class="form-floating ">
+                        <input type="password" class="form-control" placeholder="Senha:" id="password" name="password"  value="{{$user->password}}"  required>
+                        <label for="floatingPassword">Senha</label>
+                    </div>
+                    <p></p>
+
+                    <div class="form-floating ">
+                        <input type="text" required class="form-control" placeholder="Celular:" id="celular" name="celular" value="{{$user->celular}}" required>
+                        <label for="Celular">Telefone</label>
+                    </div>
+                    <p></p>
+                    <div class="form-floating">
+                        <select class="form-select" id="genero" name="genero" required>
+                            <option value="" selected disabled>Selecione o gênero</option>
+                            <option value="M" @if($user->genero == "M") selected @endif>Masculino</option>
+                            <option value="F" @if($user->genero == "F") selected @endif>Feminino</option>
+                        </select>
+                        <label for="genero">Gênero</label>
+                    </div>
+                    <p></p>
+
+                    <div class="form-floating">
+                        <select class="form-select" id="uf" name="uf" required>
+                            <option selected disabled>Estado</option>
+                            <option value="Acre" @if($user->uf == "Acre") selected @endif>Acre</option>
                                                         <option value="Alagoas" @if($user->uf == "Alagoas") selected @endif>Alagoas</option>
                                                         <option value="Amapá" @if($user->uf == "Amapá") selected @endif>Amapá</option>
                                                         <option value="Amazonas" @if($user->uf == "Amazonas") selected @endif>Amazonas</option>
@@ -91,55 +88,56 @@
                                                         <option value="São Paulo" @if($user->uf == "São Paulo") selected @endif>São Paulo</option>
                                                         <option value="Sergipe" @if($user->uf == "Sergipe") selected @endif>Sergipe</option>
                                                         <option value="Tocantins" @if($user->uf == "Tocantins") selected @endif>Tocantins</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-10">
-                                                <div class="campo__input">
-                                                    <label class="label__campos" for="cidade">Cidade</label>
-                                                    <input type="text" class="style__campo" name="cidade" placeholder="Cidade*" id="cidade" value="{{$user->cidade}}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="campo__input">
-                                                    <label class="label__campos" for="numero">Número</label>
-                                                    <input type="num" class="style__campo" name="num" placeholder="Número*" id="num" value="{{$user->num}}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="campo__input">
-                                                    <label class="label__campos" for="bairro">Bairro</label>
-                                                        <input type="text" class="style__campo" name="bairro" placeholder="Bairro*" id="Bairro" value="{{$user->bairro}}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="campo__input">
-                                                    <label class="label__campos" for="rua">Endereço</label>
-                                                    <input type="text" class="style__campo" name="rua" placeholder="Endereço*" id="rua" value="{{$user->rua}}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="campo__input ">
-                                                    <label class="label__campos" for="complemento">Complemento</label>
-                                                    <input type="text" class="style__campo" placeholder="Complemento" id="compl" name="compl" value="{{$user->compl}}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                        </select>
+                        <label for="uf">Estado</label>
+                    </div>
+                    <p></p>
+
+                    <div class="form-floating ">
+                        <input type="" class="form-control" name="cidade" placeholder="Cidade*" id="cidade" value="{{$user->cidade}}" required>
+                        <label for="cidade">Cidade</label>
+                    </div>
+                    <p></p>
+                    <div class="d-flex">
+                        <div class="form-floating pe-2 " style="width:150%;">
+                            <input type="text" class="form-control"name="rua" placeholder="Endereço*" id="rua" value="{{$user->rua}}" required>
+                            <label for="rua">Endereço</label>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="text" class="form-control" name="num" placeholder="Número*" id="num" value="{{$user->num}}" required>
+                            <label for="numero">Número</label>
+                        </div>
+                    </div>
+
+                    <p></p>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="bairro" placeholder="Bairro*" id="Bairro" value="{{$user->bairro}}" required>
+                        <label for="bairro">Bairro</label>
+                    </div>
+                    <p></p>
+
+
+                                </div>
+
+
+
                             </div>
-                            <div class="lim__estilo">
-                                <button type="submit" class="btn__salvar">ALTERAR</button>
+                            <div class="lim__estilo d-flex justify-content-center">
+                                <button class="btn btn-outline-primary btn-space"><a class="btn__voltar" href="{{ route('categorias.index') }}">Voltar</a></button>
+
+                                <button type="submit" class="btn__salvar2">ALTERAR</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     @if(auth()->user()->tipo == 0)
         <script>
             $( "#form-user-atualiza" ).validate({

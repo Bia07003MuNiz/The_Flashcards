@@ -19,18 +19,18 @@
                 @method('POST')
                 @csrf
                 <div class="opcoes__style">
-                    
+
                     <div class="custom__opcoes">
                         <b class="style__letras">Você é:</b>
                         <input class="rodape__check" type="radio" name="tipo" value="0" id="cliente"
                             onchange="formCliente()" required>
-                        <label class="rodape__check__label style__letras" for="cliente">Estudante</label>
+                        <label class="rodape__check__label style__letras" for="cliente">Professor</label>
                         <input class="rodape__check" type="radio" name="tipo" value="1" id="vendedor"
-                        onchange="formVendedor()" required>
-                    <label class="rodape__check__label style__letras" for="vendedor">Professor</label>
+                            onchange="formVendedor()" required>
+                        <label class="rodape__check__label style__letras" for="vendedor">Estudante</label>
                     </div>
                     <p></p>
-                   
+
                 </div>
 
 
@@ -64,7 +64,6 @@
                         <label for="Celular">Telefone</label>
                     </div>
                     <p></p>
-
 
                     <div class="form-floating">
                         <select class="form-select" id="genero" name="genero" required>

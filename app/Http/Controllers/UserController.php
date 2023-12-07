@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -33,7 +34,7 @@ class UserController extends Controller
         if ($request->isMethod('post')) { // Verifique se a solicitação é um POST
             // Verifique se o email já existe no banco de dados
             $existingUser = User::where('email', $request->email)->first();
-    
+
             if ($existingUser) {
                 // Se o email já existe, retorne uma mensagem de erro
                 return redirect()->route('cadastre-se')->with('error', 'O email já existe. Por favor, use outro email.');
@@ -44,7 +45,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->celular = $request->celular;
-        
+
         if(!empty($request->genero)){
             $user->genero = $request->genero;
         }
@@ -66,9 +67,9 @@ class UserController extends Controller
 
         if(!empty($request->bairro)){
             $user->bairro = $request->bairro;
-        }       
+        }
 
-        
+
 
         $user->save();
         return redirect(route('login'))->with('success', 'Cadastro efetuado com sucesso. Faça o login.');
@@ -78,9 +79,9 @@ class UserController extends Controller
      * Display the specified resource.
      */
     public function show(User $user)
-    
+
     {
-       
+
         return view('users.exibe-user', compact('user'));
     }
 
@@ -98,13 +99,12 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->nome = $request->nome;
-        $user->cpf = $request->cpf;
-        $user->celular = $request->celular;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->celular = $request->celular;
 
-        if(!empty($request->cep)){
-            $user->cep = $request->cep;
+        if(!empty($request->genero)){
+            $user->genero = $request->genero;
         }
 
         if(!empty($request->uf)){
@@ -113,6 +113,9 @@ class UserController extends Controller
 
         if(!empty($request->cidade)){
             $user->cidade = $request->cidade;
+        }
+        if(!empty($request->rua)){
+            $user->rua = $request->rua;
         }
 
         if(!empty($request->num)){
@@ -123,15 +126,9 @@ class UserController extends Controller
             $user->bairro = $request->bairro;
         }
 
-        if(!empty($request->rua)){
-            $user->rua = $request->rua;
-        }
-
-        if(!empty($request->compl)){
-            $user->compl= $request->compl;
-        }
-
         $user->save();
+
+        Session::flash('success', 'Dados alterado com sucesso!');
 
         return redirect(route('users.edit',auth()->user()->id));
     }

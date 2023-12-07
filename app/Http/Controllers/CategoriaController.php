@@ -29,16 +29,17 @@ class CategoriaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $categoria = new Categoria();
-        $categoria->ordem = $request->ordem;
-        $categoria->nome = $request->nome;
-        $categoria->status = $request->status;
-        $categoria->destaque = $request->destaque;
+{
+    $categoria = new Categoria();
 
-        $categoria->save();
+    $categoria->nome = $request->nome;
+    $categoria->destaque = $request->destaque;
 
-        return redirect(route('categorias.index'));
+    $categoria->save();
+
+    session()->flash('success', 'Categoria criada com sucesso!');
+
+        return redirect(route('criacard'));
     }
 
     /**
@@ -62,9 +63,9 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        $categoria->ordem = $request->ordem;
+
         $categoria->nome = $request->nome;
-        $categoria->status = $request->status;
+
         $categoria->destaque = $request->destaque;
 
         $categoria->save();
@@ -75,8 +76,11 @@ class CategoriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+
+    // No modelo Categoria.php
+public function produtos()
+{
+    return $this->hasMany(Produto::class);
+}
+
 }

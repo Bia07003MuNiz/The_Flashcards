@@ -2,8 +2,8 @@
     <x-slot:title>
         login
     </x-slot>
-    <main class="form-signin m-auto " style="width: 500px; padding-top:15px;">
-        <div class="container Login">
+    <main class="form-signin m-auto " style="height: 535px; width: 500px; padding-top:15px;" >
+        <div class="container Login" style="margin-top:120px;" >
 
             <form class="style__form" action="{{ route('logar') }}" method="POST">
                 @csrf

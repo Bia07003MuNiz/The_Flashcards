@@ -1,14 +1,15 @@
 <x-layout-base>
     <x-slot:title>
-        Área restrita > Relatório > Produtos cadastrados
+        Área restrita > Relatório >
     </x-slot>
     <main id="relatorio__produtos__cadastrados" class="area-restrita relatorios">
         <div class="container">
             <h1 class="titulo"><span>Área restrita</span></h1>
             <div class="bloco__segura">
+
+                
                 @include('menu-area-restrita')
                 <div class="bloco__conteudo">
-                    <a class="btn__voltar" href="javascript:history.back()"><i class="fa-solid fa-share fa-flip-horizontal"></i>Voltar</a>
                     <div class="style__espacamento">
                         @include('menu-relatorios')
                         <h3>Produtos cadastrados</h3>
@@ -38,14 +39,7 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Código</th>
-                                        <th>Nome</th>
-                                        <th>Categorias</th>
-                                        <th>Valor</th>
-                                    </tr>
-                                </tfoot>
+                               
                             </table>
                         @endisset
                     </div>

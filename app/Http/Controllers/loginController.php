@@ -31,21 +31,21 @@ class loginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required','min_digits:6'],
         ], $messages);
- 
+
         if (Auth::attempt($credentials)) {
             if(auth()->user()->tipo == 0){
                 //Cliente
                 $request->session()->regenerate();
- 
-                return redirect()->intended(route('logado'));
+
+                return redirect()->intended(route('categorias.index'));
             } elseif(auth()->user()->tipo == 1){
                 //Vendedor
                 $request->session()->regenerate();
- 
-                return redirect()->intended(route('boas-vindas'));
+
+                return redirect()->intended(route('categorias.index'));
             }
         }
- 
+
         return back()->withErrors([
             'email' => 'Usuário ou senha não encontrados!',
         ])->onlyInput('email');

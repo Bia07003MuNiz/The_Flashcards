@@ -1,5 +1,5 @@
 .btncard{
-  
+
     border: none;
     padding: 0.75rem 1.5rem;
     background-color: #ffca2c;
@@ -36,17 +36,17 @@
       display: flex;
       align-items: center;
     }
-    
+
     .input-container {
       position: relative;
     }
-    
+
     .input-container input, .form button {
       outline: none;
       border: 1px solid #e5e7eb;
       margin: 8px 0;
     }
-    
+
     .input-container input {
       background-color: #fff;
       padding: 1rem;
@@ -57,7 +57,7 @@
       border-radius: 0.5rem;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
-    
+
     .submit {
       display: block;
       padding-top: 0.75rem;
@@ -73,7 +73,7 @@
       border-radius: 0.5rem;
       text-transform: uppercase;
     }
-    
+
     .signup-link {
       color: #6B7280;
       font-size: 0.875rem;
@@ -92,15 +92,15 @@
     position: relative;
     left: 915px;
   }
-  
+
   .container_cards2{
     align-items: center;
     position: relative;
       top: -50px;
-  
-    
+
+
   }
-  
+
    .cardinho {
       display: flex;
       flex-direction: column;
@@ -109,21 +109,21 @@
       position: relative;
       right: 50px;
     }
-    
+
     .input-container2 {
       margin-bottom: 10px;
     }
-  
+
     .input-container2 {
       position: relative;
     }
-    
+
     .input-container2 input, .form button {
       outline: none;
       border: 1px solid #e5e7eb;
       margin: 8px 0;
     }
-    
+
     .input-container2 input {
       background-color: #fff;
       padding: 1rem;
@@ -147,16 +147,16 @@
     .flash2{
       margin-bottom: 20px;
       text-align: center;
-     
+
     }
     .border{
       margin-bottom: -10px;
     }
-  
+
      .button, .button__icon, .button__text {
       transition: all 0.3s;
     }
-    
+
     .button .button__text {
       transform: translateX(30px);
       color: #fff;
@@ -167,7 +167,7 @@
       display: flex;
       padding: 0.75rem 1.5rem;
       background-color: #ffca2c;
-  
+
       font-size: 0.75rem;
       line-height: 1rem;
       font-weight: 700;
@@ -182,16 +182,16 @@
       transition: all .6s ease;
       align-items: center;
     }
-    
+
     button:hover {
       box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
     }
-    
+
     button:focus,button:active {
       opacity: .85;
       box-shadow: none;
     }
-    
+
     button svg {
       width: 1.25rem;
       height: 1.25rem;

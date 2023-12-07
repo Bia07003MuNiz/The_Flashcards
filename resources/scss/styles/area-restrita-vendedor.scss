@@ -1,6 +1,6 @@
 .area-restrita{
-    padding: 100px;
-    
+    padding: 25px;
+
     .error{
         color: red;
     }
@@ -43,8 +43,50 @@
             border-radius: 30px;
             border: none;
             padding: 15px;
+
         }
+        .btn__voltar {
+            color: black; /* Define a cor do texto para preto */
+            text-decoration: none;
+        }
+
+        .btn-space {
+            margin-right: 10px; /* Adiciona um espaço à direita entre os botões */
+            text-decoration: none;
+        }
+        .btn__salvar2{
+            border: none;
+            display: flex;
+
+            background-color: #ffca2c;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            vertical-align: middle;
+            align-items: center;
+            border-radius: 0.5rem;
+            user-select: none;
+            gap: 0.75rem;
+            box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+            transition: all .6s ease;
+            align-items: center;
+
+        }
+
+
     }
+
+    .lim__estilo2{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+    .btn__salvar2{
+            background-color: black;
+        }
 
     .campo__input{
         margin-bottom: 10px;
@@ -77,7 +119,7 @@
         font-weight: 600;
         font-size: 15px;
         line-height: 15px;
-        color: #006acb;
+        color: #012845;
         margin-left: 30px;
     }
 
@@ -116,6 +158,39 @@
 #listar__categorias,
 #exibir__categorias,
 #produtos-area-restrita{
+    .campo {
+
+        .form-check {
+            display: flex; /* Alinha o checkbox e o label lado a lado */
+            align-items: center; /* Centraliza verticalmente dentro da div */
+
+            .form-check-input {
+                margin-right: 8px; /* Adiciona espaço entre o checkbox e o label */
+            }
+
+            &.categoria-checkbox {
+                .form-check-input {
+                    /* Estilos específicos para os checkboxes das categorias */
+                    /* Exemplo: Alterar a cor de fundo */
+
+                    border-radius: 10px;
+                    border-color: #ffca2c;
+                    height: 25px;
+                    width: 25px;
+                }
+
+                .form-check-label {
+                    /* Estilos específicos para os labels dos checkboxes das categorias */
+                    /* Exemplo: Alterar a cor do texto */
+
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+
+
     .posiciona__btn{
         display: flex;
         align-items: center;
@@ -145,7 +220,7 @@
 
     .table__categorias{
         margin-top: 50px;
-        
+
         .listagem__categorias{
             display: flex;
             align-items: center;
@@ -191,6 +266,220 @@
             }
         }
     }
+    .form_cards {
+        background-color: #fff;
+        display: block;
+        padding: 1rem;
+        max-width: 1000px;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        height: auto;
+        width: 1500px;
+      }
+      .form-title {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+
+
+
+
+      .input-container input {
+        background-color: #fff;
+        padding: 1rem;
+        padding-right: 3rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 950px;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+
+
+      .input-container {
+        position: relative;
+    }
+
+    .input-container p {
+        background-color: #fff;
+        padding: 1rem;
+        padding-right: 3rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 950px; /* ou ajuste conforme necessário */
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        margin: 8px 0;
+    }
+
+      .submit {
+        display: block;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        background-color: #4F46E5;
+        color: #ffffff;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        width: 100%;
+        border-radius: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .signup-link {
+        color: #6B7280;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        text-align: center;
+      }
+    .lixeira{
+      width: 32px;
+      position: relative;
+      left: 225px;
+    }
+    .header_modal {
+        text-align: center;
+        position: relative;
+        left: 280px;
+    }
+    .botaozinho{
+        height: 1200px;
+    }
+    .container_cards2{
+      align-items: center;
+      position: relative;
+        top: -50px;
+
+
+    }
+
+     .cardinho {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        right: 50px;
+      }
+      .input-container3 {
+        position: relative;
+      }
+
+      .input-container3 input, .form button {
+        outline: none;
+        border: 1px solid #e5e7eb;
+        margin: 8px 0;
+      }
+
+      .input-container3 input {
+        background-color: #fff;
+        padding: 1rem;
+        padding-right: 3rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 700px;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+
+
+      .input-container2 {
+        margin-bottom: 10px;
+      }
+
+      .input-container2 {
+        position: relative;
+      }
+
+      .input-container2 input, .form button {
+        outline: none;
+        border: 1px solid #e5e7eb;
+        margin: 8px 0;
+      }
+
+      .input-container2 input {
+        background-color: #fff;
+        padding: 1rem;
+        padding-right: 3rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 350px;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+      .btn_card{
+        align-items: center;
+        position: relative;
+        left: 400px;
+      }
+      .flash{
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .border{
+        margin-bottom: -10px;
+      }
+
+       .button, .button__icon, .button__text {
+        transition: all 0.3s;
+      }
+
+      .button .button__text {
+        transform: translateX(30px);
+        color: #fff;
+        font-weight: 600;
+      }
+      button {
+        border: none;
+        display: flex;
+        padding: 0.75rem 1.5rem;
+        background-color: #ffca2c;
+
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+        align-items: center;
+        border-radius: 0.5rem;
+        user-select: none;
+        gap: 0.75rem;
+        box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+        transition: all .6s ease;
+        align-items: center;
+      }
+
+      button:hover {
+        box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+      }
+
+      button:focus,button:active {
+        opacity: .85;
+        box-shadow: none;
+      }
+
+      button svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .button_add{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
 }
 
 #boas-vindas{
@@ -320,4 +609,5 @@
         line-height: 20px;
         color: #006acb;
     }
+
 }

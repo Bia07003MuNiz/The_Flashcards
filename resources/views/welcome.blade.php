@@ -95,7 +95,7 @@
   <div class="container text-center">
     <div class="row align-items-start">
       <div class="col">
-        <a href="#" >
+        <a  href="{{ route('card1') }}">
           <svg width="255" height="241" viewBox="0 0 255 241" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g filter="url(#filter0_d_0_1)">
           <rect x="30" y="20" width="196" height="202" rx="7" fill="url(#pattern0)" shape-rendering="crispEdges"/>
@@ -122,7 +122,7 @@
 
       </div>
       <div class="col">
-        <a href="#" >
+        <a href="{{ route('card2') }}" >
           <svg width="255" height="241" viewBox="0 0 255 241" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g filter="url(#filter0_d_0_1)">
           <rect x="30" y="20" width="196" height="202" rx="7" fill="url(#pattern0)" shape-rendering="crispEdges"/>
@@ -149,7 +149,7 @@
           <p class="titulo">FLASHCARDS - ALFABETIZAÇÃO</p>
       </div>
       <div class="col">
-        <a href="#" >
+        <a href="{{ route('card3') }}" >
           <svg width="255" height="241" viewBox="0 0 255 241" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g filter="url(#filter0_d_0_1)">
           <rect x="30" y="20" width="196" height="202" rx="7" fill="url(#pattern0)" shape-rendering="crispEdges"/>

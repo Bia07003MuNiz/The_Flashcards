@@ -63,12 +63,16 @@ Route::get('/report', function () {
 })->name('produtos-cadastros');
 
 //Outros
-Route::view('/quem-somos','quem-somos')->name('quem-somos');
+Route::view('/historico','historico')->name('historico');
 Route::view('/logado','logado')->name('logado');
 Route::view('/contato','contato')->name('contato');
+
+Route::view('/card1','card1')->name('card1');
+Route::view('/card2','card2')->name('card2');
+Route::view('/card3','card3')->name('card3');
 Route::post('/salvacontato', [App\Http\Controllers\ContatoController::class, 'store'])->name('salvacontato');
 Route::view('/politica-de-privacidade','politica-de-privacidade')->name('politicas');
-Route::view('/termos-de-uso','termos-de-uso')->name('termos');
+Route::view('/relatorio','relatorio')->name('relatorio');
 Route::view('/duvidas-frequentes','duvidas-frequentes')->name('duvidas');
 Route::view('/esqueci-a-senha','esqueci-a-senha')->name('esqueci-senha');
 Route::get('/carrinho', LvCarrinho::class)->name('carrinho');
@@ -77,6 +81,7 @@ Route::post('/forgot-password', [App\Http\Controllers\ForgotPasswordController::
 Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\AuthResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
 //Área restrita (Vendedor e Cliente)
+Route::get('/logado', [ProdutoController::class, 'obterUltimoId']);
 
 Route::get('/teste', function () {
     $carrinhoAux = new CarrinhoAux();
@@ -85,10 +90,10 @@ Route::get('/teste', function () {
 })->name('teste');
 
 Route::prefix('admin')->middleware(['admin'])->group(function () {
-    Route::get('/lista-produtos', [ProdutoController::class, 'adminIndex'])->name('lista-produtos');
+    Route::get('/criacard', [ProdutoController::class, 'adminIndex'])->name('criacard');
     Route::get('/produtos-cadastrados', function () {
         $produtos = Produto::all();
-    
+
         return view('area-restrita.relatorios.produtos-cadastrados', ['produtos' => $produtos]);
     })->name('produtos-cadastros');
 });
@@ -113,7 +118,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/orcamento/{id}/excluir',[OrcamentoController::class, 'avisoExcluir'])->name('aviso-exclui-orcamento');
     Route::delete('/orcamento/{orcamento}/excluir',[OrcamentoController::class, 'excluirOrcamento'])->name('excluir-orcamento');
-    
+
     Route::get('/orcamento/{id}/editar',[OrcamentoController::class, 'viewEditar'])->name('view-editar-orcamento');
     Route::put('/orcamento/{orcamento}/editar',[OrcamentoController::class, 'editarOrcamento'])->name('editar-orcamento');
 });

@@ -37,7 +37,7 @@ class ProdutoController extends Controller
     {
         $produtos = Produto::all();
 
-        return view('produtos.admin.lista-produtos', compact('produtos'));
+        return view('produtos.admin.criacard', compact('produtos'));
     }
 
     public function Listar()
@@ -46,7 +46,7 @@ class ProdutoController extends Controller
 
         return view('produtos.listar-produtos-clientes', compact('produtos'));
     }
- 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -61,13 +61,10 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        
+
         $produto = new Produto();
         $produto->nome = $request->nome;
-        $produto->valor = $request->valor;
         $produto->codigo = $request->codigo;
-        $produto->informacoes = $request->informacoes;
-        $produto->status = $request->status;
         $produto->destaque = $request->destaque;
 
 
@@ -88,7 +85,13 @@ class ProdutoController extends Controller
             }
         }
 
-        return redirect(route('lista-produtos'));
+        return redirect(route('criacard'));
+    }
+    public function obterUltimoId()
+    {
+        $ultimoId = Produto::max('id');
+
+        return response()->json(['ultimo_id' => $ultimoId]);
     }
 
     /**
@@ -114,10 +117,8 @@ class ProdutoController extends Controller
     public function update(Request $request, Produto $produto)
     {
         $produto->nome = $request->nome;
-        $produto->valor = $request->valor;
+        $produto->nome = $request->nome;
         $produto->codigo = $request->codigo;
-        $produto->informacoes = $request->informacoes;
-        $produto->status = $request->status;
         $produto->destaque = $request->destaque;
 
         $produto->save();
@@ -125,7 +126,7 @@ class ProdutoController extends Controller
         $produto->categorias()->detach();
         $produto->categorias()->attach($request->categoria);
 
-        return redirect(route('lista-produtos'));
+        return redirect(route('criacard'));
     }
 
     /**
@@ -136,7 +137,7 @@ class ProdutoController extends Controller
         $produto->categorias()->detach();
         $produto->delete();
 
-        return redirect(route('lista-produtos'));
+        return redirect(route('criacard'));
     }
 
     public function confirmaExclusao(Produto $produto)
@@ -153,9 +154,14 @@ class ProdutoController extends Controller
     public function AddCarrinho(Produto $produto)
     {
         $carrinhoAux = new CarrinhoAux();
-        
+
         $carrinhoAux->AddItemCarrinho($produto, 1);
 
         return redirect(route('carrinho'));
     }
+
+    public function produtos()
+{
+    return $this->hasMany(Produto::class);
+}
 }
